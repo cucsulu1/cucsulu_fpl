@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -69,15 +70,20 @@ namespace AutoClickWebbrowser
         
         #endregion
 
-
-        public IntPtr WndHandle { get; set; }
+        [DllImport("user32")]
+        public static extern int SetCursorPos(int x, int y);
+        [DllImport("user32.dll",
+            CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
+        public static extern void mouse_event(int dwFlags, int dx, int dy, int cButtons,
+            int dwExtraInfo);
+        public static IntPtr WndHandle { get; set; }
         [DllImport("user32.dll")]
         static extern void mouse_event(uint dwFlags, uint dx, uint dy, uint dwData, UIntPtr dwExtraInfo);
 
         [DllImport("user32.dll")]
         static extern bool ClientToScreen(IntPtr hWnd, ref Point lpPoint);
 
-        public void LeftClick(Point clientPoint)
+        public static void LeftClick(Point clientPoint)
         {
             var oldPos = Cursor.Position;
             /// get screen coordinates
@@ -147,11 +153,15 @@ namespace AutoClickWebbrowser
         private const int MOUSEEVENTF_LEFTUP = 0x0004; /* left button up */
         private const int MOUSEEVENTF_RIGHTDOWN = 0x0008; /* right button down */
 
-                [DllImport("user32")]
-        public static extern int SetCursorPos(int x, int y);
-        [DllImport("user32.dll",
-            CharSet = CharSet.Auto,CallingConvention=CallingConvention.StdCall)]
-        public static extern void mouse_event(int dwFlags, int dx, int dy, int cButtons,
-            int dwExtraInfo);
+                
+        public static Color GetPixelColor(int x, int y)
+        {
+            Bitmap snapshot = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height, PixelFormat.Format32bppArgb);
+            using (Graphics gph = Graphics.FromImage(snapshot))
+            {
+                gph.CopyFromScreen(Screen.PrimaryScreen.Bounds.X, Screen.PrimaryScreen.Bounds.Y, 0, 0, Screen.PrimaryScreen.Bounds.Size, CopyPixelOperation.SourceCopy);
+            }
+            return snapshot.GetPixel(x, y);
+        } 
     }
 }

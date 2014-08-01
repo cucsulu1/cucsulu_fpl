@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Threading;
 namespace AutoClickWebbrowser
 {
     public partial class Form1 : Form
@@ -46,19 +46,72 @@ namespace AutoClickWebbrowser
         private void btnStartGP_Click(object sender, EventArgs e)
         {
             var x = GetListGroup();
-            win.LeftClick(new Point(294, 447));
+            foreach (var item in x)
+            {
+                WinUtilities.LeftClick(new Point(382, 142));//url
+                SendKeys.SendWait(x.FirstOrDefault());
+                SendKeys.SendWait("{ENTER}");
+                var n = 0;
+                while (true)
+                {
+                    if (WinUtilities.GetPixelColor(51, 115) == ColorTranslator.FromHtml("0xB43525") || n == 20)
+                    {
+                        n = 0;
+                        break;
+                    }
+                    Thread.Sleep(500);
+                    n++;
+                }
+                WinUtilities.LeftClick(new Point(477, 446));
+                while (true)
+                {
+                    if (WinUtilities.GetPixelColor(635, 452) == ColorTranslator.FromHtml("0x4285F4") || n == 20)
+                    {
+                        n = 0;
+                        break;
+                    }
+                    Thread.Sleep(500);
+                    n++;
+                }
+                SendKeys.SendWait("http://dichthuatdonga.com/");
+                Thread.Sleep(10000);
+                SendKeys.SendWait("{TAB}");
+                SendKeys.SendWait("{TAB}");
+                SendKeys.SendWait("{TAB}");
+                SendKeys.SendWait("{TAB}");
+                SendKeys.SendWait("{TAB}");
+                Thread.Sleep(100);
+                SendKeys.SendWait("{DOWN}");
+                Thread.Sleep(100);
+                SendKeys.SendWait("{ENTER}");
+                Thread.Sleep(200);
+                SendKeys.SendWait("{TAB}");
+                while (true)
+                {
+                    if (WinUtilities.GetPixelColor(524, 580) == ColorTranslator.FromHtml("0x53A93F") || n == 10)
+                    {
+                        n = 0;
+                        break;
+                    }
+                    Thread.Sleep(500);
+                    n++;
+                }
+                SendKeys.SendWait("{ENTER}");
+                Thread.Sleep(1000);
+            }
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            //CurrentChrome = Process.Start("firefox.exe", "http:\\www.google.com");
+            CurrentBrower = Process.Start("firefox.exe", "http:\\www.google.com");
+            Thread.Sleep(2000);
             Process[] processesByName = Process.GetProcesses();
             CurrentBrower = processesByName.FirstOrDefault(p => p.ProcessName.Contains("firefox"));
             if (CurrentBrower != null)
             {
                 WinUtilities.SetParent(CurrentBrower.MainWindowHandle, pnClient.Handle);
                 WinUtilities.MoveWindow(CurrentBrower.MainWindowHandle, 0, 0, pnClient.Width, pnClient.Height, false);
-                win.WndHandle = CurrentBrower.Handle;
+                WinUtilities.WndHandle = CurrentBrower.Handle;
             }
         }
 

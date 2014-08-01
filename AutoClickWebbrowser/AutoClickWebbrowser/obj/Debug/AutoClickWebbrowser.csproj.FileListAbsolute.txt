@@ -16,3 +16,12 @@ D:\autopostcucsulu\AutoClickWebbrowser\AutoClickWebbrowser\obj\Debug\AutoClickWe
 D:\autopostcucsulu\AutoClickWebbrowser\AutoClickWebbrowser\obj\Debug\AutoClickWebbrowser.Form1.resources
 D:\autopostcucsulu\AutoClickWebbrowser\AutoClickWebbrowser\obj\Debug\AutoClickWebbrowser.Properties.Resources.resources
 D:\autopostcucsulu\AutoClickWebbrowser\AutoClickWebbrowser\obj\Debug\AutoClickWebbrowser.csproj.GenerateResource.Cache
+D:\Website\autopostcucsulu_code\AutoClickWebbrowser\AutoClickWebbrowser\bin\Debug\AutoClickWebbrowser.exe.config
+D:\Website\autopostcucsulu_code\AutoClickWebbrowser\AutoClickWebbrowser\obj\Debug\AutoClickWebbrowser.exe
+D:\Website\autopostcucsulu_code\AutoClickWebbrowser\AutoClickWebbrowser\obj\Debug\AutoClickWebbrowser.pdb
+D:\Website\autopostcucsulu_code\AutoClickWebbrowser\AutoClickWebbrowser\bin\Debug\AutoClickWebbrowser.exe
+D:\Website\autopostcucsulu_code\AutoClickWebbrowser\AutoClickWebbrowser\bin\Debug\AutoClickWebbrowser.pdb
+D:\Website\autopostcucsulu_code\AutoClickWebbrowser\AutoClickWebbrowser\obj\Debug\AutoClickWebbrowser.csprojResolveAssemblyReference.cache
+D:\Website\autopostcucsulu_code\AutoClickWebbrowser\AutoClickWebbrowser\obj\Debug\AutoClickWebbrowser.Form1.resources
+D:\Website\autopostcucsulu_code\AutoClickWebbrowser\AutoClickWebbrowser\obj\Debug\AutoClickWebbrowser.Properties.Resources.resources
+D:\Website\autopostcucsulu_code\AutoClickWebbrowser\AutoClickWebbrowser\obj\Debug\AutoClickWebbrowser.csproj.GenerateResource.Cache
