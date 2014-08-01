@@ -7,3 +7,12 @@ c:\users\nghia.nv\documents\visual studio 2012\Projects\AutoClickWebbrowser\Auto
 c:\users\nghia.nv\documents\visual studio 2012\Projects\AutoClickWebbrowser\AutoClickWebbrowser\obj\Debug\AutoClickWebbrowser.csproj.GenerateResource.Cache
 c:\users\nghia.nv\documents\visual studio 2012\Projects\AutoClickWebbrowser\AutoClickWebbrowser\obj\Debug\AutoClickWebbrowser.exe
 c:\users\nghia.nv\documents\visual studio 2012\Projects\AutoClickWebbrowser\AutoClickWebbrowser\obj\Debug\AutoClickWebbrowser.pdb
+D:\autopostcucsulu\AutoClickWebbrowser\AutoClickWebbrowser\bin\Debug\AutoClickWebbrowser.exe.config
+D:\autopostcucsulu\AutoClickWebbrowser\AutoClickWebbrowser\obj\Debug\AutoClickWebbrowser.exe
+D:\autopostcucsulu\AutoClickWebbrowser\AutoClickWebbrowser\obj\Debug\AutoClickWebbrowser.pdb
+D:\autopostcucsulu\AutoClickWebbrowser\AutoClickWebbrowser\bin\Debug\AutoClickWebbrowser.exe
+D:\autopostcucsulu\AutoClickWebbrowser\AutoClickWebbrowser\bin\Debug\AutoClickWebbrowser.pdb
+D:\autopostcucsulu\AutoClickWebbrowser\AutoClickWebbrowser\obj\Debug\AutoClickWebbrowser.csprojResolveAssemblyReference.cache
+D:\autopostcucsulu\AutoClickWebbrowser\AutoClickWebbrowser\obj\Debug\AutoClickWebbrowser.Form1.resources
+D:\autopostcucsulu\AutoClickWebbrowser\AutoClickWebbrowser\obj\Debug\AutoClickWebbrowser.Properties.Resources.resources
+D:\autopostcucsulu\AutoClickWebbrowser\AutoClickWebbrowser\obj\Debug\AutoClickWebbrowser.csproj.GenerateResource.Cache
