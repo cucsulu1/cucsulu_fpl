@@ -31,7 +31,7 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnStart = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnPost = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnLoad = new System.Windows.Forms.Button();
@@ -40,6 +40,8 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.webBrowserGroup = new System.Windows.Forms.WebBrowser();
+            this.chkIsMoblie = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -54,7 +56,7 @@
             this.webBrowser1.Location = new System.Drawing.Point(6, 32);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(528, 373);
+            this.webBrowser1.Size = new System.Drawing.Size(659, 373);
             this.webBrowser1.TabIndex = 0;
             // 
             // textBox1
@@ -63,11 +65,11 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(353, 20);
             this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "https://www.google.com.vn/";
+            this.textBox1.Text = "https://m.facebook.com/browsegroups/?seemore";
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(459, 5);
+            this.btnStart.Location = new System.Drawing.Point(577, 5);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(75, 23);
             this.btnStart.TabIndex = 2;
@@ -75,15 +77,15 @@
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
-            // button1
+            // btnPost
             // 
-            this.button1.Location = new System.Drawing.Point(378, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Click";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnPost.Location = new System.Drawing.Point(496, 5);
+            this.btnPost.Name = "btnPost";
+            this.btnPost.Size = new System.Drawing.Size(75, 23);
+            this.btnPost.TabIndex = 3;
+            this.btnPost.Text = "Post";
+            this.btnPost.UseVisualStyleBackColor = true;
+            this.btnPost.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabControl1
             // 
@@ -94,7 +96,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(550, 437);
+            this.tabControl1.Size = new System.Drawing.Size(681, 437);
             this.tabControl1.TabIndex = 4;
             // 
             // tabPage2
@@ -145,14 +147,16 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.chkIsMoblie);
+            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.btnPost);
             this.tabPage1.Controls.Add(this.webBrowser1);
             this.tabPage1.Controls.Add(this.btnStart);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(542, 411);
+            this.tabPage1.Size = new System.Drawing.Size(673, 411);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Tool";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -177,11 +181,31 @@
             this.webBrowserGroup.Size = new System.Drawing.Size(536, 405);
             this.webBrowserGroup.TabIndex = 0;
             // 
+            // chkIsMoblie
+            // 
+            this.chkIsMoblie.AutoSize = true;
+            this.chkIsMoblie.Location = new System.Drawing.Point(365, 9);
+            this.chkIsMoblie.Name = "chkIsMoblie";
+            this.chkIsMoblie.Size = new System.Drawing.Size(56, 17);
+            this.chkIsMoblie.TabIndex = 4;
+            this.chkIsMoblie.Text = "mobile";
+            this.chkIsMoblie.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(414, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Test";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 437);
+            this.ClientSize = new System.Drawing.Size(681, 437);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -201,7 +225,7 @@
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnStart;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPost;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -210,6 +234,8 @@
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.WebBrowser webBrowserGroup;
+        private System.Windows.Forms.CheckBox chkIsMoblie;
+        private System.Windows.Forms.Button button1;
     }
 }
 
