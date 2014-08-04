@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnStart = new System.Windows.Forms.Button();
@@ -38,12 +39,14 @@
             this.btnStartGP = new System.Windows.Forms.Button();
             this.pnClient = new System.Windows.Forms.Panel();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.webBrowserGroup = new System.Windows.Forms.WebBrowser();
-            this.chkIsMoblie = new System.Windows.Forms.CheckBox();
-                        this.btnGetPeople = new System.Windows.Forms.Button();
-
             this.button1 = new System.Windows.Forms.Button();
+            this.chkIsMoblie = new System.Windows.Forms.CheckBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnGetPeople = new System.Windows.Forms.Button();
+            this.webBrowserGroup = new System.Windows.Forms.WebBrowser();
+            this.rtbPostFGroupComment = new System.Windows.Forms.RichTextBox();
+            this.tmCheckFFIsLoaded = new System.Windows.Forms.Timer(this.components);
+            this.tmCheckIs = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -58,14 +61,14 @@
             this.webBrowser1.Location = new System.Drawing.Point(6, 32);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(659, 373);
+            this.webBrowser1.Size = new System.Drawing.Size(258, 373);
             this.webBrowser1.TabIndex = 0;
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(6, 6);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(353, 20);
+            this.textBox1.Size = new System.Drawing.Size(272, 20);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "https://m.facebook.com/browsegroups/?seemore";
             // 
@@ -75,13 +78,13 @@
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(75, 23);
             this.btnStart.TabIndex = 2;
-            this.btnStart.Text = "Start";
+            this.btnStart.Text = "GO";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // btnPost
             // 
-            this.btnPost.Location = new System.Drawing.Point(496, 5);
+            this.btnPost.Location = new System.Drawing.Point(451, 5);
             this.btnPost.Name = "btnPost";
             this.btnPost.Size = new System.Drawing.Size(75, 23);
             this.btnPost.TabIndex = 3;
@@ -98,7 +101,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(681, 437);
+            this.tabControl1.Size = new System.Drawing.Size(601, 534);
             this.tabControl1.TabIndex = 4;
             // 
             // tabPage2
@@ -109,46 +112,44 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(542, 411);
+            this.tabPage2.Size = new System.Drawing.Size(593, 508);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "GP";
+            this.tabPage2.Text = "G+";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // btnLoad
             // 
-            this.btnLoad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLoad.Location = new System.Drawing.Point(381, 4);
+            this.btnLoad.Location = new System.Drawing.Point(3, 4);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnLoad.Size = new System.Drawing.Size(120, 23);
             this.btnLoad.TabIndex = 2;
-            this.btnLoad.Text = "Load";
+            this.btnLoad.Text = "Load FF";
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // btnStartGP
             // 
-            this.btnStartGP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStartGP.Location = new System.Drawing.Point(462, 4);
+            this.btnStartGP.Location = new System.Drawing.Point(129, 4);
             this.btnStartGP.Name = "btnStartGP";
             this.btnStartGP.Size = new System.Drawing.Size(75, 23);
             this.btnStartGP.TabIndex = 1;
-            this.btnStartGP.Text = "Start";
+            this.btnStartGP.Text = "Start +";
             this.btnStartGP.UseVisualStyleBackColor = true;
             this.btnStartGP.Click += new System.EventHandler(this.btnStartGP_Click);
             // 
             // pnClient
             // 
-            this.pnClient.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnClient.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.pnClient.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnClient.Location = new System.Drawing.Point(1, 30);
+            this.pnClient.Location = new System.Drawing.Point(0, 30);
             this.pnClient.Name = "pnClient";
-            this.pnClient.Size = new System.Drawing.Size(539, 381);
+            this.pnClient.Size = new System.Drawing.Size(591, 478);
             this.pnClient.TabIndex = 0;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.rtbPostFGroupComment);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.chkIsMoblie);
             this.tabPage1.Controls.Add(this.textBox1);
@@ -160,8 +161,30 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(673, 411);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Tool";
+            this.tabPage1.Text = "Post FGroup";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(284, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Test";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // chkIsMoblie
+            // 
+            this.chkIsMoblie.AutoSize = true;
+            this.chkIsMoblie.Checked = true;
+            this.chkIsMoblie.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkIsMoblie.Location = new System.Drawing.Point(365, 9);
+            this.chkIsMoblie.Name = "chkIsMoblie";
+            this.chkIsMoblie.Size = new System.Drawing.Size(62, 17);
+            this.chkIsMoblie.TabIndex = 4;
+            this.chkIsMoblie.Text = "Fmobile";
+            this.chkIsMoblie.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
@@ -170,10 +193,20 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(542, 411);
+            this.tabPage3.Size = new System.Drawing.Size(673, 411);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "GROUP";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btnGetPeople
+            // 
+            this.btnGetPeople.Location = new System.Drawing.Point(3, 18);
+            this.btnGetPeople.Name = "btnGetPeople";
+            this.btnGetPeople.Size = new System.Drawing.Size(75, 23);
+            this.btnGetPeople.TabIndex = 1;
+            this.btnGetPeople.Text = "GetPeop";
+            this.btnGetPeople.UseVisualStyleBackColor = true;
+            this.btnGetPeople.Click += new System.EventHandler(this.btnGetPeople_Click);
             // 
             // webBrowserGroup
             // 
@@ -183,51 +216,32 @@
             this.webBrowserGroup.Location = new System.Drawing.Point(3, 47);
             this.webBrowserGroup.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowserGroup.Name = "webBrowserGroup";
-            this.webBrowserGroup.Size = new System.Drawing.Size(536, 361);
+            this.webBrowserGroup.Size = new System.Drawing.Size(294, 361);
             this.webBrowserGroup.TabIndex = 0;
             // 
-            this.webBrowserGroup.TabIndex = 0;
+            // rtbPostFGroupComment
             // 
-            // chkIsMoblie
+            this.rtbPostFGroupComment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtbPostFGroupComment.Location = new System.Drawing.Point(270, 32);
+            this.rtbPostFGroupComment.Name = "rtbPostFGroupComment";
+            this.rtbPostFGroupComment.Size = new System.Drawing.Size(397, 373);
+            this.rtbPostFGroupComment.TabIndex = 6;
+            this.rtbPostFGroupComment.Text = "";
             // 
-            this.chkIsMoblie.AutoSize = true;
-            this.chkIsMoblie.Location = new System.Drawing.Point(365, 9);
-            this.chkIsMoblie.Name = "chkIsMoblie";
-            this.chkIsMoblie.Size = new System.Drawing.Size(56, 17);
-            this.chkIsMoblie.TabIndex = 4;
-            this.chkIsMoblie.Text = "mobile";
-            this.chkIsMoblie.UseVisualStyleBackColor = true;
+            // tmCheckFFIsLoaded
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(414, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Test";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-                        // 
-            // btnGetPeople
-            // 
-            this.btnGetPeople.Location = new System.Drawing.Point(459, 18);
-            this.btnGetPeople.Name = "btnGetPeople";
-            this.btnGetPeople.Size = new System.Drawing.Size(75, 23);
-            this.btnGetPeople.TabIndex = 1;
-            this.btnGetPeople.Text = "GetPeop";
-            this.btnGetPeople.UseVisualStyleBackColor = true;
-            this.btnGetPeople.Click += new System.EventHandler(this.btnGetPeople_Click);
-           
+            this.tmCheckFFIsLoaded.Tick += new System.EventHandler(this.tmCheckFFIsLoaded_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(681, 437);
+            this.ClientSize = new System.Drawing.Size(601, 534);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
@@ -255,6 +269,9 @@
         private System.Windows.Forms.CheckBox chkIsMoblie;
         private System.Windows.Forms.Button button1;
                 private System.Windows.Forms.Button btnGetPeople;
+                private System.Windows.Forms.RichTextBox rtbPostFGroupComment;
+                private System.Windows.Forms.Timer tmCheckFFIsLoaded;
+                private System.Windows.Forms.Timer tmCheckIs;
 
     }
 }
