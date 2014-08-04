@@ -1,2 +1,4 @@
 syntax: glob
 AutoClickWebbrowser/_ReSharper.AutoClickWebbrowser
+.orig
+AutoClickWebbrowser/AutoClickWebbrowser/Form1.cs.orig
