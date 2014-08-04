@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SEODBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="SEODBModelStoreContainer">
+    <EntitySet Name="PlusPeoples" EntityType="SEODBModel.Store.PlusPeoples" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="PlusPeoples">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Url" Type="nvarchar" MaxLength="500" />
+    <Property Name="GroupId" Type="int" />
+    <Property Name="IsRunAdded" Type="bit" />
+    <Property Name="IsFriend" Type="bit" />
+  </EntityType>
+</Schema>
