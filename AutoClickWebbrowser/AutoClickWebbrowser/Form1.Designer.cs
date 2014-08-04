@@ -41,6 +41,8 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.webBrowserGroup = new System.Windows.Forms.WebBrowser();
             this.chkIsMoblie = new System.Windows.Forms.CheckBox();
+                        this.btnGetPeople = new System.Windows.Forms.Button();
+
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -163,6 +165,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.btnGetPeople);
             this.tabPage3.Controls.Add(this.webBrowserGroup);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
@@ -174,11 +177,15 @@
             // 
             // webBrowserGroup
             // 
-            this.webBrowserGroup.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowserGroup.Location = new System.Drawing.Point(3, 3);
+            this.webBrowserGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.webBrowserGroup.Location = new System.Drawing.Point(3, 47);
             this.webBrowserGroup.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowserGroup.Name = "webBrowserGroup";
-            this.webBrowserGroup.Size = new System.Drawing.Size(536, 405);
+            this.webBrowserGroup.Size = new System.Drawing.Size(536, 361);
+            this.webBrowserGroup.TabIndex = 0;
+            // 
             this.webBrowserGroup.TabIndex = 0;
             // 
             // chkIsMoblie
@@ -200,6 +207,17 @@
             this.button1.Text = "Test";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
+                        // 
+            // btnGetPeople
+            // 
+            this.btnGetPeople.Location = new System.Drawing.Point(459, 18);
+            this.btnGetPeople.Name = "btnGetPeople";
+            this.btnGetPeople.Size = new System.Drawing.Size(75, 23);
+            this.btnGetPeople.TabIndex = 1;
+            this.btnGetPeople.Text = "GetPeop";
+            this.btnGetPeople.UseVisualStyleBackColor = true;
+            this.btnGetPeople.Click += new System.EventHandler(this.btnGetPeople_Click);
+           
             // 
             // Form1
             // 
@@ -236,6 +254,8 @@
         private System.Windows.Forms.WebBrowser webBrowserGroup;
         private System.Windows.Forms.CheckBox chkIsMoblie;
         private System.Windows.Forms.Button button1;
+                private System.Windows.Forms.Button btnGetPeople;
+
     }
 }
 

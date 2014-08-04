@@ -25,3 +25,5 @@ D:\Website\autopostcucsulu_code\AutoClickWebbrowser\AutoClickWebbrowser\obj\Debu
 D:\Website\autopostcucsulu_code\AutoClickWebbrowser\AutoClickWebbrowser\obj\Debug\AutoClickWebbrowser.Form1.resources
 D:\Website\autopostcucsulu_code\AutoClickWebbrowser\AutoClickWebbrowser\obj\Debug\AutoClickWebbrowser.Properties.Resources.resources
 D:\Website\autopostcucsulu_code\AutoClickWebbrowser\AutoClickWebbrowser\obj\Debug\AutoClickWebbrowser.csproj.GenerateResource.Cache
+D:\Website\autopostcucsulu_code\AutoClickWebbrowser\AutoClickWebbrowser\bin\Debug\EntityFramework.dll
+D:\Website\autopostcucsulu_code\AutoClickWebbrowser\AutoClickWebbrowser\bin\Debug\EntityFramework.xml

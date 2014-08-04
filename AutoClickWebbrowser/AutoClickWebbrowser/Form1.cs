@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
@@ -130,6 +131,11 @@ namespace AutoClickWebbrowser
         private void btnStartGP_Click(object sender, EventArgs e)
         {
             var x = GetListGroup();
+            var y = "";
+            foreach (var iem in x)
+            {
+                y += string.Format("\"{0}\", _\r\n", iem);
+            }
             foreach (var item in x)
             {
                 WinUtilities.LeftClick(new Point(382, 142));//url
@@ -220,7 +226,26 @@ namespace AutoClickWebbrowser
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            webBrowserGroup.Url = new Uri("https://plus.google.com/communities");
+            webBrowserGroup.Url = new Uri("https://plus.google.com/u/0/b/102397380177231200136/communities/113255993038343232025/members");
+        }
+        SEODBEntities _db=new SEODBEntities();
+        private void btnGetPeople_Click(object sender, EventArgs e)
+        {
+            var str = System.IO.File.ReadAllText("C:/Users/pc/Desktop/tt.htm");
+            if (webBrowserGroup.Document != null)
+            {
+                HtmlElementCollection col = webBrowserGroup.Document.GetElementsByTagName("a");
+                var regex = Regex.Matches(str, "oid=\"(\\d*)\"");
+                foreach (Match element in regex)
+                {
+                    var href = element.Groups[1].Value;
+                     if (!_db.PlusPeoples.Any(p => p.Name == href))
+                     {
+                         _db.PlusPeoples.Add(new PlusPeoples() { IsRunAdded = false, Name = href, Url = "https://plus.google.com/"+href,IsFriend = false});
+                         _db.SaveChanges();
+                     }
+                }
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
