@@ -128,53 +128,68 @@ namespace AutoClickWebbrowser
             }
             return result;
         }
+        List<PlusPeoples> _lstPeople = new List<PlusPeoples>();
+        private PlusPeoples _selectedPeople;
+        private void ProcessAddPeople()
+        {
+            _selectedPeople = _lstPeople[0];
+            WinUtilities.LeftClick(new Point(165, 146));//url
+            SendKeys.SendWait(_selectedPeople.Url);
+            SendKeys.SendWait("{ENTER}");
+            var autoIt = Process.Start("c:\\AddPPdb.au3");
+            autoIt.Exited += SaveIsAdded;
+        }
+        private void SaveIsAdded(object sender, EventArgs e)
+        {
+            _selectedPeople.IsRunAdded = true;
+            _db.SaveChanges();
+            _lstPeople.Remove(_selectedPeople);
+            ProcessAddPeople();
+        }
+
         private void btnStartGP_Click(object sender, EventArgs e)
         {
-            var x = new List<string>() { "https://plus.google.com/u/0/113417325382899203255/posts" };
-            foreach (var item in x)
-            {
-                WinUtilities.LeftClick(new Point(165, 146));//url
-                SendKeys.SendWait(x.FirstOrDefault());
-                SendKeys.SendWait("{ENTER}");
-                var n = 0;
-                while (true)
-                {
-                    if (WinUtilities.GetPixelColor(51, 115) == ColorTranslator.FromHtml("0xB43525") || n == 10)
-                    {
-                        n = 0;
-                        MessageBox.Show("Test2");
-                        break;
-                    }
-                    Thread.Sleep(1000);
-                    n++;
-                }
-                SendKeys.SendWait("{DOWN}");
-                //SendKeys.SendWait("http://dichthuatdonga.com/");
-                //Thread.Sleep(10000);
-                //SendKeys.SendWait("{TAB}");
-                //SendKeys.SendWait("{TAB}");
-                //SendKeys.SendWait("{TAB}");
-                //SendKeys.SendWait("{TAB}");
-                //SendKeys.SendWait("{TAB}");
-                //Thread.Sleep(100);
-                SendKeys.SendWait("{DOWN}");
-                //Thread.Sleep(100);
-                //SendKeys.SendWait("{ENTER}");
-                //Thread.Sleep(200);
-                //SendKeys.SendWait("{TAB}");
-                //while (true)
-                //{
-                //    if (WinUtilities.GetPixelColor(524, 580) == ColorTranslator.FromHtml("0x53A93F") || n == 10)
-                //    {
-                //        n = 0;
-                //        break;
-                //    }
-                //    Thread.Sleep(500);
-                //    n++;
-                //}
-                //SendKeys.SendWait("{ENTER}");
-                //Thread.Sleep(1000);
-            }
+            _lstPeople = _db.PlusPeoples.Where(p=>p.IsRunAdded==null || p.IsRunAdded==false).Take(100).ToList();
+            ProcessAddPeople();
+            //var n = 0;
+            //while (true)
+            //{
+            //    if (WinUtilities.GetPixelColor(51, 115) == ColorTranslator.FromHtml("0xB43525") || n == 10)
+            //    {
+            //        n = 0;
+            //        MessageBox.Show("Test2");
+            //        break;
+            //    }
+            //    Thread.Sleep(1000);
+            //    n++;
+            //}
+            //SendKeys.SendWait("{DOWN}");
+            //SendKeys.SendWait("http://dichthuatdonga.com/");
+            //Thread.Sleep(10000);
+            //SendKeys.SendWait("{TAB}");
+            //SendKeys.SendWait("{TAB}");
+            //SendKeys.SendWait("{TAB}");
+            //SendKeys.SendWait("{TAB}");
+            //SendKeys.SendWait("{TAB}");
+            //Thread.Sleep(100);
+            //SendKeys.SendWait("{DOWN}");
+            //Thread.Sleep(100);
+            //SendKeys.SendWait("{ENTER}");
+            //Thread.Sleep(200);
+            //SendKeys.SendWait("{TAB}");
+            //while (true)
+            //{
+            //    if (WinUtilities.GetPixelColor(524, 580) == ColorTranslator.FromHtml("0x53A93F") || n == 10)
+            //    {
+            //        n = 0;
+            //        break;
+            //    }
+            //    Thread.Sleep(500);
+            //    n++;
+            //}
+            //SendKeys.SendWait("{ENTER}");
+            //Thread.Sleep(1000);
+        
         }
 
         private void btnLoad_Click(object sender, EventArgs e)

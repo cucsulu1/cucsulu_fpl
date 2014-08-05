@@ -39,12 +39,12 @@
             this.btnStartGP = new System.Windows.Forms.Button();
             this.pnClient = new System.Windows.Forms.Panel();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.rtbPostFGroupComment = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.chkIsMoblie = new System.Windows.Forms.CheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnGetPeople = new System.Windows.Forms.Button();
             this.webBrowserGroup = new System.Windows.Forms.WebBrowser();
-            this.rtbPostFGroupComment = new System.Windows.Forms.RichTextBox();
             this.tmCheckFFIsLoaded = new System.Windows.Forms.Timer(this.components);
             this.tmCheckIs = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
@@ -139,10 +139,11 @@
             // 
             // pnClient
             // 
-            this.pnClient.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnClient.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnClient.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnClient.Location = new System.Drawing.Point(0, 30);
+            this.pnClient.Location = new System.Drawing.Point(3, 30);
             this.pnClient.Name = "pnClient";
             this.pnClient.Size = new System.Drawing.Size(591, 478);
             this.pnClient.TabIndex = 0;
@@ -159,10 +160,20 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(673, 411);
+            this.tabPage1.Size = new System.Drawing.Size(593, 508);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Post FGroup";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // rtbPostFGroupComment
+            // 
+            this.rtbPostFGroupComment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtbPostFGroupComment.Location = new System.Drawing.Point(270, 32);
+            this.rtbPostFGroupComment.Name = "rtbPostFGroupComment";
+            this.rtbPostFGroupComment.Size = new System.Drawing.Size(397, 373);
+            this.rtbPostFGroupComment.TabIndex = 6;
+            this.rtbPostFGroupComment.Text = "";
             // 
             // button1
             // 
@@ -193,7 +204,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(673, 411);
+            this.tabPage3.Size = new System.Drawing.Size(593, 508);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "GROUP";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -219,16 +230,6 @@
             this.webBrowserGroup.Size = new System.Drawing.Size(294, 361);
             this.webBrowserGroup.TabIndex = 0;
             // 
-            // rtbPostFGroupComment
-            // 
-            this.rtbPostFGroupComment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtbPostFGroupComment.Location = new System.Drawing.Point(270, 32);
-            this.rtbPostFGroupComment.Name = "rtbPostFGroupComment";
-            this.rtbPostFGroupComment.Size = new System.Drawing.Size(397, 373);
-            this.rtbPostFGroupComment.TabIndex = 6;
-            this.rtbPostFGroupComment.Text = "";
-            // 
             // tmCheckFFIsLoaded
             // 
             this.tmCheckFFIsLoaded.Tick += new System.EventHandler(this.tmCheckFFIsLoaded_Tick);
@@ -241,6 +242,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
