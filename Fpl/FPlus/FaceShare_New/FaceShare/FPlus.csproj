@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4A1A55C6-43B5-457E-90FA-66574B36D189}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FPlus</RootNamespace>
+    <AssemblyName>FPlus</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>.\Microsoft.mshtml.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.cs" />
+    <Compile Include="ucAutoJoinGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAutoJoinGroup.Designer.cs">
+      <DependentUpon>ucAutoJoinGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FacePost.cs" />
+    <Compile Include="FaceFriend.cs" />
+    <Compile Include="FaceGroup.cs" />
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSelectPost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSelectPost.Designer.cs">
+      <DependentUpon>frmSelectPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mails.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ucAds.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAds.Designer.cs">
+      <DependentUpon>ucAds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucAutoPostFriend.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAutoPostFriend.Designer.cs">
+      <DependentUpon>ucAutoPostFriend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucAutoPostGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAutoPostGroup.Designer.cs">
+      <DependentUpon>ucAutoPostGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucBuy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucBuy.Designer.cs">
+      <DependentUpon>ucBuy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGuide.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGuide.Designer.cs">
+      <DependentUpon>ucGuide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucLoginFacebook.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucLoginFacebook.Designer.cs">
+      <DependentUpon>ucLoginFacebook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucMoveComputer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucMoveComputer.Designer.cs">
+      <DependentUpon>ucMoveComputer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities.cs" />
+    <EmbeddedResource Include="ucAutoJoinGroup.resx">
+      <DependentUpon>ucAutoJoinGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSelectPost.resx">
+      <DependentUpon>frmSelectPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ucAds.resx">
+      <DependentUpon>ucAds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucAutoPostFriend.resx">
+      <DependentUpon>ucAutoPostFriend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucAutoPostGroup.resx">
+      <DependentUpon>ucAutoPostGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucBuy.resx">
+      <DependentUpon>ucBuy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGuide.resx">
+      <DependentUpon>ucGuide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucLoginFacebook.resx">
+      <DependentUpon>ucLoginFacebook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucMoveComputer.resx">
+      <DependentUpon>ucMoveComputer.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Facebook.dll" />
+    <Content Include="MetroFramework.txt" />
+    <Content Include="Microsoft.mshtml.dll" />
+    <None Include="Resources\loading-blue.gif" />
+    <None Include="Resources\house1.png" />
+    <None Include="Resources\house.png" />
+    <None Include="Resources\key_red.png" />
+    <None Include="Resources\key_blue.png" />
+    <None Include="Resources\key1.png" />
+    <None Include="Resources\Generate-keys-icon1.png" />
+    <None Include="Resources\t3-session-guide-Icon.png" />
+    <None Include="Resources\settings-icon.png" />
+    <None Include="Resources\keys-icon1.png" />
+    <None Include="Resources\key.png" />
+    <None Include="Resources\guide.png" />
+    <None Include="Resources\GooglePlus.png" />
+    <None Include="Resources\Generate-keys-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SHDocVw">
+      <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

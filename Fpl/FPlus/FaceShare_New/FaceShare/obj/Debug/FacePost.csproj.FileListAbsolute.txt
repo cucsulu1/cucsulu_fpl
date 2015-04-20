@@ -1,0 +1,15 @@
+C:\Users\user\Documents\Visual Studio 2013\Projects\FaceShare_New\FaceShare\bin\Debug\FaceShare.exe
+C:\Users\user\Documents\Visual Studio 2013\Projects\FaceShare_New\FaceShare\bin\Debug\FaceShare.pdb
+C:\Users\user\Documents\Visual Studio 2013\Projects\FaceShare_New\FaceShare\bin\Debug\Facebook.dll
+C:\Users\user\Documents\Visual Studio 2013\Projects\FaceShare_New\FaceShare\obj\Debug\FaceShare.FrmMain.resources
+C:\Users\user\Documents\Visual Studio 2013\Projects\FaceShare_New\FaceShare\obj\Debug\FaceShare.Properties.Resources.resources
+C:\Users\user\Documents\Visual Studio 2013\Projects\FaceShare_New\FaceShare\obj\Debug\FacePost.csproj.GenerateResource.Cache
+C:\Users\user\Documents\Visual Studio 2013\Projects\FaceShare_New\FaceShare\obj\Debug\FaceShare.exe
+C:\Users\user\Documents\Visual Studio 2013\Projects\FaceShare_New\FaceShare\obj\Debug\FaceShare.pdb
+C:\Users\user\Documents\Visual Studio 2013\Projects\FaceShare_New\FaceShare\obj\Debug\Interop.SHDocVw.dll
+C:\Users\user\Documents\Visual Studio 2013\Projects\FaceShare_New\FaceShare\obj\Debug\FacePost.csproj.ResolveComReference.cache
+C:\Users\user\Documents\Visual Studio 2013\Projects\FaceShare_New\FaceShare\obj\Debug\FacePost.csprojResolveAssemblyReference.cache
+C:\Users\My PC\Desktop\FaceShare_New\FaceShare\obj\Debug\Interop.SHDocVw.dll
+C:\Users\My PC\Desktop\FaceShare_New\FaceShare\obj\Debug\FacePost.csproj.ResolveComReference.cache
+C:\Users\My PC\Desktop\FaceShare_New\FaceShare\obj\Debug\FaceShare.exe
+C:\Users\My PC\Desktop\FaceShare_New\FaceShare\obj\Debug\FaceShare.pdb

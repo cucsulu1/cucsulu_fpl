@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfFacePost xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FacePost>
+    <Id>2</Id>
+    <PostContent>2133123</PostContent>
+    <TypeId>1</TypeId>
+    <TypeName>Đăng ảnh</TypeName>
+    <ImageFile />
+    <PostLink />
+    <WebsiteLink />
+    <DateCreated>2015-04-19T23:28:51.8575507+07:00</DateCreated>
+  </FacePost>
+</ArrayOfFacePost>

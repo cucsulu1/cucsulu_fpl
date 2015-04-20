@@ -1,0 +1,14 @@
+C:\Users\user\Desktop\MetroFramework-master\MetroFramework\bin\Debug\MetroFramework.dll
+C:\Users\user\Desktop\MetroFramework-master\MetroFramework\bin\Debug\MetroFramework.pdb
+C:\Users\user\Desktop\MetroFramework-master\MetroFramework\obj\Debug\MetroFramework.Forms.MetroTaskWindow.resources
+C:\Users\user\Desktop\MetroFramework-master\MetroFramework\obj\Debug\MetroFramework.Properties.Resources.resources
+C:\Users\user\Desktop\MetroFramework-master\MetroFramework\obj\Debug\MetroFramework.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\MetroFramework-master\MetroFramework\obj\Debug\MetroFramework.dll
+C:\Users\user\Desktop\MetroFramework-master\MetroFramework\obj\Debug\MetroFramework.pdb
+C:\Users\user\Desktop\auto\FPlus\FaceShare_New\MetroFramework\obj\Debug\MetroFramework.Forms.MetroTaskWindow.resources
+C:\Users\user\Desktop\auto\FPlus\FaceShare_New\MetroFramework\obj\Debug\MetroFramework.Properties.Resources.resources
+C:\Users\user\Desktop\auto\FPlus\FaceShare_New\MetroFramework\obj\Debug\MetroFramework.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\auto\FPlus\FaceShare_New\MetroFramework\obj\Debug\MetroFramework.dll
+C:\Users\user\Desktop\auto\FPlus\FaceShare_New\MetroFramework\bin\Debug\MetroFramework.dll
+C:\Users\user\Desktop\auto\FPlus\FaceShare_New\MetroFramework\bin\Debug\MetroFramework.pdb
+C:\Users\user\Desktop\auto\FPlus\FaceShare_New\MetroFramework\obj\Debug\MetroFramework.pdb

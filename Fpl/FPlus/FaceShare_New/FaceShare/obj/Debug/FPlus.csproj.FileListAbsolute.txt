@@ -1,0 +1,74 @@
+C:\Users\My PC\Desktop\FaceShare_New\FaceShare\obj\Debug\Interop.SHDocVw.dll
+C:\Users\My PC\Desktop\FaceShare_New\FaceShare\obj\Debug\FPlus.csproj.ResolveComReference.cache
+C:\Users\My PC\Desktop\FaceShare_New\FaceShare\obj\Debug\FaceShare.FrmMain.resources
+C:\Users\My PC\Desktop\FaceShare_New\FaceShare\obj\Debug\FaceShare.Properties.Resources.resources
+C:\Users\My PC\Desktop\FaceShare_New\FaceShare\obj\Debug\FPlus.csproj.GenerateResource.Cache
+C:\Users\My PC\Desktop\FaceShare_New\FaceShare\obj\Debug\FaceShare.exe
+C:\Users\My PC\Desktop\FaceShare_New\FaceShare\bin\Debug\FaceShare.exe
+C:\Users\My PC\Desktop\FaceShare_New\FaceShare\bin\Debug\FaceShare.pdb
+C:\Users\My PC\Desktop\FaceShare_New\FaceShare\bin\Debug\Facebook.dll
+C:\Users\My PC\Desktop\FaceShare_New\FaceShare\obj\Debug\FaceShare.pdb
+C:\Users\user\Desktop\auto\FPlus\FaceShare_New\FaceShare\bin\Debug\FaceShare.exe
+C:\Users\user\Desktop\auto\FPlus\FaceShare_New\FaceShare\bin\Debug\FaceShare.pdb
+C:\Users\user\Desktop\auto\FPlus\FaceShare_New\FaceShare\bin\Debug\Facebook.dll
+C:\Users\user\Desktop\auto\FPlus\FaceShare_New\FaceShare\obj\Debug\Interop.SHDocVw.dll
+C:\Users\user\Desktop\auto\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.csproj.ResolveComReference.cache
+C:\Users\user\Desktop\auto\FPlus\FaceShare_New\FaceShare\obj\Debug\FaceShare.Properties.Resources.resources
+C:\Users\user\Desktop\auto\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\auto\FPlus\FaceShare_New\FaceShare\obj\Debug\FaceShare.exe
+C:\Users\user\Desktop\auto\FPlus\FaceShare_New\FaceShare\obj\Debug\FaceShare.pdb
+C:\Users\user\Desktop\auto\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\auto\FPlus\FaceShare_New\FaceShare\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\user\Desktop\auto\FPlus\FaceShare_New\FaceShare\bin\Debug\MetroFramework.pdb
+C:\Users\user\Desktop\auto\FPlus\FaceShare_New\FaceShare\obj\Debug\Fplus.FrmMain.resources
+C:\Users\user\Desktop\auto\FPlus\FaceShare_New\FaceShare\bin\Debug\Newtonsoft.Json.dll
+C:\Users\user\Desktop\auto\FPlus\FaceShare_New\FaceShare\bin\Debug\Newtonsoft.Json.xml
+C:\Users\My PC\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\Interop.SHDocVw.dll
+C:\Users\My PC\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.csproj.ResolveComReference.cache
+C:\Users\My PC\Desktop\FPlus\FaceShare_New\FaceShare\bin\Debug\Facebook.dll
+C:\Users\My PC\Desktop\FPlus\FaceShare_New\FaceShare\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\My PC\Desktop\FPlus\FaceShare_New\FaceShare\bin\Debug\Newtonsoft.Json.dll
+C:\Users\My PC\Desktop\FPlus\FaceShare_New\FaceShare\bin\Debug\Newtonsoft.Json.xml
+C:\Users\My PC\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\Fplus.FrmMain.resources
+C:\Users\My PC\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\auto\FPlus\FaceShare_New\FaceShare\obj\Debug\FaceShare.ucBuy.resources
+C:\Users\user\Desktop\auto\FPlus\FaceShare_New\FaceShare\obj\Debug\FaceShare.ucGuide.resources
+C:\Users\user\Desktop\auto\FPlus\FaceShare_New\FaceShare\obj\Debug\FaceShare.ucMoveComputer.resources
+C:\Users\My PC\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.ucMoveComputer.resources
+C:\Users\My PC\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.ucLoginFacebook.resources
+C:\Users\My PC\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.ucAds.resources
+C:\Users\My PC\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.Properties.Resources.resources
+C:\Users\My PC\Desktop\FPlus\FaceShare_New\FaceShare\bin\Debug\FPlus.exe
+C:\Users\My PC\Desktop\FPlus\FaceShare_New\FaceShare\bin\Debug\FPlus.pdb
+C:\Users\My PC\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.exe
+C:\Users\My PC\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.pdb
+C:\Users\My PC\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.ucBuy.resources
+C:\Users\My PC\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.ucGuide.resources
+C:\Users\user\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\Interop.SHDocVw.dll
+C:\Users\user\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.csproj.ResolveComReference.cache
+C:\Users\user\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.exe
+C:\Users\user\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.pdb
+C:\Users\user\Desktop\FPlus\FaceShare_New\FaceShare\bin\Debug\FPlus.exe
+C:\Users\user\Desktop\FPlus\FaceShare_New\FaceShare\bin\Debug\FPlus.pdb
+C:\Users\user\Desktop\FPlus\FaceShare_New\FaceShare\bin\Debug\Facebook.dll
+C:\Users\user\Desktop\FPlus\FaceShare_New\FaceShare\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\user\Desktop\FPlus\FaceShare_New\FaceShare\bin\Debug\Newtonsoft.Json.dll
+C:\Users\user\Desktop\FPlus\FaceShare_New\FaceShare\bin\Debug\Newtonsoft.Json.xml
+C:\Users\user\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\Fplus.FrmMain.resources
+C:\Users\user\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.Properties.Resources.resources
+C:\Users\user\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.ucAds.resources
+C:\Users\user\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.ucBuy.resources
+C:\Users\user\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.ucGuide.resources
+C:\Users\user\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.ucLoginFacebook.resources
+C:\Users\user\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.ucMoveComputer.resources
+C:\Users\user\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.ucAutoPostFriend.resources
+C:\Users\user\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.ucAutoPostGroup.resources
+C:\Users\My PC\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.ucAutoPostFriend.resources
+C:\Users\My PC\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.ucAutoPostGroup.resources
+C:\Users\My PC\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\FPlus\FaceShare_New\FaceShare\bin\Debug\FPlus.exe.config
+C:\Users\My PC\Desktop\FPlus\FaceShare_New\FaceShare\bin\Debug\FPlus.exe.config
+C:\Users\user\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.csprojResolveAssemblyReference.cache
+C:\Users\My PC\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.frmSelectPost.resources
+C:\Users\My PC\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.ucAutoJoinGroup.resources
