@@ -28,7 +28,7 @@ namespace FPlus
         private void btnStart_Click(object sender, EventArgs e)
         {
             this._joinGroup = true;
-            _postGroupIndex = (int)txtOffset.Value;
+            _postGroupIndex = (int)txtOffset.Value - 1;
             foreach (var faceGroup in _searchResults)
             {
                 faceGroup.IsRunned = false;

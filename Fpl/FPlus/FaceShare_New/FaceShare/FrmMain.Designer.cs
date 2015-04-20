@@ -45,17 +45,17 @@ namespace FPlus
             this.toolstatus = new System.Windows.Forms.Label();
             this.pnMain = new System.Windows.Forms.Panel();
             this.pnTab = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -132,6 +132,29 @@ namespace FPlus
             this.pnTab.Size = new System.Drawing.Size(977, 34);
             this.pnTab.TabIndex = 35;
             // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.White;
+            this.button6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(108)))), ((int)(((byte)(197)))));
+            this.button6.Location = new System.Drawing.Point(739, 0);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(121, 34);
+            this.button6.TabIndex = 2;
+            this.button6.TabStop = false;
+            this.button6.Tag = "ucAutoJoinGroup";
+            this.button6.Text = "Gia nhập nhóm";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Visible = false;
+            this.button6.Click += new System.EventHandler(this.tab_Click);
+            this.button6.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            this.button6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button1_MouseMove);
+            // 
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.White;
@@ -142,7 +165,7 @@ namespace FPlus
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(108)))), ((int)(((byte)(197)))));
-            this.button7.Location = new System.Drawing.Point(673, 0);
+            this.button7.Location = new System.Drawing.Point(579, 0);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(160, 34);
             this.button7.TabIndex = 0;
@@ -153,6 +176,7 @@ namespace FPlus
             this.button7.Visible = false;
             this.button7.TabIndexChanged += new System.EventHandler(this.button1_TabIndexChanged);
             this.button7.TabStopChanged += new System.EventHandler(this.button1_TabStopChanged);
+            this.button7.Click += new System.EventHandler(this.tab_Click);
             this.button7.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
             this.button7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button1_MouseMove);
             // 
@@ -167,7 +191,7 @@ namespace FPlus
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(529, 0);
+            this.button5.Location = new System.Drawing.Point(435, 0);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(144, 34);
             this.button5.TabIndex = 1;
@@ -181,33 +205,6 @@ namespace FPlus
             this.button5.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
             this.button5.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button1_MouseMove);
             // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(108)))), ((int)(((byte)(197)))));
-            this.button4.Image = global::FPlus.Properties.Resources.Generate_keys_icon1;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(422, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(107, 34);
-            this.button4.TabIndex = 0;
-            this.button4.TabStop = false;
-            this.button4.Tag = "ucBuy";
-            this.button4.Text = "             Gia hạn";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Visible = false;
-            this.button4.TabIndexChanged += new System.EventHandler(this.button1_TabIndexChanged);
-            this.button4.TabStopChanged += new System.EventHandler(this.button1_TabStopChanged);
-            this.button4.Click += new System.EventHandler(this.tab_Click);
-            this.button4.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
-            this.button4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button1_MouseMove);
-            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.White;
@@ -218,7 +215,7 @@ namespace FPlus
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(108)))), ((int)(((byte)(197)))));
-            this.button3.Location = new System.Drawing.Point(315, 0);
+            this.button3.Location = new System.Drawing.Point(221, 0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(107, 34);
             this.button3.TabIndex = 0;
@@ -232,58 +229,6 @@ namespace FPlus
             this.button3.Click += new System.EventHandler(this.tab_Click);
             this.button3.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
             this.button3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button1_MouseMove);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(108)))), ((int)(((byte)(197)))));
-            this.button2.Location = new System.Drawing.Point(179, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(136, 34);
-            this.button2.TabIndex = 0;
-            this.button2.TabStop = false;
-            this.button2.Tag = "ucGuide";
-            this.button2.Text = "Hướng dẫn sử dụng";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Visible = false;
-            this.button2.TabIndexChanged += new System.EventHandler(this.button1_TabIndexChanged);
-            this.button2.TabStopChanged += new System.EventHandler(this.button1_TabStopChanged);
-            this.button2.Click += new System.EventHandler(this.tab_Click);
-            this.button2.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
-            this.button2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button1_MouseMove);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(108)))), ((int)(((byte)(197)))));
-            this.button1.Image = global::FPlus.Properties.Resources.house1;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(179, 34);
-            this.button1.TabIndex = 0;
-            this.button1.TabStop = false;
-            this.button1.Tag = "ucAutoPostGroup";
-            this.button1.Text = "Tự động đăng bài";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Visible = false;
-            this.button1.TabIndexChanged += new System.EventHandler(this.button1_TabIndexChanged);
-            this.button1.TabStopChanged += new System.EventHandler(this.button1_TabStopChanged);
-            this.button1.Click += new System.EventHandler(this.tab_Click);
-            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
-            this.button1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button1_MouseMove);
             // 
             // metroLabel1
             // 
@@ -326,28 +271,84 @@ namespace FPlus
             this.pictureBox1.TabIndex = 36;
             this.pictureBox1.TabStop = false;
             // 
-            // button6
+            // button4
             // 
-            this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(108)))), ((int)(((byte)(197)))));
-            this.button6.Location = new System.Drawing.Point(833, 0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(121, 34);
-            this.button6.TabIndex = 2;
-            this.button6.TabStop = false;
-            this.button6.Tag = "ucAutoJoinGroup";
-            this.button6.Text = "Gia nhập nhóm";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Visible = false;
-            this.button6.Click += new System.EventHandler(this.tab_Click);
-            this.button6.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
-            this.button6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button1_MouseMove);
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(108)))), ((int)(((byte)(197)))));
+            this.button4.Image = global::FPlus.Properties.Resources.Generate_keys_icon1;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(328, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(107, 34);
+            this.button4.TabIndex = 0;
+            this.button4.TabStop = false;
+            this.button4.Tag = "ucBuy";
+            this.button4.Text = "             Gia hạn";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Visible = false;
+            this.button4.TabIndexChanged += new System.EventHandler(this.button1_TabIndexChanged);
+            this.button4.TabStopChanged += new System.EventHandler(this.button1_TabStopChanged);
+            this.button4.Click += new System.EventHandler(this.tab_Click);
+            this.button4.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            this.button4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button1_MouseMove);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(108)))), ((int)(((byte)(197)))));
+            this.button2.Image = global::FPlus.Properties.Resources.icon_home;
+            this.button2.Location = new System.Drawing.Point(179, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(42, 34);
+            this.button2.TabIndex = 0;
+            this.button2.TabStop = false;
+            this.button2.Tag = "ucGuide";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Visible = false;
+            this.button2.TabIndexChanged += new System.EventHandler(this.button1_TabIndexChanged);
+            this.button2.TabStopChanged += new System.EventHandler(this.button1_TabStopChanged);
+            this.button2.Click += new System.EventHandler(this.tab_Click);
+            this.button2.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            this.button2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button1_MouseMove);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(108)))), ((int)(((byte)(197)))));
+            this.button1.Image = global::FPlus.Properties.Resources.house1;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(179, 34);
+            this.button1.TabIndex = 0;
+            this.button1.TabStop = false;
+            this.button1.Tag = "ucAutoPostGroup";
+            this.button1.Text = "Tự động đăng bài";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
+            this.button1.TabIndexChanged += new System.EventHandler(this.button1_TabIndexChanged);
+            this.button1.TabStopChanged += new System.EventHandler(this.button1_TabStopChanged);
+            this.button1.Click += new System.EventHandler(this.tab_Click);
+            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            this.button1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button1_MouseMove);
             // 
             // FrmMain
             // 

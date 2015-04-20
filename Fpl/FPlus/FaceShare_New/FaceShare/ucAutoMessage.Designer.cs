@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("");
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnStopPost = new System.Windows.Forms.Button();
             this.lbTotalProcessed = new System.Windows.Forms.Label();
@@ -59,6 +59,8 @@
             this.pbLoading = new System.Windows.Forms.PictureBox();
             this.txtCountPerSend = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtPostContent = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTimeDelay)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -213,7 +215,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label2.Location = new System.Drawing.Point(161, 119);
+            this.label2.Location = new System.Drawing.Point(181, 239);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 27;
@@ -221,6 +223,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.txtPostContent);
             this.groupBox2.Controls.Add(this.txtCountPerSend);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.wbPostGroup);
@@ -237,7 +241,7 @@
             // 
             // wbPostGroup
             // 
-            this.wbPostGroup.Location = new System.Drawing.Point(40, 204);
+            this.wbPostGroup.Location = new System.Drawing.Point(40, 57);
             this.wbPostGroup.MinimumSize = new System.Drawing.Size(20, 20);
             this.wbPostGroup.Name = "wbPostGroup";
             this.wbPostGroup.ScriptErrorsSuppressed = true;
@@ -253,7 +257,7 @@
             0,
             0,
             0});
-            this.txtLimit.Location = new System.Drawing.Point(245, 167);
+            this.txtLimit.Location = new System.Drawing.Point(265, 287);
             this.txtLimit.Maximum = new decimal(new int[] {
             9999999,
             0,
@@ -280,7 +284,7 @@
             0,
             0,
             0});
-            this.txtOffset.Location = new System.Drawing.Point(245, 117);
+            this.txtOffset.Location = new System.Drawing.Point(265, 237);
             this.txtOffset.Maximum = new decimal(new int[] {
             9999999,
             0,
@@ -304,7 +308,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label1.Location = new System.Drawing.Point(74, 169);
+            this.label1.Location = new System.Drawing.Point(94, 289);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 13);
             this.label1.TabIndex = 29;
@@ -331,11 +335,11 @@
             this.columnHeader2});
             this.listBoxGroup.FullRowSelect = true;
             this.listBoxGroup.GridLines = true;
-            listViewItem3.StateImageIndex = 0;
-            listViewItem4.StateImageIndex = 0;
+            listViewItem7.StateImageIndex = 0;
+            listViewItem8.StateImageIndex = 0;
             this.listBoxGroup.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3,
-            listViewItem4});
+            listViewItem7,
+            listViewItem8});
             this.listBoxGroup.Location = new System.Drawing.Point(12, 51);
             this.listBoxGroup.Name = "listBoxGroup";
             this.listBoxGroup.Size = new System.Drawing.Size(403, 447);
@@ -394,7 +398,7 @@
             0,
             0,
             0});
-            this.txtCountPerSend.Location = new System.Drawing.Point(245, 81);
+            this.txtCountPerSend.Location = new System.Drawing.Point(265, 201);
             this.txtCountPerSend.Maximum = new decimal(new int[] {
             9999999,
             0,
@@ -418,11 +422,30 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label3.Location = new System.Drawing.Point(138, 83);
+            this.label3.Location = new System.Drawing.Point(158, 203);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 13);
             this.label3.TabIndex = 46;
             this.label3.Text = "Số tin nhắn / 1 lần :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label5.Location = new System.Drawing.Point(14, 22);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(94, 13);
+            this.label5.TabIndex = 49;
+            this.label5.Text = "Nội dung tin nhắn:";
+            // 
+            // txtPostContent
+            // 
+            this.txtPostContent.Location = new System.Drawing.Point(17, 38);
+            this.txtPostContent.Multiline = true;
+            this.txtPostContent.Name = "txtPostContent";
+            this.txtPostContent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtPostContent.Size = new System.Drawing.Size(529, 133);
+            this.txtPostContent.TabIndex = 48;
             // 
             // ucAutoMessage
             // 
@@ -484,5 +507,7 @@
         private System.Windows.Forms.PictureBox pbLoading;
         private System.Windows.Forms.NumericUpDown txtCountPerSend;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtPostContent;
     }
 }

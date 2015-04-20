@@ -29,7 +29,7 @@ namespace FPlus
         private void btnStart_Click(object sender, EventArgs e)
         {
             this._joinGroup = true;
-            _postGroupIndex = (int)txtOffset.Value;
+            _postGroupIndex = (int)txtOffset.Value - 1;
             _friendId = txtFriendLink.Text;
             if (string.IsNullOrEmpty(_friendId))
             {

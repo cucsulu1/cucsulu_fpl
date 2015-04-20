@@ -6,6 +6,7 @@ using System.Data;
 using System.Dynamic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Windows.Forms;
 using Facebook;
@@ -28,7 +29,7 @@ namespace FPlus
         private void btnStart_Click(object sender, EventArgs e)
         {
             this._joinGroup = true;
-            _postGroupIndex = (int)txtOffset.Value;
+            _postGroupIndex = (int)txtOffset.Value-1;
             foreach (var faceGroup in _searchResults)
             {
                 faceGroup.IsRunned = false;
@@ -103,8 +104,14 @@ namespace FPlus
                 lbTotalProcessed.Text = "Đã gửi : "+_searchResults.Count(p => p.IsRunned) + @"/" + listBoxGroup.CheckedIndices.Count;
                 this.lbStatus.Text = @"Đang gửi tin nhắn cho : " + (group.Name.Length > 50 ? (group.Name.Substring(0, 50) + "..") : group.Name);
                 per.Stop();
-
-                var urlGroup = "https://mbasic.facebook.com/messages/thread/" + group.Uid;
+                string paramIds = "?";
+                for (int i = 0; i < txtCountPerSend.Value; i++)
+                {
+                    paramIds += string.Format("ids[{0}]={1}&",i, _searchResults[_postGroupIndex].Uid);
+                    _postGroupIndex++;
+                } _postGroupIndex--;
+                paramIds=paramIds.Trim('&');
+                var urlGroup = "https://mbasic.facebook.com/messages/compose/" + paramIds;
                 this.wbPostGroup.Navigate(urlGroup);
                 timerstep.Stop();
             }
@@ -145,10 +152,20 @@ namespace FPlus
             if (documentText.Contains("mbasic.facebook.com/login.php"))
             {
             }
-            if (this._joinGroup && _searchResults.Count > _postGroupIndex)
+            if (this._joinGroup && _searchResults.Count > _postGroupIndex && wbPostGroup.Document!=null)
             {
                 if (!_searchResults[_postGroupIndex].IsRunned)
                 {
+                    var strComment = GetPostMessage(txtCountPerSend.Value>1?null:_searchResults[_postGroupIndex]);
+                    HtmlElementCollection elementsByTextArea = this.wbPostGroup.Document.GetElementsByTagName("textarea");
+                    foreach (HtmlElement element2 in elementsByTextArea)
+                    {
+                        if (element2.GetAttribute("class").Equals("bt bu bv"))
+                        {
+                             element2.InnerText = strComment;
+                        }
+                    }
+                    
                     HtmlElementCollection elementsByTagName = this.wbPostGroup.Document.GetElementsByTagName("input");
                     foreach (HtmlElement element2 in elementsByTagName)
                     {
@@ -159,7 +176,7 @@ namespace FPlus
                     }
                 }
                 _searchResults[_postGroupIndex].IsRunned = true;
-                this.listBoxGroup.Items[_postGroupIndex].SubItems[1].Text = "Đã gửi tin nhắn";
+                this.listBoxGroup.Items[_postGroupIndex].SubItems[1].Text = @"Đã gửi tin nhắn";
                 per.Start();
                 if (_postGroupIndex >= _searchResults.Count)
                 {
@@ -171,6 +188,22 @@ namespace FPlus
                     timerstep.Start();
                 }
             }
+        }
+
+        private string GetPostMessage(FaceUser user)
+        {
+            var msg = txtPostContent.Text;
+            if (user == null)
+            {
+                msg = Regex.Replace(msg, @"\[u\|", "");
+                msg = Regex.Replace(msg, @"\]", "");
+            }
+            else
+            {
+                msg = Regex.Replace(msg, @"\[u\|.*?\]", user.Name);
+                msg = Regex.Replace(msg, @"\[u\]", user.Name);
+            }
+            return msg;
         }
 
         private void ucAutoMessage_Load(object sender, EventArgs e)
