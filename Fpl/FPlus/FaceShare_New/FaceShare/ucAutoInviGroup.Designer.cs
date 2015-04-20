@@ -1,6 +1,6 @@
 ﻿namespace FPlus
 {
-    partial class ucAutoJoinGroup
+    partial class ucAutoInviGroup
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("");
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnStopPost = new System.Windows.Forms.Button();
             this.lbTotalProcessed = new System.Windows.Forms.Label();
@@ -55,6 +55,8 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtSearchGroup = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.txtFriendLink = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTimeDelay)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -215,6 +217,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.txtFriendLink);
             this.groupBox2.Controls.Add(this.wbPostGroup);
             this.groupBox2.Controls.Add(this.txtLimit);
             this.groupBox2.Controls.Add(this.txtOffset);
@@ -323,11 +327,11 @@
             this.columnHeader2});
             this.listBoxGroup.FullRowSelect = true;
             this.listBoxGroup.GridLines = true;
-            listViewItem1.StateImageIndex = 0;
-            listViewItem2.StateImageIndex = 0;
+            listViewItem5.StateImageIndex = 0;
+            listViewItem6.StateImageIndex = 0;
             this.listBoxGroup.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2});
+            listViewItem5,
+            listViewItem6});
             this.listBoxGroup.Location = new System.Drawing.Point(12, 51);
             this.listBoxGroup.Name = "listBoxGroup";
             this.listBoxGroup.Size = new System.Drawing.Size(403, 447);
@@ -360,9 +364,25 @@
             this.btnSearch.TabIndex = 51;
             this.btnSearch.Text = "Tìm";
             this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // ucAutoJoinGroup
+            // txtFriendLink
+            // 
+            this.txtFriendLink.Location = new System.Drawing.Point(245, 63);
+            this.txtFriendLink.Name = "txtFriendLink";
+            this.txtFriendLink.Size = new System.Drawing.Size(257, 20);
+            this.txtFriendLink.TabIndex = 46;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label3.Location = new System.Drawing.Point(115, 66);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(114, 13);
+            this.label3.TabIndex = 47;
+            this.label3.Text = "Link bạn bè muốn mời:";
+            // 
+            // ucAutoInviGroup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -374,7 +394,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lbDsNhom);
             this.Controls.Add(this.groupBox2);
-            this.Name = "ucAutoJoinGroup";
+            this.Name = "ucAutoInviGroup";
             this.Size = new System.Drawing.Size(996, 508);
             this.Load += new System.EventHandler(this.ucAutoJoinGroup_Load);
             this.groupBox1.ResumeLayout(false);
@@ -415,5 +435,7 @@
         private System.Windows.Forms.NumericUpDown txtOffset;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.WebBrowser wbPostGroup;
+        private System.Windows.Forms.TextBox txtFriendLink;
+        private System.Windows.Forms.Label label3;
     }
 }

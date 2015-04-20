@@ -11,7 +11,7 @@ namespace FPlus
 {
     public class App
     {
-        public static List<FaceFriend> LstFriends = new List<FaceFriend>();
+        public static List<FaceUser> LstFriends = new List<FaceUser>();
         public static List<FaceGroup> LstGroups = new List<FaceGroup>();
         public static List<FacePost> LstPosts = new List<FacePost>();
         public static  string CurrentVersion = "2.0";
@@ -51,7 +51,7 @@ namespace FPlus
         {
             if (App.LstGroups.Count > 0)
             {
-                var mySerializer = new XmlSerializer(typeof(List<FaceFriend>));
+                var mySerializer = new XmlSerializer(typeof(List<FaceUser>));
                 //To write to a file, create a StreamWriter object.
                 var myWriter = new StreamWriter(Path.Combine(Application.StartupPath, "list_friend.xml"));
                 mySerializer.Serialize(myWriter, LstFriends);
@@ -65,7 +65,7 @@ namespace FPlus
                 var mySerializer = new XmlSerializer(typeof(List<FaceGroup>));
                 // To write to a file, create a StreamWriter object.
                 var reader = new XmlTextReader(Path.Combine(Application.StartupPath, "list_friend.xml"));
-                LstFriends = mySerializer.Deserialize(reader) as List<FaceFriend>;
+                LstFriends = mySerializer.Deserialize(reader) as List<FaceUser>;
                 reader.Close();
             }
             catch

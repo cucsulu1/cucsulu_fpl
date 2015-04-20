@@ -105,7 +105,7 @@ namespace FPlus
             {
                 var id = (string)((JsonObject)item)["id"];
                 var name = (string)((JsonObject)item)["name"];
-                App.LstFriends.Add(new FaceFriend(){ Uid = id, Name = name, IsChecked = true });
+                App.LstFriends.Add(new FaceUser(){ Uid = id, Name = name, IsChecked = true });
             }
             App.SaveListGroup();
         }

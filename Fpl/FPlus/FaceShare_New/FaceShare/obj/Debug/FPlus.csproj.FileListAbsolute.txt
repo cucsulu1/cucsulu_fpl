@@ -72,3 +72,29 @@ C:\Users\My PC\Desktop\FPlus\FaceShare_New\FaceShare\bin\Debug\FPlus.exe.config
 C:\Users\user\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.csprojResolveAssemblyReference.cache
 C:\Users\My PC\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.frmSelectPost.resources
 C:\Users\My PC\Desktop\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.ucAutoJoinGroup.resources
+D:\fpl\branches\HOME\Fpl\FPlus\FaceShare_New\FaceShare\bin\Debug\FPlus.exe.config
+D:\fpl\branches\HOME\Fpl\FPlus\FaceShare_New\FaceShare\obj\Debug\Interop.SHDocVw.dll
+D:\fpl\branches\HOME\Fpl\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.csproj.ResolveComReference.cache
+D:\fpl\branches\HOME\Fpl\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.exe
+D:\fpl\branches\HOME\Fpl\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.pdb
+D:\fpl\branches\HOME\Fpl\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.csprojResolveAssemblyReference.cache
+D:\fpl\branches\HOME\Fpl\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.ucAutoJoinGroup.resources
+D:\fpl\branches\HOME\Fpl\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.FrmMain.resources
+D:\fpl\branches\HOME\Fpl\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.frmSelectPost.resources
+D:\fpl\branches\HOME\Fpl\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.Properties.Resources.resources
+D:\fpl\branches\HOME\Fpl\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.ucAds.resources
+D:\fpl\branches\HOME\Fpl\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.ucAutoPostFriend.resources
+D:\fpl\branches\HOME\Fpl\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.ucAutoPostGroup.resources
+D:\fpl\branches\HOME\Fpl\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.ucBuy.resources
+D:\fpl\branches\HOME\Fpl\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.ucGuide.resources
+D:\fpl\branches\HOME\Fpl\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.ucLoginFacebook.resources
+D:\fpl\branches\HOME\Fpl\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.ucMoveComputer.resources
+D:\fpl\branches\HOME\Fpl\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.csproj.GenerateResource.Cache
+D:\fpl\branches\HOME\Fpl\FPlus\FaceShare_New\FaceShare\bin\Debug\FPlus.exe
+D:\fpl\branches\HOME\Fpl\FPlus\FaceShare_New\FaceShare\bin\Debug\FPlus.pdb
+D:\fpl\branches\HOME\Fpl\FPlus\FaceShare_New\FaceShare\bin\Debug\Facebook.dll
+D:\fpl\branches\HOME\Fpl\FPlus\FaceShare_New\FaceShare\bin\Debug\MetroFramework.Fonts.dll
+D:\fpl\branches\HOME\Fpl\FPlus\FaceShare_New\FaceShare\bin\Debug\Newtonsoft.Json.dll
+D:\fpl\branches\HOME\Fpl\FPlus\FaceShare_New\FaceShare\bin\Debug\Newtonsoft.Json.xml
+D:\fpl\branches\HOME\Fpl\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.ucAutoInviGroup.resources
+D:\fpl\branches\HOME\Fpl\FPlus\FaceShare_New\FaceShare\obj\Debug\FPlus.ucAutoMessage.resources

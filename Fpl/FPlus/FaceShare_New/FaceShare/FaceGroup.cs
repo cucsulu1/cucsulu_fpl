@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FPlus
 {
-    public class FaceFriend
+    public class FaceUser
     {
         public string Uid { get; set; }
         public string Name { get; set; }

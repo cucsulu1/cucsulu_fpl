@@ -278,7 +278,7 @@ namespace FPlus
             var i = 1;
             foreach (var item in App.LstGroups)
             {
-                var newItem = new ListViewItem(item.GroupName);
+                var newItem = new ListViewItem(i+ ". "+item.GroupName);
                 newItem.Checked = true;
                 newItem.SubItems.Add("");
                 this.listBoxGroup.Items.Add(newItem);

@@ -87,6 +87,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="ucAutoMessage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAutoMessage.Designer.cs">
+      <DependentUpon>ucAutoMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucAutoInviGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAutoInviGroup.Designer.cs">
+      <DependentUpon>ucAutoInviGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucAutoJoinGroup.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -154,6 +166,12 @@
       <DependentUpon>ucMoveComputer.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities.cs" />
+    <EmbeddedResource Include="ucAutoMessage.resx">
+      <DependentUpon>ucAutoMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucAutoInviGroup.resx">
+      <DependentUpon>ucAutoInviGroup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucAutoJoinGroup.resx">
       <DependentUpon>ucAutoJoinGroup.cs</DependentUpon>
     </EmbeddedResource>

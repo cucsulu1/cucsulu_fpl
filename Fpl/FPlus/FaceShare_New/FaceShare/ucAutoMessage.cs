@@ -15,13 +15,13 @@ using Newtonsoft.Json.Linq;
 
 namespace FPlus
 {
-    public partial class ucAutoJoinGroup : UserControl
+    public partial class ucAutoMessage : UserControl
     {
         private bool _joinGroup;
         private int _countdown;
         private int _postGroupIndex = -1;
-        private readonly List<FaceGroup> _searchResults=new List<FaceGroup>(); 
-        public ucAutoJoinGroup()
+        private readonly List<FaceUser> _searchResults = new List<FaceUser>();
+        public ucAutoMessage()
         {
             InitializeComponent();
         }
@@ -44,7 +44,7 @@ namespace FPlus
             metroProgressSpinnerOnePost.Spinning = true;
             metroProgressSpinnerOnePost.Show();
             lbStatus.Show();
-            lbStatus.Text = "Bắt đầu gửi yêu cầu";
+            lbStatus.Text = "Bắt đầu gửi tin nhắn";
         }
 
         private void btnStopPost_Click(object sender, EventArgs e)
@@ -68,7 +68,7 @@ namespace FPlus
             this._countdown--;
             if (_countdown >= 0)
             {
-                this.lbStatus.Text = @"Còn " + this._countdown.ToString() + @" giây để đăng nhóm tiếp theo";
+                this.lbStatus.Text = @"Còn " + this._countdown.ToString() + @" giây để gửi ";
                 try {
                     metroProgressSpinnerOnePost.Value = 100 - (int)(_countdown / this.txtTimeDelay.Value * 100);
                 }
@@ -76,13 +76,12 @@ namespace FPlus
             }
         }
 
-
         private void timerstep_Tick(object sender, EventArgs e)
         {
             if (this._joinGroup)
             {
                 _postGroupIndex++;
-                if (_postGroupIndex >= App.LstGroups.Count || App.LstGroups.Count(p => p.IsRunned) >= txtLimit.Value)
+                if (_postGroupIndex >= _searchResults.Count || _searchResults.Count(p => p.IsRunned)>=txtLimit.Value)
                 {
                     btnStopPost_Click(null, null);
                     return;
@@ -101,29 +100,28 @@ namespace FPlus
                 this.timerstep.Interval = 1000 * ((int)this.txtTimeDelay.Value);
                 this._countdown = (int)this.txtTimeDelay.Value;
                 progressBarStatus.Value = (int)(_postGroupIndex / _searchResults.Count * 1000);
-                lbTotalProcessed.Text = "Đã tham gia : "+_searchResults.Count(p => p.IsRunned) + @"/" + listBoxGroup.CheckedIndices.Count;
-                this.lbStatus.Text = @"Đang tham gia nhóm : " + (group.GroupName.Length>50?(group.GroupName.Substring(0,50)+".."): group.GroupName);
+                lbTotalProcessed.Text = "Đã gửi : "+_searchResults.Count(p => p.IsRunned) + @"/" + listBoxGroup.CheckedIndices.Count;
+                this.lbStatus.Text = @"Đang gửi tin nhắn cho : " + (group.Name.Length > 50 ? (group.Name.Substring(0, 50) + "..") : group.Name);
                 per.Stop();
-                
-                var urlGroup = "https://mbasic.facebook.com/groups/" + group.Uid;
+
+                var urlGroup = "https://mbasic.facebook.com/messages/thread/" + group.Uid;
                 this.wbPostGroup.Navigate(urlGroup);
                 timerstep.Stop();
             }
         }
 
-        public void DisplayGroups()
+        public void DisplayUsers()
         {
             this.listBoxGroup.Items.Clear();
             var i = 1;
             foreach (var item in _searchResults)
             {
-                var newItem = new ListViewItem(i+". "+item.GroupName);
-                newItem.Checked = true;
+                var newItem = new ListViewItem(i + ". " + item.Name) {Checked = true};
                 newItem.SubItems.Add("");
                 this.listBoxGroup.Items.Add(newItem);
                 i++;
             }
-            this.lbDsNhom.Text = @"" + _searchResults.Count + @" nhóm)";
+            this.lbDsNhom.Text = @"" + _searchResults.Count + @" người)";
         }
 
         private void cbSelectAll_CheckedChanged(object sender, EventArgs e)
@@ -134,32 +132,10 @@ namespace FPlus
             }
         }
 
-
-        private void ucAutoJoinGroup_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            var client = new FacebookClient(App.Accesstoken);
-            if (string.IsNullOrEmpty(txtSearchGroup.Text))
-            {
-                MessageBox.Show("Vui lòng nhập từ khóa","Thông báo");
-                return;
-            }
-            var jsonResult = JObject.Parse(client.Get(string.Format("/search?type=group&q={0}&limit=5000&offset=0"), txtSearchGroup.Text).ToString());
-            _searchResults.Clear();
-            foreach (var item in jsonResult.Value<JArray>("data"))
-            {
-                var faceGroup = new FaceGroup()
-                {
-                    GroupName = item.Value<string>("name"),
-                    Uid = item.Value<string>("id")
-                };
-                _searchResults.Add(faceGroup);
-            }
-            DisplayGroups();
+            pbLoading.Visible = true;
+            if (!bwSearchMember.IsBusy) bwSearchMember.RunWorkerAsync(cbbGroups.SelectedItem);
         }
 
         private void wbPostGroup_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
@@ -181,10 +157,9 @@ namespace FPlus
                             element2.InvokeMember("Click");
                         }
                     }
-
                 }
                 _searchResults[_postGroupIndex].IsRunned = true;
-                this.listBoxGroup.Items[_postGroupIndex].SubItems[1].Text = "Đã gửi yêu cầu";
+                this.listBoxGroup.Items[_postGroupIndex].SubItems[1].Text = "Đã gửi tin nhắn";
                 per.Start();
                 if (_postGroupIndex >= _searchResults.Count)
                 {
@@ -196,6 +171,41 @@ namespace FPlus
                     timerstep.Start();
                 }
             }
+        }
+
+        private void ucAutoMessage_Load(object sender, EventArgs e)
+        {
+            var lst=App.LstGroups.ToList();lst.Insert(0,new FaceGroup(){GroupName = "Tất cả",Uid="0"});
+            cbbGroups.DataSource = App.LstGroups;
+            cbbGroups.DisplayMember = "GroupName";
+            cbbGroups.ValueMember = "Uid";
+            if (cbbGroups.Items.Count>1) cbbGroups.SelectedIndex = 1;
+        }
+
+        private void bwSearchMember_DoWork(object sender, DoWorkEventArgs e)
+        {
+            var selectedGroup = e.Argument as FaceGroup;
+            var client = new FacebookClient(App.Accesstoken);
+            foreach (var group in App.LstGroups.Where(p =>p.Uid == selectedGroup.Uid ||  selectedGroup.Uid=="0"))
+            {
+                var jsonResult = JObject.Parse(client.Get(string.Format("/{0}/members?limit=1000000&offset=0"), group.Uid).ToString());
+                _searchResults.Clear();
+                foreach (var item in jsonResult.Value<JArray>("data"))
+                {
+                    var faceGroup = new FaceUser()
+                    {
+                        Name = item.Value<string>("name"),
+                        Uid = item.Value<string>("id")
+                    };
+                    _searchResults.Add(faceGroup);
+                }
+            }
+        }
+
+        private void bwSearchMember_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            DisplayUsers();
+            pbLoading.Visible = false;
         }
     }
 }
