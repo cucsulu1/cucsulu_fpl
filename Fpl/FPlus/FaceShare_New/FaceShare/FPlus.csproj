@@ -230,6 +230,7 @@
     <Content Include="Facebook.dll" />
     <Content Include="MetroFramework.txt" />
     <Content Include="Microsoft.mshtml.dll" />
+    <None Include="Resources\icon_home.png" />
     <None Include="Resources\loading-blue.gif" />
     <None Include="Resources\house1.png" />
     <None Include="Resources\house.png" />
