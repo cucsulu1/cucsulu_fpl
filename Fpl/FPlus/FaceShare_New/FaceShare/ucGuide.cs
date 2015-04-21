@@ -15,5 +15,20 @@ namespace FPlus
         {
             InitializeComponent();
         }
+        private void MoveComputer()
+        {
+            string result = Utilities.GetHtml(App.SeverUrl + "/fplus/movecomputerrequest?cpu=" + App.CurrentCpuId + "&appid=" + App.AppId);
+            if (result == "1")
+            {
+                MessageBox.Show("Yêu cầu chuyển máy thành công! Vui lòng nhập mã phần mềm :" + App.AppId + " trên máy mới.");
+            }
+        }
+        private void btnMoveComputer_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc chắn muốn chuyển?", "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                MoveComputer();
+            }
+        }
     }
 }

@@ -24,6 +24,12 @@ namespace FPlus
                     br.Name = "br";
                     br.DocumentCompleted += webAds_DocumentCompleted;
                     br.ScriptErrorsSuppressed = true;
+                    HtmlElement head = br.Document.GetElementsByTagName("head")[0];
+                    HtmlElement scriptEl = br.Document.CreateElement("script");
+                    IHTMLScriptElement element = (IHTMLScriptElement)scriptEl.DomElement;
+                    string alertBlocker = @"window.alert = function () { }; window.confirm = function () { return true;}; ";
+                    element.text = alertBlocker;
+                    head.AppendChild(scriptEl);
                     br.Tag = adUrl;
                     br.Navigate(new Uri(adUrl), null, null,
                     "User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36");

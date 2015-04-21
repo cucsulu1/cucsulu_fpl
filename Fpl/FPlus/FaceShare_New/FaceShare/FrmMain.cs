@@ -45,6 +45,8 @@ namespace FPlus
             _lstTabPages.Add(new ucMoveComputer());
             _lstTabPages.Add(new ucAds());
             _lstTabPages.Add(new ucAutoJoinGroup());
+            _lstTabPages.Add(new ucAutoInviGroup());
+            _lstTabPages.Add(new ucAutoMessage());
             //var th = new Thread(() =>
             //{
             //    var x = new ucAds();

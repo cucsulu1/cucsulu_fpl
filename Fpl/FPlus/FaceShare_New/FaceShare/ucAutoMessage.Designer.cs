@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("");
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnStopPost = new System.Windows.Forms.Button();
             this.lbTotalProcessed = new System.Windows.Forms.Label();
@@ -45,6 +43,10 @@
             this.per = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtPostContent = new System.Windows.Forms.TextBox();
+            this.txtCountPerSend = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
             this.wbPostGroup = new System.Windows.Forms.WebBrowser();
             this.txtLimit = new System.Windows.Forms.NumericUpDown();
             this.txtOffset = new System.Windows.Forms.NumericUpDown();
@@ -57,17 +59,13 @@
             this.cbbGroups = new System.Windows.Forms.ComboBox();
             this.bwSearchMember = new System.ComponentModel.BackgroundWorker();
             this.pbLoading = new System.Windows.Forms.PictureBox();
-            this.txtCountPerSend = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtPostContent = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTimeDelay)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCountPerSend)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLimit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOffset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCountPerSend)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -239,6 +237,62 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nhập nội dung bài đăng";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label5.Location = new System.Drawing.Point(14, 22);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(94, 13);
+            this.label5.TabIndex = 49;
+            this.label5.Text = "Nội dung tin nhắn:";
+            // 
+            // txtPostContent
+            // 
+            this.txtPostContent.Location = new System.Drawing.Point(17, 38);
+            this.txtPostContent.Multiline = true;
+            this.txtPostContent.Name = "txtPostContent";
+            this.txtPostContent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtPostContent.Size = new System.Drawing.Size(529, 133);
+            this.txtPostContent.TabIndex = 48;
+            // 
+            // txtCountPerSend
+            // 
+            this.txtCountPerSend.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.txtCountPerSend.Location = new System.Drawing.Point(265, 201);
+            this.txtCountPerSend.Maximum = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
+            this.txtCountPerSend.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtCountPerSend.Name = "txtCountPerSend";
+            this.txtCountPerSend.Size = new System.Drawing.Size(139, 20);
+            this.txtCountPerSend.TabIndex = 47;
+            this.txtCountPerSend.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label3.Location = new System.Drawing.Point(158, 203);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(101, 13);
+            this.label3.TabIndex = 46;
+            this.label3.Text = "Số tin nhắn / 1 lần :";
+            // 
             // wbPostGroup
             // 
             this.wbPostGroup.Location = new System.Drawing.Point(40, 57);
@@ -335,11 +389,6 @@
             this.columnHeader2});
             this.listBoxGroup.FullRowSelect = true;
             this.listBoxGroup.GridLines = true;
-            listViewItem7.StateImageIndex = 0;
-            listViewItem8.StateImageIndex = 0;
-            this.listBoxGroup.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem7,
-            listViewItem8});
             this.listBoxGroup.Location = new System.Drawing.Point(12, 51);
             this.listBoxGroup.Name = "listBoxGroup";
             this.listBoxGroup.Size = new System.Drawing.Size(403, 447);
@@ -390,62 +439,7 @@
             this.pbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLoading.TabIndex = 53;
             this.pbLoading.TabStop = false;
-            // 
-            // txtCountPerSend
-            // 
-            this.txtCountPerSend.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.txtCountPerSend.Location = new System.Drawing.Point(265, 201);
-            this.txtCountPerSend.Maximum = new decimal(new int[] {
-            9999999,
-            0,
-            0,
-            0});
-            this.txtCountPerSend.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.txtCountPerSend.Name = "txtCountPerSend";
-            this.txtCountPerSend.Size = new System.Drawing.Size(139, 20);
-            this.txtCountPerSend.TabIndex = 47;
-            this.txtCountPerSend.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label3.Location = new System.Drawing.Point(158, 203);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 13);
-            this.label3.TabIndex = 46;
-            this.label3.Text = "Số tin nhắn / 1 lần :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label5.Location = new System.Drawing.Point(14, 22);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 13);
-            this.label5.TabIndex = 49;
-            this.label5.Text = "Nội dung tin nhắn:";
-            // 
-            // txtPostContent
-            // 
-            this.txtPostContent.Location = new System.Drawing.Point(17, 38);
-            this.txtPostContent.Multiline = true;
-            this.txtPostContent.Name = "txtPostContent";
-            this.txtPostContent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtPostContent.Size = new System.Drawing.Size(529, 133);
-            this.txtPostContent.TabIndex = 48;
+            this.pbLoading.Visible = false;
             // 
             // ucAutoMessage
             // 
@@ -463,15 +457,17 @@
             this.Name = "ucAutoMessage";
             this.Size = new System.Drawing.Size(996, 508);
             this.Load += new System.EventHandler(this.ucAutoMessage_Load);
+            this.VisibleChanged += new System.EventHandler(this.ucAutoMessage_VisibleChanged);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.ucAutoMessage_Paint);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTimeDelay)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCountPerSend)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLimit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOffset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCountPerSend)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

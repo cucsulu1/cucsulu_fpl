@@ -53,9 +53,9 @@ namespace FPlus
             this.per.Stop();
             this.timerstep.Stop();
             _joinGroup = false;
-            MessageBox.Show(@"Tham gia nhóm hoàn tất", @"Thông báo!");
+            MessageBox.Show(@"Gửi tin nhắn hoàn tất", @"Thông báo!");
             metroProgressSpinnerOnePost.Spinning = false;
-            lbStatus.Text = "Tham gia nhóm hoàn tất";
+            lbStatus.Text = "Gửi tin nhắn hoàn tất";
             //var client = new FacebookClient(App.Accesstoken);
             //var lstActivities = JObject.Parse(client.Get("/me/activities").ToString());
         }
@@ -100,8 +100,6 @@ namespace FPlus
                 this.listBoxGroup.Items[_postGroupIndex].Selected = true;
                 this.timerstep.Interval = 1000 * ((int)this.txtTimeDelay.Value);
                 this._countdown = (int)this.txtTimeDelay.Value;
-                progressBarStatus.Value = (int)(_postGroupIndex / _searchResults.Count * 1000);
-                lbTotalProcessed.Text = "Đã gửi : "+_searchResults.Count(p => p.IsRunned) + @"/" + listBoxGroup.CheckedIndices.Count;
                 this.lbStatus.Text = @"Đang gửi tin nhắn cho : " + (group.Name.Length > 50 ? (group.Name.Substring(0, 50) + "..") : group.Name);
                 per.Stop();
                 string paramIds = "?";
@@ -160,7 +158,7 @@ namespace FPlus
                     HtmlElementCollection elementsByTextArea = this.wbPostGroup.Document.GetElementsByTagName("textarea");
                     foreach (HtmlElement element2 in elementsByTextArea)
                     {
-                        if (element2.GetAttribute("class").Equals("bt bu bv"))
+                        if (element2.GetAttribute("name").Equals("body"))
                         {
                              element2.InnerText = strComment;
                         }
@@ -169,7 +167,7 @@ namespace FPlus
                     HtmlElementCollection elementsByTagName = this.wbPostGroup.Document.GetElementsByTagName("input");
                     foreach (HtmlElement element2 in elementsByTagName)
                     {
-                        if (element2.GetAttribute("class").Equals("bs bt bu"))
+                        if (element2.GetAttribute("name").Equals("Send"))
                         {
                             element2.InvokeMember("Click");
                         }
@@ -177,6 +175,9 @@ namespace FPlus
                 }
                 _searchResults[_postGroupIndex].IsRunned = true;
                 this.listBoxGroup.Items[_postGroupIndex].SubItems[1].Text = @"Đã gửi tin nhắn";
+                progressBarStatus.Value = (int)(_postGroupIndex / _searchResults.Count * 1000);
+                lbTotalProcessed.Text = "Đã gửi : " + _searchResults.Count(p => p.IsRunned) + @"/" + listBoxGroup.CheckedIndices.Count;
+
                 per.Start();
                 if (_postGroupIndex >= _searchResults.Count)
                 {
@@ -206,25 +207,21 @@ namespace FPlus
             return msg;
         }
 
-        private void ucAutoMessage_Load(object sender, EventArgs e)
+        public void ucAutoMessage_Load(object sender, EventArgs e)
         {
-            var lst=App.LstGroups.ToList();lst.Insert(0,new FaceGroup(){GroupName = "Tất cả",Uid="0"});
-            cbbGroups.DataSource = App.LstGroups;
-            cbbGroups.DisplayMember = "GroupName";
-            cbbGroups.ValueMember = "Uid";
-            if (cbbGroups.Items.Count>1) cbbGroups.SelectedIndex = 1;
+            
         }
 
         private void bwSearchMember_DoWork(object sender, DoWorkEventArgs e)
         {
             var selectedGroup = e.Argument as FaceGroup;
             var client = new FacebookClient(App.Accesstoken);
+            _searchResults.Clear();
             foreach (var group in App.LstGroups.Where(p =>p.Uid == selectedGroup.Uid ||  selectedGroup.Uid=="0"))
             {
-                var jsonResult = JObject.Parse(client.Get(string.Format("/{0}/members?limit=1000000&offset=0"), group.Uid).ToString());
-                _searchResults.Clear();
+                var jsonResult = JObject.Parse(client.Get(string.Format("/{0}/members?limit=1000000&offset=0", group.Uid)).ToString());
                 foreach (var item in jsonResult.Value<JArray>("data"))
-                {
+               { 
                     var faceGroup = new FaceUser()
                     {
                         Name = item.Value<string>("name"),
@@ -239,6 +236,26 @@ namespace FPlus
         {
             DisplayUsers();
             pbLoading.Visible = false;
+        }
+
+        private void ucAutoMessage_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible)
+            {
+                if (cbbGroups.DataSource == null &&!string.IsNullOrEmpty( App.Accesstoken))
+                {
+                    var lst = App.LstGroups.ToList(); lst.Insert(0, new FaceGroup() { GroupName = "Tất cả", Uid = "0" });
+                    cbbGroups.DataSource = lst;
+                    cbbGroups.DisplayMember = "GroupName";
+                    cbbGroups.ValueMember = "Uid";
+                    if (cbbGroups.Items.Count > 1) cbbGroups.SelectedIndex = 1;
+                }
+            }
+        }
+
+        private void ucAutoMessage_Paint(object sender, PaintEventArgs e)
+        {
+           
         }
     }
 }
