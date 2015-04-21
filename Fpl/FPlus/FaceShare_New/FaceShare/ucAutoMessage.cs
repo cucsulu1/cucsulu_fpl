@@ -13,6 +13,8 @@ using Facebook;
 using FPlus;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json.Linq;
+using System.Xml.Serialization;
+using System.Xml;
 
 namespace FPlus
 {
@@ -21,10 +23,11 @@ namespace FPlus
         private bool _joinGroup;
         private int _countdown;
         private int _postGroupIndex = -1;
-        private readonly List<FaceUser> _searchResults = new List<FaceUser>();
+        private List<FaceUser> _searchResults = new List<FaceUser>();
         public ucAutoMessage()
         {
             InitializeComponent();
+            OpenListResult();
         }
         private void btnStart_Click(object sender, EventArgs e)
         {
@@ -236,6 +239,7 @@ namespace FPlus
         {
             DisplayUsers();
             pbLoading.Visible = false;
+            SaveListResult();
         }
 
         private void ucAutoMessage_VisibleChanged(object sender, EventArgs e)
@@ -256,6 +260,33 @@ namespace FPlus
         private void ucAutoMessage_Paint(object sender, PaintEventArgs e)
         {
            
+        }
+        public  void SaveListResult()
+        {
+            if (App.LstPosts.Count > 0)
+            {
+                var mySerializer = new XmlSerializer(typeof(List<FaceUser>));
+                //To write to a file, create a StreamWriter object.
+                var myWriter = new StreamWriter(Path.Combine(Application.StartupPath, "list_user_message.xml"));
+                mySerializer.Serialize(myWriter, _searchResults);
+                myWriter.Close();
+            }
+        }
+
+        public void OpenListResult()
+        {
+            try
+            {
+                var mySerializer = new XmlSerializer(typeof(List<FaceUser>));
+                // To write to a file, create a StreamWriter object.
+                var myWriter = new XmlTextReader(Path.Combine(Application.StartupPath, "list_user_message.xml"));
+                _searchResults = mySerializer.Deserialize(myWriter) as List<FaceUser>;
+                myWriter.Close();
+                DisplayUsers();
+            }
+            catch
+            {
+            }
         }
     }
 }

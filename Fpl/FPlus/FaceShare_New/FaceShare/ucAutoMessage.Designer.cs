@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucAutoMessage));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnStopPost = new System.Windows.Forms.Button();
             this.lbTotalProcessed = new System.Windows.Forms.Label();
@@ -213,11 +214,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label2.Location = new System.Drawing.Point(181, 239);
+            this.label2.Location = new System.Drawing.Point(154, 248);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.Size = new System.Drawing.Size(101, 13);
             this.label2.TabIndex = 27;
-            this.label2.Text = "Bắt đầu từ thứ:";
+            this.label2.Text = "Bắt đầu từ user thứ:";
             // 
             // groupBox2
             // 
@@ -235,7 +236,7 @@
             this.groupBox2.Size = new System.Drawing.Size(557, 335);
             this.groupBox2.TabIndex = 47;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Nhập nội dung bài đăng";
+            this.groupBox2.Text = "Nhập nội";
             // 
             // label5
             // 
@@ -287,7 +288,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label3.Location = new System.Drawing.Point(158, 203);
+            this.label3.Location = new System.Drawing.Point(154, 203);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 13);
             this.label3.TabIndex = 46;
@@ -338,35 +339,25 @@
             0,
             0,
             0});
-            this.txtOffset.Location = new System.Drawing.Point(265, 237);
+            this.txtOffset.Location = new System.Drawing.Point(265, 246);
             this.txtOffset.Maximum = new decimal(new int[] {
             9999999,
-            0,
-            0,
-            0});
-            this.txtOffset.Minimum = new decimal(new int[] {
-            1,
             0,
             0,
             0});
             this.txtOffset.Name = "txtOffset";
             this.txtOffset.Size = new System.Drawing.Size(139, 20);
             this.txtOffset.TabIndex = 44;
-            this.txtOffset.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label1.Location = new System.Drawing.Point(94, 289);
+            this.label1.Location = new System.Drawing.Point(96, 289);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 13);
+            this.label1.Size = new System.Drawing.Size(159, 13);
             this.label1.TabIndex = 29;
-            this.label1.Text = "Tổng số người muốn gửi tin nhắn:";
+            this.label1.Text = "Tổng số user muốn gửi tin nhắn:";
             // 
             // cbSelectAll
             // 
@@ -399,7 +390,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Nhóm";
-            this.columnHeader1.Width = 299;
+            this.columnHeader1.Width = 288;
             // 
             // columnHeader2
             // 
@@ -432,7 +423,7 @@
             // pbLoading
             // 
             this.pbLoading.BackColor = System.Drawing.Color.White;
-            this.pbLoading.Image = global::FPlus.Properties.Resources.loading_blue;
+            this.pbLoading.Image = ((System.Drawing.Image)(resources.GetObject("pbLoading.Image")));
             this.pbLoading.Location = new System.Drawing.Point(195, 174);
             this.pbLoading.Name = "pbLoading";
             this.pbLoading.Size = new System.Drawing.Size(48, 48);

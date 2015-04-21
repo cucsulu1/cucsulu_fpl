@@ -44,6 +44,7 @@ namespace FPlus
             _ucAutoPost = new ucAutoPostGroup();
             _lstTabPages.Add(_ucFaceLogin);
             _lstTabPages.Add(_ucAutoPost);
+            _lstTabPages.Add(new ucAutoPostFriend());
             _lstTabPages.Add(new ucGuide());
             _lstTabPages.Add(new ucBuy());
             _lstTabPages.Add(new ucMoveComputer());
@@ -156,7 +157,7 @@ namespace FPlus
                     else
                     {
                         item.Show();
-                        if (item.Tag.ToString() == "ucAutoPostGroup")
+                        if (item.Tag.ToString() == "ucGuide")
                         {
                             item.TabIndex = 1;
                         }
@@ -192,12 +193,6 @@ namespace FPlus
                 item.TabIndex = 0;
 	        }
             ((Control)sender).TabIndex = 1;
-            foreach (var item in _lstTabPages)
-            {
-                item.Hide();
-                if(item.Name == ((Button)sender).Tag.ToString())
-                item.Show();
-            }
         }
 
         private void button1_MouseLeave(object sender, EventArgs e)
@@ -205,7 +200,7 @@ namespace FPlus
             var btn = (Control)sender;
             if (btn.TabIndex==0)
             {
-                btn.ForeColor = Color.FromArgb(2, 159, 218);
+                btn.ForeColor = Color.FromArgb(0, 108, 197);
             }
             else
             {
@@ -221,11 +216,12 @@ namespace FPlus
 
         private void button1_TabIndexChanged(object sender, EventArgs e)
         {
+            //pnTab.SuspendLayout();
             var btn = (Control)sender;
             if (btn.TabIndex==0)
             {
                 btn.BackColor = Color.White;
-                btn.ForeColor = Color.FromArgb(2, 159, 218);
+                btn.ForeColor = Color.FromArgb(0, 108, 197);
             }
             else
             {
@@ -234,24 +230,27 @@ namespace FPlus
             }
             foreach (var item in _lstTabPages)
             {
-                item.Hide();
+                item.Hide(); 
                 if (item.Name == btn.Tag.ToString())
                 {
-                    if (App.AppStatus == 0 || item.Name=="ucGuide")
+                    if (App.AppStatus == 0 || item.Name == "ucGuide")
                     {
                         item.Show();
                         item.Focus();
-                    } else if (App.AppStatus == 1)
+                    }
+                    else if (App.AppStatus == 1)
                     {
-                        MessageBox.Show(@"Bạn phải gia hạn phần mềm để sử dụng chức năng này",@"Thông báo");
+                        MessageBox.Show(@"Bạn phải gia hạn phần mềm để sử dụng chức năng này", @"Thông báo");
                         pnMain.Controls["ucBuy"].Show();
-                    } else if (App.AppStatus == 2)
+                    }
+                    else if (App.AppStatus == 2)
                     {
                         MessageBox.Show(@"Đang chuyển máy, vui lòng xác nhận chuyển trên máy mới", @"Thông báo");
                         pnMain.Controls["ucMoveComputer"].Show();
                     }
                 }
             }
+            //pnTab.PerformLayout();
         }
     }
    

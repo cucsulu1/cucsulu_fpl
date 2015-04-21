@@ -19,7 +19,7 @@ namespace FPlus
         public static  int AppId = 0;
         public static string Accesstoken;
         public static string SeverUrl = "http://plus24h.com/";
-        public static int AppStatus =-1;
+        public static int AppStatus =0;
         public static void SaveListGroup()
         {
             if (App.LstGroups.Count > 0)

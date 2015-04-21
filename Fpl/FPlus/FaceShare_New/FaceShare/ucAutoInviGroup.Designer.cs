@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("");
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnStopPost = new System.Windows.Forms.Button();
             this.lbTotalProcessed = new System.Windows.Forms.Label();
@@ -45,6 +43,8 @@
             this.per = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtFriendLink = new System.Windows.Forms.TextBox();
             this.wbPostGroup = new System.Windows.Forms.WebBrowser();
             this.txtLimit = new System.Windows.Forms.NumericUpDown();
             this.txtOffset = new System.Windows.Forms.NumericUpDown();
@@ -53,10 +53,6 @@
             this.listBoxGroup = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.txtSearchGroup = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtFriendLink = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTimeDelay)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -189,7 +185,7 @@
             // 
             this.lbDsNhom.AutoSize = true;
             this.lbDsNhom.ForeColor = System.Drawing.Color.Navy;
-            this.lbDsNhom.Location = new System.Drawing.Point(37, 35);
+            this.lbDsNhom.Location = new System.Drawing.Point(37, 21);
             this.lbDsNhom.Name = "lbDsNhom";
             this.lbDsNhom.Size = new System.Drawing.Size(88, 13);
             this.lbDsNhom.TabIndex = 43;
@@ -229,7 +225,24 @@
             this.groupBox2.Size = new System.Drawing.Size(557, 335);
             this.groupBox2.TabIndex = 47;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Nhập nội dung bài đăng";
+            this.groupBox2.Text = "Thông tin";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label3.Location = new System.Drawing.Point(115, 66);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(114, 13);
+            this.label3.TabIndex = 47;
+            this.label3.Text = "Link bạn bè muốn mời:";
+            // 
+            // txtFriendLink
+            // 
+            this.txtFriendLink.Location = new System.Drawing.Point(245, 63);
+            this.txtFriendLink.Name = "txtFriendLink";
+            this.txtFriendLink.Size = new System.Drawing.Size(257, 20);
+            this.txtFriendLink.TabIndex = 46;
             // 
             // wbPostGroup
             // 
@@ -240,6 +253,7 @@
             this.wbPostGroup.Size = new System.Drawing.Size(506, 114);
             this.wbPostGroup.TabIndex = 45;
             this.wbPostGroup.Url = new System.Uri("", System.UriKind.Relative);
+            this.wbPostGroup.Visible = false;
             this.wbPostGroup.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.wbPostGroup_DocumentCompleted);
             // 
             // txtLimit
@@ -282,19 +296,9 @@
             0,
             0,
             0});
-            this.txtOffset.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.txtOffset.Name = "txtOffset";
             this.txtOffset.Size = new System.Drawing.Size(139, 20);
             this.txtOffset.TabIndex = 44;
-            this.txtOffset.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // label1
             // 
@@ -311,7 +315,7 @@
             this.cbSelectAll.AutoSize = true;
             this.cbSelectAll.Checked = true;
             this.cbSelectAll.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbSelectAll.Location = new System.Drawing.Point(18, 35);
+            this.cbSelectAll.Location = new System.Drawing.Point(18, 21);
             this.cbSelectAll.Name = "cbSelectAll";
             this.cbSelectAll.Size = new System.Drawing.Size(15, 14);
             this.cbSelectAll.TabIndex = 48;
@@ -327,14 +331,9 @@
             this.columnHeader2});
             this.listBoxGroup.FullRowSelect = true;
             this.listBoxGroup.GridLines = true;
-            listViewItem5.StateImageIndex = 0;
-            listViewItem6.StateImageIndex = 0;
-            this.listBoxGroup.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem5,
-            listViewItem6});
-            this.listBoxGroup.Location = new System.Drawing.Point(12, 51);
+            this.listBoxGroup.Location = new System.Drawing.Point(12, 41);
             this.listBoxGroup.Name = "listBoxGroup";
-            this.listBoxGroup.Size = new System.Drawing.Size(403, 447);
+            this.listBoxGroup.Size = new System.Drawing.Size(403, 457);
             this.listBoxGroup.TabIndex = 49;
             this.listBoxGroup.UseCompatibleStateImageBehavior = false;
             this.listBoxGroup.View = System.Windows.Forms.View.Details;
@@ -349,46 +348,11 @@
             this.columnHeader2.Text = "Trạng Thái";
             this.columnHeader2.Width = 98;
             // 
-            // txtSearchGroup
-            // 
-            this.txtSearchGroup.Location = new System.Drawing.Point(13, 8);
-            this.txtSearchGroup.Name = "txtSearchGroup";
-            this.txtSearchGroup.Size = new System.Drawing.Size(214, 20);
-            this.txtSearchGroup.TabIndex = 50;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(239, 8);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(61, 23);
-            this.btnSearch.TabIndex = 51;
-            this.btnSearch.Text = "Tìm";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // txtFriendLink
-            // 
-            this.txtFriendLink.Location = new System.Drawing.Point(245, 63);
-            this.txtFriendLink.Name = "txtFriendLink";
-            this.txtFriendLink.Size = new System.Drawing.Size(257, 20);
-            this.txtFriendLink.TabIndex = 46;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label3.Location = new System.Drawing.Point(115, 66);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 13);
-            this.label3.TabIndex = 47;
-            this.label3.Text = "Link bạn bè muốn mời:";
-            // 
             // ucAutoInviGroup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(250)))), ((int)(((byte)(255)))));
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.txtSearchGroup);
             this.Controls.Add(this.listBoxGroup);
             this.Controls.Add(this.cbSelectAll);
             this.Controls.Add(this.groupBox1);
@@ -397,6 +361,7 @@
             this.Name = "ucAutoInviGroup";
             this.Size = new System.Drawing.Size(996, 508);
             this.Load += new System.EventHandler(this.ucAutoJoinGroup_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.ucAutoInviGroup_Paint);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTimeDelay)).EndInit();
@@ -429,8 +394,6 @@
         private System.Windows.Forms.ListView listBoxGroup;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.TextBox txtSearchGroup;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.NumericUpDown txtLimit;
         private System.Windows.Forms.NumericUpDown txtOffset;
         private System.Windows.Forms.Label label1;

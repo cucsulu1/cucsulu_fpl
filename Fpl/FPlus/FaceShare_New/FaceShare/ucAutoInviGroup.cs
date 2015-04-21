@@ -154,7 +154,7 @@ namespace FPlus
 
         private void ucAutoJoinGroup_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void wbPostGroup_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
@@ -201,6 +201,12 @@ namespace FPlus
                     }
                 }
             }
+        }
+
+        private void ucAutoInviGroup_Paint(object sender, PaintEventArgs e)
+        {
+            if(listBoxGroup.Items.Count==0)
+            DisplayGroups();
         }
     }
 }

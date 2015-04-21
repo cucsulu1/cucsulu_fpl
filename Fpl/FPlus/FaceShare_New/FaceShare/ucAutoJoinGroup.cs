@@ -28,7 +28,7 @@ namespace FPlus
         private void btnStart_Click(object sender, EventArgs e)
         {
             this._joinGroup = true;
-            _postGroupIndex = (int)txtOffset.Value - 1;
+            _postGroupIndex = (int)txtOffset.Value - 2;
             foreach (var faceGroup in _searchResults)
             {
                 faceGroup.IsRunned = false;
@@ -142,13 +142,14 @@ namespace FPlus
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            
             var client = new FacebookClient(App.Accesstoken);
             if (string.IsNullOrEmpty(txtSearchGroup.Text))
             {
                 MessageBox.Show("Vui lòng nhập từ khóa","Thông báo");
                 return;
-            }
-            var jsonResult = JObject.Parse(client.Get(string.Format("/search?type=group&q={0}&limit=5000&offset=0"), txtSearchGroup.Text).ToString());
+            } pbLoading.Visible = true;
+            var jsonResult = JObject.Parse(client.Get(string.Format("/search?type=group&q={0}&limit=5000&offset=0", txtSearchGroup.Text)).ToString());
             _searchResults.Clear();
             foreach (var item in jsonResult.Value<JArray>("data"))
             {
@@ -159,6 +160,7 @@ namespace FPlus
                 };
                 _searchResults.Add(faceGroup);
             }
+            pbLoading.Visible = false;
             DisplayGroups();
         }
 

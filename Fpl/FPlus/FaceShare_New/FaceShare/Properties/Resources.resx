@@ -118,61 +118,82 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Share-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Share-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Relationship-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Relationship-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Generate-keys-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Generate-keys-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="booking_for_others_256" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\booking_for_others_256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="home_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Users-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Users-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Bubble-Communication-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Bubble_Communication_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Bubble-Communication-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="key1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\key1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="key_mn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\key_mn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="User_Green_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\User-Green-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1429608253_login1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1429608253_login1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="key_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\key_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="add_user" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add_user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="loading-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loading-blue.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GooglePlus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GooglePlus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Bubble_Comment_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bubble-Comment-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="vectors0tock_1729408" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vectors0tock_1729408.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Relationship_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Relationship-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MB__LOCK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MB__LOCK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="key_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\key_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="home_green1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home_green1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Users_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Users-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="key1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\key1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="home_green2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home_green2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_login2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_login2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Share_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Share-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="User_Green_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\User-Green-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1429608253_login1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1429608253_login1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="booking_for_others_256" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\booking_for_others_256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add_user" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="User-Accounts-alt-windows-8-metro-style" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\User-Accounts-alt-windows-8-metro-style.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="key_mn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\key_mn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GooglePlus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GooglePlus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="home_green11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home_green11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_home" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Bubble-Comment-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Bubble-Comment-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_login1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_login1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Bubble-Communication-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Bubble-Communication-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="loading_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loading-blue.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MB__LOCK1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MB__LOCK1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
