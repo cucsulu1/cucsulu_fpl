@@ -40,6 +40,7 @@
             this.wbLoginFace.Location = new System.Drawing.Point(0, 0);
             this.wbLoginFace.MinimumSize = new System.Drawing.Size(20, 20);
             this.wbLoginFace.Name = "wbLoginFace";
+            this.wbLoginFace.ScriptErrorsSuppressed = true;
             this.wbLoginFace.Size = new System.Drawing.Size(996, 508);
             this.wbLoginFace.TabIndex = 0;
             this.wbLoginFace.Url = new System.Uri("", System.UriKind.Relative);

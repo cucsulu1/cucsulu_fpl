@@ -37,6 +37,7 @@
             this.wbHelpGuide.Location = new System.Drawing.Point(0, 0);
             this.wbHelpGuide.MinimumSize = new System.Drawing.Size(20, 20);
             this.wbHelpGuide.Name = "wbHelpGuide";
+            this.wbHelpGuide.ScriptErrorsSuppressed = true;
             this.wbHelpGuide.Size = new System.Drawing.Size(996, 508);
             this.wbHelpGuide.TabIndex = 3;
             // 

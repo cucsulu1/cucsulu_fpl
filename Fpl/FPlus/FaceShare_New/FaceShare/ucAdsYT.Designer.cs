@@ -1,6 +1,6 @@
 ﻿namespace FPlus
 {
-    partial class ucBuy
+    partial class ucAdsYT
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,31 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.wbHelpBuy = new System.Windows.Forms.WebBrowser();
+            this.components = new System.ComponentModel.Container();
+            this.timerAds = new System.Windows.Forms.Timer(this.components);
+            this.webAds = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
             // 
-            // wbHelpBuy
+            // timerAds
             // 
-            this.wbHelpBuy.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.wbHelpBuy.Location = new System.Drawing.Point(0, 0);
-            this.wbHelpBuy.MinimumSize = new System.Drawing.Size(20, 20);
-            this.wbHelpBuy.Name = "wbHelpBuy";
-            this.wbHelpBuy.Size = new System.Drawing.Size(996, 508);
-            this.wbHelpBuy.TabIndex = 3;
+            this.timerAds.Interval = 10000;
             // 
-            // ucBuy
+            // webAds
+            // 
+            this.webAds.Location = new System.Drawing.Point(0, 0);
+            this.webAds.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webAds.Name = "webAds";
+            this.webAds.ScriptErrorsSuppressed = true;
+            this.webAds.Size = new System.Drawing.Size(150, 150);
+            this.webAds.TabIndex = 0;
+            this.webAds.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webAds_DocumentCompleted);
+            // 
+            // ucAds
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.wbHelpBuy);
-            this.Name = "ucBuy";
-            this.Size = new System.Drawing.Size(996, 508);
+            this.Controls.Add(this.webAds);
+            this.Name = "ucAds";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.WebBrowser wbHelpBuy;
+        private System.Windows.Forms.Timer timerAds;
+        private System.Windows.Forms.WebBrowser webAds;
     }
 }

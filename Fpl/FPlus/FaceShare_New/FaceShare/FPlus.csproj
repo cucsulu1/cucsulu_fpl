@@ -87,6 +87,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ucAdsYT.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAdsYT.Designer.cs">
+      <DependentUpon>ucAdsYT.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucAutoMessage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -166,6 +177,9 @@
       <DependentUpon>ucMoveComputer.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities.cs" />
+    <EmbeddedResource Include="ucAdsYT.resx">
+      <DependentUpon>ucAdsYT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucAutoMessage.resx">
       <DependentUpon>ucAutoMessage.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,14 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="ucAds.resx">
       <DependentUpon>ucAds.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,6 +239,25 @@
     <Content Include="Facebook.dll" />
     <Content Include="MetroFramework.txt" />
     <Content Include="Microsoft.mshtml.dll" />
+    <None Include="Resources\Bubble-Communication-icon1.png" />
+    <None Include="Resources\User-Green-icon.png" />
+    <None Include="Resources\User-Green-icon1.png" />
+    <None Include="Resources\Users-icon1.png" />
+    <None Include="Resources\key_mn.png" />
+    <None Include="Resources\home_green.png" />
+    <None Include="Resources\1429608433_home1.png" />
+    <None Include="Resources\1429608433_home.png" />
+    <None Include="Resources\booking_for_others_256.png" />
+    <None Include="Resources\add_user.png" />
+    <None Include="Resources\Users-icon.png" />
+    <None Include="Resources\Share-icon.png" />
+    <None Include="Resources\Relationship-icon.png" />
+    <None Include="Resources\Bubble-Communication-icon.png" />
+    <None Include="Resources\Bubble-Comment-icon.png" />
+    <None Include="Resources\1429608253_login1.png" />
+    <None Include="Resources\1429608253_login.png" />
+    <None Include="Resources\vectors0tock_1729408.png" />
+    <None Include="Resources\User-group-icon-1105220032.png" />
     <None Include="Resources\icon_home.png" />
     <None Include="Resources\loading-blue.gif" />
     <None Include="Resources\house1.png" />

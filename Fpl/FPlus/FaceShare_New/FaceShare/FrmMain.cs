@@ -36,6 +36,10 @@ namespace FPlus
         {
             this.components = null;
             this.InitializeComponent();
+
+            App.Accesstoken = "";
+            App.CurrentCpuId = Utilities.GetCpuId();
+
             _ucFaceLogin = new ucLoginFacebook();
             _ucAutoPost = new ucAutoPostGroup();
             _lstTabPages.Add(_ucFaceLogin);
@@ -47,13 +51,6 @@ namespace FPlus
             _lstTabPages.Add(new ucAutoJoinGroup());
             _lstTabPages.Add(new ucAutoInviGroup());
             _lstTabPages.Add(new ucAutoMessage());
-            //var th = new Thread(() =>
-            //{
-            //    var x = new ucAds();
-            //});
-            //th.SetApartmentState(ApartmentState.STA);
-            //th.Start();
-        
             foreach (var item in _lstTabPages)
             {
                 pnMain.Controls.Add(item);
@@ -63,8 +60,6 @@ namespace FPlus
             _ucFaceLogin.FacebookLoggedIn += new EventHandler(FacebookLoggedin);
             _ucFaceLogin.Show();
 
-            App.Accesstoken = "";
-            App.CurrentCpuId = Utilities.GetCpuId();
             // save the current volume
             uint savedVolume;
             waveOutGetVolume(IntPtr.Zero, out savedVolume);
@@ -76,7 +71,6 @@ namespace FPlus
         {
             CheckUpdate();
             CheckKey();
-            this.thongbao.Text = Utilities.GetHtml(App.SeverUrl + "/fplus/notify");
             //ShowFaceLogin();
         }
        
@@ -95,12 +89,13 @@ namespace FPlus
         {
             try
             {
-                string jsonResult = Utilities.GetHtml(App.SeverUrl + "/fplus/checklic?cpu=" + App.CurrentCpuId + "&id=" + new Random().Next(1, 999999) + "&type=1");
+                string jsonResult = Utilities.GetHtml(App.SeverUrl + "fplus/checklic?cpu=" + App.CurrentCpuId + "&id=" + new Random().Next(1, 999999) + "&type=1");
                 var jsonUserInfo = JObject.Parse(jsonResult);
-                var result = jsonUserInfo.Value<string>("result");
-                var remainLic = jsonUserInfo.Value<int>("remain");
+                var result = jsonUserInfo.Value<int>("result");
+                var remainLic = jsonUserInfo.Value<int>("remain");//days remain
                 var appId = jsonUserInfo.Value<int>("appid");
-
+                lbAppId.Text = @"Mã phần mềm: " + appId;
+                App.AppStatus = result;
                 //var name = (string.IsNullOrEmpty(lastName) ? "" : (lastName + " ")) + firstName;
                 //var email = jsonUserInfo.Value<JArray>("emails")[0].Value<string>("value");
                 //var googleUId = jsonUserInfo.Value<string>("id");
@@ -112,11 +107,8 @@ namespace FPlus
                     // Hết hạn
                     case "1":
                         break;
-                    // Đã đăng kí máy khác
-                    case "2":
-                        break;
                     // đang chuyển - vui long xac nhan chuyen
-                    case "3":
+                    case "2":
                         break;
                 }
             }
@@ -128,8 +120,9 @@ namespace FPlus
         }
         private void CheckUpdate()
         {
-            string newVer = Utilities.GetHtml(App.SeverUrl + "/fplus/checkversion");
-            if (newVer != App.CurrentVersion)
+            lbVersion.Text = @"Version " + App.CurrentVersion;
+            string newVer = Utilities.GetHtml(App.SeverUrl + "fplus/checkversion");
+            if (!string.IsNullOrEmpty(newVer) && newVer != App.CurrentVersion)
             {
                 try
                 {
@@ -212,7 +205,7 @@ namespace FPlus
             var btn = (Control)sender;
             if (btn.TabIndex==0)
             {
-                btn.ForeColor = Color.FromArgb(0, 108, 197);
+                btn.ForeColor = Color.FromArgb(2, 159, 218);
             }
             else
             {
@@ -226,20 +219,13 @@ namespace FPlus
             btn.ForeColor = Color.White;
         }
 
-        private void button1_TabStopChanged(object sender, EventArgs e)
-        {
-            
-            //_ucAutoPost.Show();
-            //_ucAutoPost.Focus();
-        }
-
         private void button1_TabIndexChanged(object sender, EventArgs e)
         {
             var btn = (Control)sender;
             if (btn.TabIndex==0)
             {
                 btn.BackColor = Color.White;
-                btn.ForeColor = Color.FromArgb(0, 108, 197);
+                btn.ForeColor = Color.FromArgb(2, 159, 218);
             }
             else
             {
@@ -251,8 +237,19 @@ namespace FPlus
                 item.Hide();
                 if (item.Name == btn.Tag.ToString())
                 {
-                    item.Show();
-                    item.Focus();
+                    if (App.AppStatus == 0 || item.Name=="ucGuide")
+                    {
+                        item.Show();
+                        item.Focus();
+                    } else if (App.AppStatus == 1)
+                    {
+                        MessageBox.Show(@"Bạn phải gia hạn phần mềm để sử dụng chức năng này",@"Thông báo");
+                        pnMain.Controls["ucBuy"].Show();
+                    } else if (App.AppStatus == 2)
+                    {
+                        MessageBox.Show(@"Đang chuyển máy, vui lòng xác nhận chuyển trên máy mới", @"Thông báo");
+                        pnMain.Controls["ucMoveComputer"].Show();
+                    }
                 }
             }
         }

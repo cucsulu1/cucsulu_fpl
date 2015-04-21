@@ -15,30 +15,5 @@ namespace FPlus
         {
             InitializeComponent();
         }
-
-        private void webmain_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
-
-        }
-
-        private void webAds_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
-
-        }
-
-        private void btnStopPost_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button_post_group_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

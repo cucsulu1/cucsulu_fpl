@@ -35,21 +35,23 @@
             // btnMoveComputer
             // 
             this.btnMoveComputer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnMoveComputer.Location = new System.Drawing.Point(481, 258);
+            this.btnMoveComputer.Location = new System.Drawing.Point(868, 0);
             this.btnMoveComputer.Name = "btnMoveComputer";
             this.btnMoveComputer.Size = new System.Drawing.Size(125, 33);
             this.btnMoveComputer.TabIndex = 6;
             this.btnMoveComputer.Text = "Xác nhận chuyển máy";
             this.btnMoveComputer.UseVisualStyleBackColor = true;
+            this.btnMoveComputer.Visible = false;
             this.btnMoveComputer.Click += new System.EventHandler(this.btnMoveComputer_Click);
             // 
             // wbHelpMoveComputer
             // 
-            this.wbHelpMoveComputer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.wbHelpMoveComputer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wbHelpMoveComputer.Location = new System.Drawing.Point(0, 0);
             this.wbHelpMoveComputer.MinimumSize = new System.Drawing.Size(20, 20);
             this.wbHelpMoveComputer.Name = "wbHelpMoveComputer";
-            this.wbHelpMoveComputer.Size = new System.Drawing.Size(996, 252);
+            this.wbHelpMoveComputer.ScriptErrorsSuppressed = true;
+            this.wbHelpMoveComputer.Size = new System.Drawing.Size(996, 508);
             this.wbHelpMoveComputer.TabIndex = 5;
             // 
             // ucMoveComputer

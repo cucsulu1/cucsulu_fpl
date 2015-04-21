@@ -123,7 +123,9 @@
             this.Name = "frmSelectPost";
             this.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.DropShadow;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Style = "orangered";
             this.Text = "Chọn bài viết";
+            this.Theme = "orangered";
             this.Load += new System.EventHandler(this.frmSelectPost_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPost)).EndInit();
             this.ResumeLayout(false);
