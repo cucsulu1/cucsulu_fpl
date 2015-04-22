@@ -1,0 +1,1533 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HopNguyenModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="HopNguyenModelStoreContainer">
+          <EntitySet Name="Admin" EntityType="HopNguyenModel.Store.Admin" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Content" EntityType="HopNguyenModel.Store.Content" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GroupContent" EntityType="HopNguyenModel.Store.GroupContent" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Image" EntityType="HopNguyenModel.Store.Image" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ImageContent" EntityType="HopNguyenModel.Store.ImageContent" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ImageProduct" EntityType="HopNguyenModel.Store.ImageProduct" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Module" EntityType="HopNguyenModel.Store.Module" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Order" EntityType="HopNguyenModel.Store.Order" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderDetail" EntityType="HopNguyenModel.Store.OrderDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Page" EntityType="HopNguyenModel.Store.Page" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PageDetail" EntityType="HopNguyenModel.Store.PageDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Status" EntityType="HopNguyenModel.Store.Status" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StatusContent" EntityType="HopNguyenModel.Store.StatusContent" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Support" EntityType="HopNguyenModel.Store.Support" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SystemLogs" EntityType="HopNguyenModel.Store.SystemLogs" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tag" EntityType="HopNguyenModel.Store.Tag" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TagContent" EntityType="HopNguyenModel.Store.TagContent" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TypeContent" EntityType="HopNguyenModel.Store.TypeContent" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TypeImage" EntityType="HopNguyenModel.Store.TypeImage" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TypePage" EntityType="HopNguyenModel.Store.TypePage" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TypeSupport" EntityType="HopNguyenModel.Store.TypeSupport" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Admin_Admin" Association="HopNguyenModel.Store.FK_Admin_Admin">
+            <End Role="Admin" EntitySet="Admin" />
+            <End Role="Admin1" EntitySet="Admin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Content_Admin" Association="HopNguyenModel.Store.FK_Content_Admin">
+            <End Role="Admin" EntitySet="Admin" />
+            <End Role="Content" EntitySet="Content" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Content_GroupContent" Association="HopNguyenModel.Store.FK_Content_GroupContent">
+            <End Role="GroupContent" EntitySet="GroupContent" />
+            <End Role="Content" EntitySet="Content" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Content_TypeContent" Association="HopNguyenModel.Store.FK_Content_TypeContent">
+            <End Role="TypeContent" EntitySet="TypeContent" />
+            <End Role="Content" EntitySet="Content" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Image_TypeImage" Association="HopNguyenModel.Store.FK_Image_TypeImage">
+            <End Role="TypeImage" EntitySet="TypeImage" />
+            <End Role="Image" EntitySet="Image" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ImageContent_Content" Association="HopNguyenModel.Store.FK_ImageContent_Content">
+            <End Role="Content" EntitySet="Content" />
+            <End Role="ImageContent" EntitySet="ImageContent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ImageProduct_Product" Association="HopNguyenModel.Store.FK_ImageProduct_Product">
+            <End Role="Content" EntitySet="Content" />
+            <End Role="ImageProduct" EntitySet="ImageProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_Order" Association="HopNguyenModel.Store.FK_OrderDetail_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="OrderDetail" EntitySet="OrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_Product" Association="HopNguyenModel.Store.FK_OrderDetail_Product">
+            <End Role="Content" EntitySet="Content" />
+            <End Role="OrderDetail" EntitySet="OrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Page_Admin" Association="HopNguyenModel.Store.FK_Page_Admin">
+            <End Role="Admin" EntitySet="Admin" />
+            <End Role="Page" EntitySet="Page" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Page_TypePage" Association="HopNguyenModel.Store.FK_Page_TypePage">
+            <End Role="TypePage" EntitySet="TypePage" />
+            <End Role="Page" EntitySet="Page" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusContent_Content" Association="HopNguyenModel.Store.FK_StatusContent_Content">
+            <End Role="Content" EntitySet="Content" />
+            <End Role="StatusContent" EntitySet="StatusContent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusContent_GroupContent" Association="HopNguyenModel.Store.FK_StatusContent_GroupContent">
+            <End Role="GroupContent" EntitySet="GroupContent" />
+            <End Role="Status" EntitySet="Status" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusContent_Status" Association="HopNguyenModel.Store.FK_StatusContent_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="StatusContent" EntitySet="StatusContent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Support_TypeSupport" Association="HopNguyenModel.Store.FK_Support_TypeSupport">
+            <End Role="TypeSupport" EntitySet="TypeSupport" />
+            <End Role="Support" EntitySet="Support" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SystemLogs_Admin" Association="HopNguyenModel.Store.FK_SystemLogs_Admin">
+            <End Role="Admin" EntitySet="Admin" />
+            <End Role="SystemLogs" EntitySet="SystemLogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagContent_Content" Association="HopNguyenModel.Store.FK_TagContent_Content">
+            <End Role="Content" EntitySet="Content" />
+            <End Role="TagContent" EntitySet="TagContent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagContent_Tag" Association="HopNguyenModel.Store.FK_TagContent_Tag">
+            <End Role="Tag" EntitySet="Tag" />
+            <End Role="TagContent" EntitySet="TagContent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypeContent_Admin" Association="HopNguyenModel.Store.FK_TypeContent_Admin">
+            <End Role="Admin" EntitySet="Admin" />
+            <End Role="TypeContent" EntitySet="TypeContent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypeContent_GroupContent" Association="HopNguyenModel.Store.FK_TypeContent_GroupContent">
+            <End Role="GroupContent" EntitySet="GroupContent" />
+            <End Role="TypeContent" EntitySet="TypeContent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypeContent_TypeContent1" Association="HopNguyenModel.Store.FK_TypeContent_TypeContent1">
+            <End Role="TypeContent" EntitySet="TypeContent" />
+            <End Role="TypeContent1" EntitySet="TypeContent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypeImage_TypeImage" Association="HopNguyenModel.Store.FK_TypeImage_TypeImage">
+            <End Role="TypeImage" EntitySet="TypeImage" />
+            <End Role="TypeImage1" EntitySet="TypeImage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypePage_Admin" Association="HopNguyenModel.Store.FK_TypePage_Admin">
+            <End Role="Admin" EntitySet="Admin" />
+            <End Role="TypePage" EntitySet="TypePage" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="Email" Type="nvarchar" MaxLength="250" />
+          <Property Name="Fullname" Type="nvarchar" MaxLength="250" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="150" />
+          <Property Name="LastLogin" Type="datetime" />
+          <Property Name="DateLogin" Type="datetime" />
+          <Property Name="Order" Type="bit" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="DateCreate" Type="datetime" />
+          <Property Name="Parent" Type="int" />
+        </EntityType>
+        <EntityType Name="Content">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="350" />
+          <Property Name="Alias" Type="nvarchar" Nullable="false" MaxLength="350" />
+          <Property Name="Image" Type="nvarchar" MaxLength="250" />
+          <Property Name="Summary" Type="ntext" />
+          <Property Name="Detail" Type="ntext" />
+          <Property Name="Sort" Type="int" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="Price" Type="float" />
+          <Property Name="Hit" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateByAdminId" Type="int" />
+          <Property Name="TypeId" Type="int" Nullable="false" />
+          <Property Name="MetaTitle" Type="nvarchar" MaxLength="350" />
+          <Property Name="MetaDescription" Type="nvarchar" MaxLength="350" />
+          <Property Name="MetaKeyword" Type="nvarchar" MaxLength="350" />
+          <Property Name="GroupId" Type="int" Nullable="false" />
+          <Property Name="IsHomePage" Type="bit" />
+        </EntityType>
+        <EntityType Name="GroupContent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Link" Type="nvarchar" MaxLength="250" />
+          <Property Name="Image" Type="nvarchar" MaxLength="250" />
+          <Property Name="Sort" Type="int" />
+          <Property Name="Summary" Type="ntext" />
+          <Property Name="TypeId" Type="int" />
+        </EntityType>
+        <EntityType Name="ImageContent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Image" Type="nvarchar" MaxLength="250" />
+          <Property Name="ContentId" Type="int" />
+        </EntityType>
+        <EntityType Name="ImageProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Image" Type="nvarchar" MaxLength="250" />
+          <Property Name="ContentId" Type="int" />
+        </EntityType>
+        <EntityType Name="Module">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="350" />
+          <Property Name="Detail" Type="ntext" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DateCreate" Type="datetime" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Email" Type="nvarchar" MaxLength="250" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="250" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="Message" Type="ntext" />
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ContentId" Type="int" />
+          <Property Name="OrderId" Type="int" />
+          <Property Name="Count" Type="int" />
+          <Property Name="Price" Type="float" />
+        </EntityType>
+        <EntityType Name="Page">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Link" Type="nvarchar" MaxLength="250" />
+          <Property Name="Summary" Type="nvarchar" MaxLength="500" />
+          <Property Name="TypeId" Type="int" />
+          <Property Name="Parameter" Type="nvarchar" MaxLength="250" />
+          <Property Name="AdminId" Type="int" />
+        </EntityType>
+        <EntityType Name="PageDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Alias" Type="nvarchar" MaxLength="250" />
+          <Property Name="MetaTitle" Type="nvarchar" MaxLength="350" />
+          <Property Name="MetaKeyword" Type="nvarchar" MaxLength="250" />
+          <Property Name="MetaDescription" Type="nvarchar" MaxLength="350" />
+          <Property Name="Detail" Type="ntext" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Detail" Type="ntext" />
+          <Property Name="Sort" Type="int" />
+          <Property Name="GroupId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StatusContent">
+          <Key>
+            <PropertyRef Name="ContentId" />
+            <PropertyRef Name="StatusId" />
+          </Key>
+          <Property Name="ContentId" Type="int" Nullable="false" />
+          <Property Name="StatusId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Support">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nick" Type="nvarchar" MaxLength="250" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Summary" Type="ntext" />
+          <Property Name="TypeId" Type="int" />
+        </EntityType>
+        <EntityType Name="SystemLogs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ErrorSource" Type="nvarchar" MaxLength="500" />
+          <Property Name="ErrorMessage" Type="nvarchar(max)" />
+          <Property Name="ErrorStackTrace" Type="nvarchar(max)" />
+          <Property Name="DateCreate" Type="datetime" />
+          <Property Name="AdminError" Type="int" />
+          <Property Name="IpError" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="350" />
+        </EntityType>
+        <EntityType Name="TagContent">
+          <Key>
+            <PropertyRef Name="ContentId" />
+            <PropertyRef Name="TagId" />
+          </Key>
+          <Property Name="ContentId" Type="int" Nullable="false" />
+          <Property Name="TagId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypeContent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="350" />
+          <Property Name="Alias" Type="nvarchar" Nullable="false" MaxLength="350" />
+          <Property Name="Image" Type="nvarchar" MaxLength="250" />
+          <Property Name="Summary" Type="ntext" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="Sort" Type="int" />
+          <Property Name="Parent" Type="int" />
+          <Property Name="CreateByAdminId" Type="int" />
+          <Property Name="DateCreate" Type="datetime" />
+          <Property Name="MetaTitle" Type="nvarchar" MaxLength="350" />
+          <Property Name="MetaDescription" Type="nvarchar" MaxLength="350" />
+          <Property Name="MetaKeyword" Type="nvarchar" MaxLength="250" />
+          <Property Name="GroupId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypeImage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Summary" Type="ntext" />
+          <Property Name="Sort" Type="int" />
+          <Property Name="Image" Type="nvarchar" MaxLength="250" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="Parent" Type="int" />
+        </EntityType>
+        <EntityType Name="TypePage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="AdminId" Type="int" />
+        </EntityType>
+        <EntityType Name="TypeSupport">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Pattern" Type="nvarchar" MaxLength="250" />
+          <Property Name="Parameter" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <Association Name="FK_Admin_Admin">
+          <End Role="Admin" Type="HopNguyenModel.Store.Admin" Multiplicity="0..1" />
+          <End Role="Admin1" Type="HopNguyenModel.Store.Admin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Admin1">
+              <PropertyRef Name="Parent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Content_Admin">
+          <End Role="Admin" Type="HopNguyenModel.Store.Admin" Multiplicity="0..1" />
+          <End Role="Content" Type="HopNguyenModel.Store.Content" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Content">
+              <PropertyRef Name="CreateByAdminId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Content_GroupContent">
+          <End Role="GroupContent" Type="HopNguyenModel.Store.GroupContent" Multiplicity="1" />
+          <End Role="Content" Type="HopNguyenModel.Store.Content" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupContent">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Content">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Content_TypeContent">
+          <End Role="TypeContent" Type="HopNguyenModel.Store.TypeContent" Multiplicity="1" />
+          <End Role="Content" Type="HopNguyenModel.Store.Content" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeContent">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Content">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Image_TypeImage">
+          <End Role="TypeImage" Type="HopNguyenModel.Store.TypeImage" Multiplicity="0..1" />
+          <End Role="Image" Type="HopNguyenModel.Store.Image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeImage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Image">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ImageContent_Content">
+          <End Role="Content" Type="HopNguyenModel.Store.Content" Multiplicity="0..1" />
+          <End Role="ImageContent" Type="HopNguyenModel.Store.ImageContent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Content">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ImageContent">
+              <PropertyRef Name="ContentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ImageProduct_Product">
+          <End Role="Content" Type="HopNguyenModel.Store.Content" Multiplicity="0..1" />
+          <End Role="ImageProduct" Type="HopNguyenModel.Store.ImageProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Content">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ImageProduct">
+              <PropertyRef Name="ContentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_Order">
+          <End Role="Order" Type="HopNguyenModel.Store.Order" Multiplicity="0..1" />
+          <End Role="OrderDetail" Type="HopNguyenModel.Store.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_Product">
+          <End Role="Content" Type="HopNguyenModel.Store.Content" Multiplicity="0..1" />
+          <End Role="OrderDetail" Type="HopNguyenModel.Store.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Content">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="ContentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Page_Admin">
+          <End Role="Admin" Type="HopNguyenModel.Store.Admin" Multiplicity="0..1" />
+          <End Role="Page" Type="HopNguyenModel.Store.Page" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Page">
+              <PropertyRef Name="AdminId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Page_TypePage">
+          <End Role="TypePage" Type="HopNguyenModel.Store.TypePage" Multiplicity="0..1" />
+          <End Role="Page" Type="HopNguyenModel.Store.Page" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypePage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Page">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusContent_Content">
+          <End Role="Content" Type="HopNguyenModel.Store.Content" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="StatusContent" Type="HopNguyenModel.Store.StatusContent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Content">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StatusContent">
+              <PropertyRef Name="ContentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusContent_GroupContent">
+          <End Role="GroupContent" Type="HopNguyenModel.Store.GroupContent" Multiplicity="1" />
+          <End Role="Status" Type="HopNguyenModel.Store.Status" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupContent">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Status">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusContent_Status">
+          <End Role="Status" Type="HopNguyenModel.Store.Status" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="StatusContent" Type="HopNguyenModel.Store.StatusContent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StatusContent">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Support_TypeSupport">
+          <End Role="TypeSupport" Type="HopNguyenModel.Store.TypeSupport" Multiplicity="0..1" />
+          <End Role="Support" Type="HopNguyenModel.Store.Support" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeSupport">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Support">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SystemLogs_Admin">
+          <End Role="Admin" Type="HopNguyenModel.Store.Admin" Multiplicity="0..1" />
+          <End Role="SystemLogs" Type="HopNguyenModel.Store.SystemLogs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SystemLogs">
+              <PropertyRef Name="AdminError" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagContent_Content">
+          <End Role="Content" Type="HopNguyenModel.Store.Content" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TagContent" Type="HopNguyenModel.Store.TagContent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Content">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TagContent">
+              <PropertyRef Name="ContentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagContent_Tag">
+          <End Role="Tag" Type="HopNguyenModel.Store.Tag" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TagContent" Type="HopNguyenModel.Store.TagContent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TagContent">
+              <PropertyRef Name="TagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypeContent_Admin">
+          <End Role="Admin" Type="HopNguyenModel.Store.Admin" Multiplicity="0..1" />
+          <End Role="TypeContent" Type="HopNguyenModel.Store.TypeContent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TypeContent">
+              <PropertyRef Name="CreateByAdminId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypeContent_GroupContent">
+          <End Role="GroupContent" Type="HopNguyenModel.Store.GroupContent" Multiplicity="1" />
+          <End Role="TypeContent" Type="HopNguyenModel.Store.TypeContent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupContent">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TypeContent">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypeContent_TypeContent1">
+          <End Role="TypeContent" Type="HopNguyenModel.Store.TypeContent" Multiplicity="0..1" />
+          <End Role="TypeContent1" Type="HopNguyenModel.Store.TypeContent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeContent">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TypeContent1">
+              <PropertyRef Name="Parent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypeImage_TypeImage">
+          <End Role="TypeImage" Type="HopNguyenModel.Store.TypeImage" Multiplicity="0..1" />
+          <End Role="TypeImage1" Type="HopNguyenModel.Store.TypeImage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeImage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TypeImage1">
+              <PropertyRef Name="Parent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypePage_Admin">
+          <End Role="Admin" Type="HopNguyenModel.Store.Admin" Multiplicity="0..1" />
+          <End Role="TypePage" Type="HopNguyenModel.Store.TypePage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TypePage">
+              <PropertyRef Name="AdminId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HopNguyenModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="HopNguyenEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Admins" EntityType="HopNguyenModel.Admin" />
+          <EntitySet Name="Contents" EntityType="HopNguyenModel.Content" />
+          <EntitySet Name="GroupContents" EntityType="HopNguyenModel.GroupContent" />
+          <EntitySet Name="Images" EntityType="HopNguyenModel.Image" />
+          <EntitySet Name="ImageProducts" EntityType="HopNguyenModel.ImageProduct" />
+          <EntitySet Name="Modules" EntityType="HopNguyenModel.Module" />
+          <EntitySet Name="Orders" EntityType="HopNguyenModel.Order" />
+          <EntitySet Name="Pages" EntityType="HopNguyenModel.Page" />
+          <EntitySet Name="PageDetails" EntityType="HopNguyenModel.PageDetail" />
+          <EntitySet Name="Status" EntityType="HopNguyenModel.Status" />
+          <EntitySet Name="Supports" EntityType="HopNguyenModel.Support" />
+          <EntitySet Name="SystemLogs" EntityType="HopNguyenModel.SystemLog" />
+          <EntitySet Name="Tags" EntityType="HopNguyenModel.Tag" />
+          <EntitySet Name="TypeContents" EntityType="HopNguyenModel.TypeContent" />
+          <EntitySet Name="TypeImages" EntityType="HopNguyenModel.TypeImage" />
+          <EntitySet Name="TypePages" EntityType="HopNguyenModel.TypePage" />
+          <EntitySet Name="TypeSupports" EntityType="HopNguyenModel.TypeSupport" />
+          <AssociationSet Name="FK_Admin_Admin" Association="HopNguyenModel.FK_Admin_Admin">
+            <End Role="Admin" EntitySet="Admins" />
+            <End Role="Admin1" EntitySet="Admins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Content_Admin" Association="HopNguyenModel.FK_Content_Admin">
+            <End Role="Admin" EntitySet="Admins" />
+            <End Role="Content" EntitySet="Contents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Page_Admin" Association="HopNguyenModel.FK_Page_Admin">
+            <End Role="Admin" EntitySet="Admins" />
+            <End Role="Page" EntitySet="Pages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SystemLogs_Admin" Association="HopNguyenModel.FK_SystemLogs_Admin">
+            <End Role="Admin" EntitySet="Admins" />
+            <End Role="SystemLog" EntitySet="SystemLogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypeContent_Admin" Association="HopNguyenModel.FK_TypeContent_Admin">
+            <End Role="Admin" EntitySet="Admins" />
+            <End Role="TypeContent" EntitySet="TypeContents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypePage_Admin" Association="HopNguyenModel.FK_TypePage_Admin">
+            <End Role="Admin" EntitySet="Admins" />
+            <End Role="TypePage" EntitySet="TypePages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Content_GroupContent" Association="HopNguyenModel.FK_Content_GroupContent">
+            <End Role="GroupContent" EntitySet="GroupContents" />
+            <End Role="Content" EntitySet="Contents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Content_TypeContent" Association="HopNguyenModel.FK_Content_TypeContent">
+            <End Role="TypeContent" EntitySet="TypeContents" />
+            <End Role="Content" EntitySet="Contents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ImageProduct_Product" Association="HopNguyenModel.FK_ImageProduct_Product">
+            <End Role="Content" EntitySet="Contents" />
+            <End Role="ImageProduct" EntitySet="ImageProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusContent_GroupContent" Association="HopNguyenModel.FK_StatusContent_GroupContent">
+            <End Role="GroupContent" EntitySet="GroupContents" />
+            <End Role="Status" EntitySet="Status" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypeContent_GroupContent" Association="HopNguyenModel.FK_TypeContent_GroupContent">
+            <End Role="GroupContent" EntitySet="GroupContents" />
+            <End Role="TypeContent" EntitySet="TypeContents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Image_TypeImage" Association="HopNguyenModel.FK_Image_TypeImage">
+            <End Role="TypeImage" EntitySet="TypeImages" />
+            <End Role="Image" EntitySet="Images" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Page_TypePage" Association="HopNguyenModel.FK_Page_TypePage">
+            <End Role="TypePage" EntitySet="TypePages" />
+            <End Role="Page" EntitySet="Pages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Support_TypeSupport" Association="HopNguyenModel.FK_Support_TypeSupport">
+            <End Role="TypeSupport" EntitySet="TypeSupports" />
+            <End Role="Support" EntitySet="Supports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypeContent_TypeContent1" Association="HopNguyenModel.FK_TypeContent_TypeContent1">
+            <End Role="TypeContent" EntitySet="TypeContents" />
+            <End Role="TypeContent1" EntitySet="TypeContents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypeImage_TypeImage" Association="HopNguyenModel.FK_TypeImage_TypeImage">
+            <End Role="TypeImage" EntitySet="TypeImages" />
+            <End Role="TypeImage1" EntitySet="TypeImages" />
+          </AssociationSet>
+          <AssociationSet Name="StatusContent" Association="HopNguyenModel.StatusContent">
+            <End Role="Content" EntitySet="Contents" />
+            <End Role="Status" EntitySet="Status" />
+          </AssociationSet>
+          <AssociationSet Name="TagContent" Association="HopNguyenModel.TagContent">
+            <End Role="Content" EntitySet="Contents" />
+            <End Role="Tag" EntitySet="Tags" />
+          </AssociationSet>
+          <EntitySet Name="OrderDetails" EntityType="HopNguyenModel.OrderDetail" />
+          <AssociationSet Name="FK_OrderDetail_Product" Association="HopNguyenModel.FK_OrderDetail_Product">
+            <End Role="Content" EntitySet="Contents" />
+            <End Role="OrderDetail" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_Order" Association="HopNguyenModel.FK_OrderDetail_Order">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="OrderDetail" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <EntitySet Name="ImageContents" EntityType="HopNguyenModel.ImageContent" />
+          <AssociationSet Name="FK_ImageContent_Content" Association="HopNguyenModel.FK_ImageContent_Content">
+            <End Role="Content" EntitySet="Contents" />
+            <End Role="ImageContent" EntitySet="ImageContents" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Username" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Fullname" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LastLogin" Precision="3" />
+          <Property Type="DateTime" Name="DateLogin" Precision="3" />
+          <Property Type="Boolean" Name="Order" />
+          <Property Type="Boolean" Name="Active" />
+          <Property Type="DateTime" Name="DateCreate" Precision="3" />
+          <Property Type="Int32" Name="Parent" />
+          <NavigationProperty Name="Admin1" Relationship="HopNguyenModel.FK_Admin_Admin" FromRole="Admin" ToRole="Admin1" />
+          <NavigationProperty Name="Admin2" Relationship="HopNguyenModel.FK_Admin_Admin" FromRole="Admin1" ToRole="Admin" />
+          <NavigationProperty Name="Contents" Relationship="HopNguyenModel.FK_Content_Admin" FromRole="Admin" ToRole="Content" />
+          <NavigationProperty Name="Pages" Relationship="HopNguyenModel.FK_Page_Admin" FromRole="Admin" ToRole="Page" />
+          <NavigationProperty Name="SystemLogs" Relationship="HopNguyenModel.FK_SystemLogs_Admin" FromRole="Admin" ToRole="SystemLog" />
+          <NavigationProperty Name="TypeContents" Relationship="HopNguyenModel.FK_TypeContent_Admin" FromRole="Admin" ToRole="TypeContent" />
+          <NavigationProperty Name="TypePages" Relationship="HopNguyenModel.FK_TypePage_Admin" FromRole="Admin" ToRole="TypePage" />
+        </EntityType>
+        <EntityType Name="Content">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Alias" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Image" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Summary" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Detail" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Sort" />
+          <Property Type="Boolean" Name="Status" />
+          <Property Type="Double" Name="Price" />
+          <Property Type="Int32" Name="Hit" />
+          <Property Type="DateTime" Name="CreateDate" Precision="3" />
+          <Property Type="Int32" Name="CreateByAdminId" />
+          <Property Type="Int32" Name="TypeId" Nullable="false" />
+          <Property Type="String" Name="MetaTitle" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MetaDescription" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MetaKeyword" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="GroupId" Nullable="false" />
+          <NavigationProperty Name="Admin" Relationship="HopNguyenModel.FK_Content_Admin" FromRole="Content" ToRole="Admin" />
+          <NavigationProperty Name="GroupContent" Relationship="HopNguyenModel.FK_Content_GroupContent" FromRole="Content" ToRole="GroupContent" />
+          <NavigationProperty Name="TypeContent" Relationship="HopNguyenModel.FK_Content_TypeContent" FromRole="Content" ToRole="TypeContent" />
+          <NavigationProperty Name="ImageProducts" Relationship="HopNguyenModel.FK_ImageProduct_Product" FromRole="Content" ToRole="ImageProduct" />
+          <NavigationProperty Name="Status1" Relationship="HopNguyenModel.StatusContent" FromRole="Content" ToRole="Status" />
+          <NavigationProperty Name="Tags" Relationship="HopNguyenModel.TagContent" FromRole="Content" ToRole="Tag" />
+          <NavigationProperty Name="OrderDetails" Relationship="HopNguyenModel.FK_OrderDetail_Product" FromRole="Content" ToRole="OrderDetail" />
+          <Property Type="Boolean" Name="IsHomePage" />
+          <NavigationProperty Name="ImageContents" Relationship="HopNguyenModel.FK_ImageContent_Content" FromRole="Content" ToRole="ImageContent" />
+        </EntityType>
+        <EntityType Name="GroupContent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Contents" Relationship="HopNguyenModel.FK_Content_GroupContent" FromRole="GroupContent" ToRole="Content" />
+          <NavigationProperty Name="Status" Relationship="HopNguyenModel.FK_StatusContent_GroupContent" FromRole="GroupContent" ToRole="Status" />
+          <NavigationProperty Name="TypeContents" Relationship="HopNguyenModel.FK_TypeContent_GroupContent" FromRole="GroupContent" ToRole="TypeContent" />
+        </EntityType>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Link" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Image1" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Sort" />
+          <Property Type="String" Name="Summary" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="TypeId" />
+          <NavigationProperty Name="TypeImage" Relationship="HopNguyenModel.FK_Image_TypeImage" FromRole="Image" ToRole="TypeImage" />
+        </EntityType>
+        <EntityType Name="ImageProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Image" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ContentId" />
+          <NavigationProperty Name="Content" Relationship="HopNguyenModel.FK_ImageProduct_Product" FromRole="ImageProduct" ToRole="Content" />
+        </EntityType>
+        <EntityType Name="Module">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Detail" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="DateCreate" Precision="3" />
+          <Property Type="String" Name="Name" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Status" />
+          <Property Type="String" Name="Message" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="OrderDetails" Relationship="HopNguyenModel.FK_OrderDetail_Order" FromRole="Order" ToRole="OrderDetail" />
+        </EntityType>
+        <EntityType Name="Page">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Link" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Summary" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="TypeId" />
+          <Property Type="String" Name="Parameter" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="AdminId" />
+          <NavigationProperty Name="Admin" Relationship="HopNguyenModel.FK_Page_Admin" FromRole="Page" ToRole="Admin" />
+          <NavigationProperty Name="TypePage" Relationship="HopNguyenModel.FK_Page_TypePage" FromRole="Page" ToRole="TypePage" />
+        </EntityType>
+        <EntityType Name="PageDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Alias" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MetaTitle" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MetaKeyword" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MetaDescription" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Detail" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Detail" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Sort" />
+          <Property Type="Int32" Name="GroupId" Nullable="false" />
+          <NavigationProperty Name="GroupContent" Relationship="HopNguyenModel.FK_StatusContent_GroupContent" FromRole="Status" ToRole="GroupContent" />
+          <NavigationProperty Name="Contents" Relationship="HopNguyenModel.StatusContent" FromRole="Status" ToRole="Content" />
+        </EntityType>
+        <EntityType Name="Support">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Nick" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Summary" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="TypeId" />
+          <NavigationProperty Name="TypeSupport" Relationship="HopNguyenModel.FK_Support_TypeSupport" FromRole="Support" ToRole="TypeSupport" />
+        </EntityType>
+        <EntityType Name="SystemLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ErrorSource" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ErrorMessage" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ErrorStackTrace" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="DateCreate" Precision="3" />
+          <Property Type="Int32" Name="AdminError" />
+          <Property Type="String" Name="IpError" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Admin" Relationship="HopNguyenModel.FK_SystemLogs_Admin" FromRole="SystemLog" ToRole="Admin" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="350" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Contents" Relationship="HopNguyenModel.TagContent" FromRole="Tag" ToRole="Content" />
+        </EntityType>
+        <EntityType Name="TypeContent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Alias" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Image" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Summary" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Status" />
+          <Property Type="Int32" Name="Sort" />
+          <Property Type="Int32" Name="Parent" />
+          <Property Type="Int32" Name="CreateByAdminId" />
+          <Property Type="DateTime" Name="DateCreate" Precision="3" />
+          <Property Type="String" Name="MetaTitle" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MetaDescription" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MetaKeyword" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="GroupId" Nullable="false" />
+          <NavigationProperty Name="Admin" Relationship="HopNguyenModel.FK_TypeContent_Admin" FromRole="TypeContent" ToRole="Admin" />
+          <NavigationProperty Name="Contents" Relationship="HopNguyenModel.FK_Content_TypeContent" FromRole="TypeContent" ToRole="Content" />
+          <NavigationProperty Name="GroupContent" Relationship="HopNguyenModel.FK_TypeContent_GroupContent" FromRole="TypeContent" ToRole="GroupContent" />
+          <NavigationProperty Name="TypeContent1" Relationship="HopNguyenModel.FK_TypeContent_TypeContent1" FromRole="TypeContent" ToRole="TypeContent1" />
+          <NavigationProperty Name="TypeContent2" Relationship="HopNguyenModel.FK_TypeContent_TypeContent1" FromRole="TypeContent1" ToRole="TypeContent" />
+        </EntityType>
+        <EntityType Name="TypeImage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Summary" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Sort" />
+          <Property Type="String" Name="Image" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Status" />
+          <Property Type="Int32" Name="Parent" />
+          <NavigationProperty Name="Images" Relationship="HopNguyenModel.FK_Image_TypeImage" FromRole="TypeImage" ToRole="Image" />
+          <NavigationProperty Name="TypeImage1" Relationship="HopNguyenModel.FK_TypeImage_TypeImage" FromRole="TypeImage" ToRole="TypeImage1" />
+          <NavigationProperty Name="TypeImage2" Relationship="HopNguyenModel.FK_TypeImage_TypeImage" FromRole="TypeImage1" ToRole="TypeImage" />
+        </EntityType>
+        <EntityType Name="TypePage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="AdminId" />
+          <NavigationProperty Name="Admin" Relationship="HopNguyenModel.FK_TypePage_Admin" FromRole="TypePage" ToRole="Admin" />
+          <NavigationProperty Name="Pages" Relationship="HopNguyenModel.FK_Page_TypePage" FromRole="TypePage" ToRole="Page" />
+        </EntityType>
+        <EntityType Name="TypeSupport">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Pattern" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Parameter" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Supports" Relationship="HopNguyenModel.FK_Support_TypeSupport" FromRole="TypeSupport" ToRole="Support" />
+        </EntityType>
+        <Association Name="FK_Admin_Admin">
+          <End Type="HopNguyenModel.Admin" Role="Admin" Multiplicity="0..1" />
+          <End Type="HopNguyenModel.Admin" Role="Admin1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Admin1">
+              <PropertyRef Name="Parent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Content_Admin">
+          <End Type="HopNguyenModel.Admin" Role="Admin" Multiplicity="0..1" />
+          <End Type="HopNguyenModel.Content" Role="Content" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Content">
+              <PropertyRef Name="CreateByAdminId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Page_Admin">
+          <End Type="HopNguyenModel.Admin" Role="Admin" Multiplicity="0..1" />
+          <End Type="HopNguyenModel.Page" Role="Page" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Page">
+              <PropertyRef Name="AdminId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SystemLogs_Admin">
+          <End Type="HopNguyenModel.Admin" Role="Admin" Multiplicity="0..1" />
+          <End Type="HopNguyenModel.SystemLog" Role="SystemLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SystemLog">
+              <PropertyRef Name="AdminError" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypeContent_Admin">
+          <End Type="HopNguyenModel.Admin" Role="Admin" Multiplicity="0..1" />
+          <End Type="HopNguyenModel.TypeContent" Role="TypeContent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TypeContent">
+              <PropertyRef Name="CreateByAdminId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypePage_Admin">
+          <End Type="HopNguyenModel.Admin" Role="Admin" Multiplicity="0..1" />
+          <End Type="HopNguyenModel.TypePage" Role="TypePage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TypePage">
+              <PropertyRef Name="AdminId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Content_GroupContent">
+          <End Type="HopNguyenModel.GroupContent" Role="GroupContent" Multiplicity="1" />
+          <End Type="HopNguyenModel.Content" Role="Content" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupContent">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Content">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Content_TypeContent">
+          <End Type="HopNguyenModel.TypeContent" Role="TypeContent" Multiplicity="1" />
+          <End Type="HopNguyenModel.Content" Role="Content" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeContent">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Content">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ImageProduct_Product">
+          <End Type="HopNguyenModel.Content" Role="Content" Multiplicity="0..1" />
+          <End Type="HopNguyenModel.ImageProduct" Role="ImageProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Content">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ImageProduct">
+              <PropertyRef Name="ContentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusContent_GroupContent">
+          <End Type="HopNguyenModel.GroupContent" Role="GroupContent" Multiplicity="1" />
+          <End Type="HopNguyenModel.Status" Role="Status" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupContent">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Status">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypeContent_GroupContent">
+          <End Type="HopNguyenModel.GroupContent" Role="GroupContent" Multiplicity="1" />
+          <End Type="HopNguyenModel.TypeContent" Role="TypeContent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupContent">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TypeContent">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Image_TypeImage">
+          <End Type="HopNguyenModel.TypeImage" Role="TypeImage" Multiplicity="0..1" />
+          <End Type="HopNguyenModel.Image" Role="Image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeImage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Image">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Page_TypePage">
+          <End Type="HopNguyenModel.TypePage" Role="TypePage" Multiplicity="0..1" />
+          <End Type="HopNguyenModel.Page" Role="Page" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypePage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Page">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Support_TypeSupport">
+          <End Type="HopNguyenModel.TypeSupport" Role="TypeSupport" Multiplicity="0..1" />
+          <End Type="HopNguyenModel.Support" Role="Support" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeSupport">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Support">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypeContent_TypeContent1">
+          <End Type="HopNguyenModel.TypeContent" Role="TypeContent" Multiplicity="0..1" />
+          <End Type="HopNguyenModel.TypeContent" Role="TypeContent1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeContent">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TypeContent1">
+              <PropertyRef Name="Parent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypeImage_TypeImage">
+          <End Type="HopNguyenModel.TypeImage" Role="TypeImage" Multiplicity="0..1" />
+          <End Type="HopNguyenModel.TypeImage" Role="TypeImage1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeImage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TypeImage1">
+              <PropertyRef Name="Parent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="StatusContent">
+          <End Type="HopNguyenModel.Content" Role="Content" Multiplicity="*" />
+          <End Type="HopNguyenModel.Status" Role="Status" Multiplicity="*" />
+        </Association>
+        <Association Name="TagContent">
+          <End Type="HopNguyenModel.Content" Role="Content" Multiplicity="*" />
+          <End Type="HopNguyenModel.Tag" Role="Tag" Multiplicity="*" />
+        </Association>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ContentId" />
+          <Property Type="Int32" Name="OrderId" />
+          <Property Type="Int32" Name="Count" />
+          <Property Type="Double" Name="Price" />
+          <NavigationProperty Name="Content" Relationship="HopNguyenModel.FK_OrderDetail_Product" FromRole="OrderDetail" ToRole="Content" />
+          <NavigationProperty Name="Order" Relationship="HopNguyenModel.FK_OrderDetail_Order" FromRole="OrderDetail" ToRole="Order" />
+        </EntityType>
+        <Association Name="FK_OrderDetail_Product">
+          <End Type="HopNguyenModel.Content" Role="Content" Multiplicity="0..1" />
+          <End Type="HopNguyenModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Content">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="ContentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_Order">
+          <End Type="HopNguyenModel.Order" Role="Order" Multiplicity="0..1" />
+          <End Type="HopNguyenModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ImageContent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Image" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ContentId" />
+          <NavigationProperty Name="Content" Relationship="HopNguyenModel.FK_ImageContent_Content" FromRole="ImageContent" ToRole="Content" />
+        </EntityType>
+        <Association Name="FK_ImageContent_Content">
+          <End Type="HopNguyenModel.Content" Role="Content" Multiplicity="0..1" />
+          <End Type="HopNguyenModel.ImageContent" Role="ImageContent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Content">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ImageContent">
+              <PropertyRef Name="ContentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HopNguyenModelStoreContainer" CdmEntityContainer="HopNguyenEntities">
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="HopNguyenModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="Parent" ColumnName="Parent" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Order" ColumnName="Order" />
+                <ScalarProperty Name="DateLogin" ColumnName="DateLogin" />
+                <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contents">
+            <EntityTypeMapping TypeName="HopNguyenModel.Content">
+              <MappingFragment StoreEntitySet="Content">
+                <ScalarProperty Name="IsHomePage" ColumnName="IsHomePage" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="MetaKeyword" ColumnName="MetaKeyword" />
+                <ScalarProperty Name="MetaDescription" ColumnName="MetaDescription" />
+                <ScalarProperty Name="MetaTitle" ColumnName="MetaTitle" />
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="CreateByAdminId" ColumnName="CreateByAdminId" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Hit" ColumnName="Hit" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="Summary" ColumnName="Summary" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Alias" ColumnName="Alias" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GroupContents">
+            <EntityTypeMapping TypeName="HopNguyenModel.GroupContent">
+              <MappingFragment StoreEntitySet="GroupContent">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Images">
+            <EntityTypeMapping TypeName="HopNguyenModel.Image">
+              <MappingFragment StoreEntitySet="Image">
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="Summary" ColumnName="Summary" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="Image1" ColumnName="Image" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImageProducts">
+            <EntityTypeMapping TypeName="HopNguyenModel.ImageProduct">
+              <MappingFragment StoreEntitySet="ImageProduct">
+                <ScalarProperty Name="ContentId" ColumnName="ContentId" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Modules">
+            <EntityTypeMapping TypeName="HopNguyenModel.Module">
+              <MappingFragment StoreEntitySet="Module">
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="HopNguyenModel.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pages">
+            <EntityTypeMapping TypeName="HopNguyenModel.Page">
+              <MappingFragment StoreEntitySet="Page">
+                <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+                <ScalarProperty Name="Parameter" ColumnName="Parameter" />
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="Summary" ColumnName="Summary" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PageDetails">
+            <EntityTypeMapping TypeName="HopNguyenModel.PageDetail">
+              <MappingFragment StoreEntitySet="PageDetail">
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="MetaDescription" ColumnName="MetaDescription" />
+                <ScalarProperty Name="MetaKeyword" ColumnName="MetaKeyword" />
+                <ScalarProperty Name="MetaTitle" ColumnName="MetaTitle" />
+                <ScalarProperty Name="Alias" ColumnName="Alias" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Status">
+            <EntityTypeMapping TypeName="HopNguyenModel.Status">
+              <MappingFragment StoreEntitySet="Status">
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Supports">
+            <EntityTypeMapping TypeName="HopNguyenModel.Support">
+              <MappingFragment StoreEntitySet="Support">
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="Summary" ColumnName="Summary" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Nick" ColumnName="Nick" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemLogs">
+            <EntityTypeMapping TypeName="HopNguyenModel.SystemLog">
+              <MappingFragment StoreEntitySet="SystemLogs">
+                <ScalarProperty Name="IpError" ColumnName="IpError" />
+                <ScalarProperty Name="AdminError" ColumnName="AdminError" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="ErrorStackTrace" ColumnName="ErrorStackTrace" />
+                <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+                <ScalarProperty Name="ErrorSource" ColumnName="ErrorSource" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tags">
+            <EntityTypeMapping TypeName="HopNguyenModel.Tag">
+              <MappingFragment StoreEntitySet="Tag">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeContents">
+            <EntityTypeMapping TypeName="HopNguyenModel.TypeContent">
+              <MappingFragment StoreEntitySet="TypeContent">
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="MetaKeyword" ColumnName="MetaKeyword" />
+                <ScalarProperty Name="MetaDescription" ColumnName="MetaDescription" />
+                <ScalarProperty Name="MetaTitle" ColumnName="MetaTitle" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="CreateByAdminId" ColumnName="CreateByAdminId" />
+                <ScalarProperty Name="Parent" ColumnName="Parent" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Summary" ColumnName="Summary" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Alias" ColumnName="Alias" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeImages">
+            <EntityTypeMapping TypeName="HopNguyenModel.TypeImage">
+              <MappingFragment StoreEntitySet="TypeImage">
+                <ScalarProperty Name="Parent" ColumnName="Parent" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="Summary" ColumnName="Summary" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypePages">
+            <EntityTypeMapping TypeName="HopNguyenModel.TypePage">
+              <MappingFragment StoreEntitySet="TypePage">
+                <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeSupports">
+            <EntityTypeMapping TypeName="HopNguyenModel.TypeSupport">
+              <MappingFragment StoreEntitySet="TypeSupport">
+                <ScalarProperty Name="Parameter" ColumnName="Parameter" />
+                <ScalarProperty Name="Pattern" ColumnName="Pattern" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="StatusContent" TypeName="HopNguyenModel.StatusContent" StoreEntitySet="StatusContent">
+            <EndProperty Name="Status">
+              <ScalarProperty Name="Id" ColumnName="StatusId" />
+            </EndProperty>
+            <EndProperty Name="Content">
+              <ScalarProperty Name="Id" ColumnName="ContentId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="TagContent" TypeName="HopNguyenModel.TagContent" StoreEntitySet="TagContent">
+            <EndProperty Name="Tag">
+              <ScalarProperty Name="Id" ColumnName="TagId" />
+            </EndProperty>
+            <EndProperty Name="Content">
+              <ScalarProperty Name="Id" ColumnName="ContentId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="OrderDetails">
+            <EntityTypeMapping TypeName="HopNguyenModel.OrderDetail">
+              <MappingFragment StoreEntitySet="OrderDetail">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="ContentId" ColumnName="ContentId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImageContents">
+            <EntityTypeMapping TypeName="HopNguyenModel.ImageContent">
+              <MappingFragment StoreEntitySet="ImageContent">
+                <ScalarProperty Name="ContentId" ColumnName="ContentId" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
