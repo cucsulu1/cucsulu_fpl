@@ -1,0 +1,151 @@
+﻿@using HopNguyenModel
+@{
+    Layout = null;
+    var admin = new Admin();
+}
+
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--basic styles-->
+
+		<link href="/backend/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="/backend/css/bootstrap-responsive.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="/backend/css/font-awesome.min.css" />
+
+		<!--[if IE 7]>
+		  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
+		<![endif]-->
+
+		<!--page specific plugin styles-->
+
+		<!--fonts-->
+
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
+        <link rel="stylesheet" href="/backend/css/chosen.css" />
+
+		<!--ace styles-->
+
+		<link rel="stylesheet" href="/backend/css/ace.min.css" />
+		<link rel="stylesheet" href="/backend/css/ace-responsive.min.css" />
+		<link rel="stylesheet" href="/backend/css/ace-skins.min.css" />
+
+		<!--[if lte IE 8]>
+		  <link rel="stylesheet" href="/backend/css/ace-ie.min.css" />
+		<![endif]-->
+
+		<!--inline styles related to this page-->
+
+    <link rel="shortcut icon" href="/Backend/img/favicon.png" />
+</head>
+
+<body>
+    @if (Admins.Current != null)
+    {
+        
+        <div class="navbar">
+			<div class="navbar-inner">
+				<div class="container-fluid">
+					<a href="/cpanel" class="brand">
+                        Administrator
+					</a><!--/.brand-->
+
+					<ul class="nav ace-nav pull-right">
+						<li class="light-blue">
+							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+								<span class="user-info">
+									<small>Xin chào, </small>
+									@Admins.Current.Fullname
+								</span>
+
+								<i class="icon-caret-down"></i>
+							</a>
+
+							<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-closer">
+								<li>
+									<a href="/cpanel/editprofile">
+										<i class="icon-user"></i>
+										Sửa tài khoản
+									</a>
+								</li>
+
+								<li class="divider"></li>
+
+								<li>
+									<a href="/cpanel/logout">
+										<i class="icon-off"></i>
+										Đăng xuất
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul><!--/.ace-nav-->
+				</div><!--/.container-fluid-->
+			</div><!--/.navbar-inner-->
+		</div>
+        <div class="main-container container-fluid">
+            <a class="menu-toggler" id="menu-toggler" href="#">
+                <span class="menu-text"></span>
+            </a>
+            <div class="sidebar" id="sidebar">
+				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+					
+				</div><!--#sidebar-shortcuts-->
+
+                <ul class="nav nav-list">
+                    @Html.Raw(admin.LoadGroupMenu())
+                    @if (!admin.CheckPermission(Admins.Current.Id))
+                    {
+                        Response.Redirect("/cpanel/error404");
+                    }
+                </ul>
+
+            <div class="sidebar-collapse" id="sidebar-collapse">
+					<i class="icon-double-angle-left"></i>
+				</div>
+			</div>
+            <div class="main-content">
+                <div class="page-content">
+                @RenderBody()
+                    </div>
+            </div>
+        </div>
+        
+        <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-small btn-inverse">
+			<i class="icon-double-angle-up icon-only bigger-110"></i>
+		</a>
+
+		<!--basic scripts-->
+        <script src="~/Backend/js/jquery.min.js"></script>
+		<script src="/backend/js/bootstrap.min.js"></script>
+        <!-- ck editor -->
+        <script src="~/Backend/js/ckeditor/ckeditor.js"></script>
+        <script src="~/Backend/js/ckfinder/ckfinder.js"></script>
+		<!--page specific plugin scripts-->
+
+		<script src="/backend/js/jquery.dataTables.min.js"></script>
+		<script src="/backend/js/jquery.dataTables.bootstrap.js"></script>
+
+        <script src="/backend/js/chosen.jquery.min.js"></script>
+        <script src="/backend/js/bootstrap-tag.min.js"></script>
+        
+        <script src="/backend/js/jquery.validate.min.js"></script>
+
+        
+		<!--ace scripts-->
+
+		<script src="/backend/js/ace-elements.min.js"></script>
+		<script src="/backend/js/ace.min.js"></script>
+        <script src="~/Backend/js/Custom.js"></script>
+		<!--inline scripts related to this page-->
+    }
+    else
+    {
+        Response.Redirect("/cpanel");
+    }
+</body>
+</html>

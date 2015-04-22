@@ -1,0 +1,147 @@
+﻿@using HopNguyenModel
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- META TAGS -->
+    <meta http-equiv="Content-Language" content="vi" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="https://plus.google.com/102397380177231200136" />
+    <meta name="geo.region" content="VN-HN" />
+    <meta name="geo.position" content="21.022377;105.831546" />
+    <meta name="ICBM" content="21.022377, 105.831546" />
+    <link rel="shortcut icon" href="/Frontend/img/dich-thuat-dong-a-cong-chung-nhanh-favicon.ico" type="image/x-icon">
+    @RenderSection("SEO", false)
+   <!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Web Fonts  -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+
+		<!-- /Frontend/vendor CSS -->
+		<link rel="stylesheet" href="/Frontend/vendor/bootstrap/bootstrap.css">
+		<link rel="stylesheet" href="/Frontend/vendor/fontawesome/css/font-awesome.css">
+		<link rel="stylesheet" href="/Frontend/vendor/owlcarousel/owl.carousel.min.css" media="screen">
+		<link rel="stylesheet" href="/Frontend/vendor/owlcarousel/owl.theme.default.min.css" media="screen">
+		<link rel="stylesheet" href="/Frontend/vendor/magnific-popup/magnific-popup.css" media="screen">
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="/Frontend/css/theme.css">
+		<link rel="stylesheet" href="/Frontend/css/theme-elements.css">
+		<link rel="stylesheet" href="/Frontend/css/theme-blog.css">
+		<link rel="stylesheet" href="/Frontend/css/theme-shop.css">
+		<link rel="stylesheet" href="/Frontend/css/theme-animate.css">
+        <link href="/Frontend/css/style-revolution-slider.css" rel="stylesheet" />
+		<!-- Current Page CSS -->
+		<link rel="stylesheet" href="/Frontend/vendor/rs-plugin/css/settings.css" media="screen">
+		<link rel="stylesheet" href="/Frontend/vendor/circle-flip-slideshow/css/component.css" media="screen">
+
+		<!-- Skin CSS -->
+		<link rel="stylesheet" href="/Frontend/css/skins/default.css">
+
+		<!-- Theme Custom CSS -->
+		<link rel="stylesheet" href="/Frontend/css/custom.css">
+
+		<!-- Head Libs -->
+		<script src="/Frontend/vendor/modernizr/modernizr.js"></script>
+
+		<!--[if IE]>
+			<link rel="stylesheet" href="css/ie.css">
+		<![endif]-->
+
+		<!--[if lte IE 8]>
+			<script src="/Frontend/vendor/respond/respond.js"></script>
+			<script src="/Frontend/vendor/excanvas/excanvas.js"></script>
+		<![endif]-->
+
+    @RenderSection("Scripts", false)
+</head>
+<body>
+
+    <!-- #header -->
+   <header id="header">
+        @Html.Partial("Patial/Layout/_Header")
+    </header>
+    <!-- end #header -->
+    
+    <!-- #content -->
+   <div role="main" class="main">
+        @Html.Partial("Patial/General/_Slide")
+        @RenderBody()
+    </div>
+    <!-- end #content -->
+    <!-- #footer -->
+    @Html.Partial("Patial/Layout/_Footer")
+    @Html.Partial("Patial/General/_OnlineSupport")
+    
+		<!-- Vendor -->
+		<script src="/Frontend/vendor/jquery/jquery.js"></script>
+		<script src="/Frontend/vendor/jquery.appear/jquery.appear.js"></script>
+		<script src="/Frontend/vendor/jquery.easing/jquery.easing.js"></script>
+		<script src="/Frontend/vendor/jquery-cookie/jquery-cookie.js"></script>
+		<script src="master/style-switcher/style.switcher.js"></script>
+		<script src="/Frontend/vendor/bootstrap/bootstrap.js"></script>
+		<script src="/Frontend/vendor/common/common.js"></script>
+		<script src="/Frontend/vendor/jquery.validation/jquery.validation.js"></script>
+		<script src="/Frontend/vendor/jquery.stellar/jquery.stellar.js"></script>
+		<script src="/Frontend/vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.js"></script>
+		<script src="/Frontend/vendor/jquery.gmap/jquery.gmap.js"></script>
+		<script src="/Frontend/vendor/isotope/jquery.isotope.js"></script>
+		<script src="/Frontend/vendor/owlcarousel/owl.carousel.js"></script>
+		<script src="/Frontend/vendor/jflickrfeed/jflickrfeed.js"></script>
+		<script src="/Frontend/vendor/magnific-popup/jquery.magnific-popup.js"></script>
+		<script src="/Frontend/vendor/vide/vide.js"></script>
+		
+		<!-- Theme Base, Components and Settings -->
+		<script src="/Frontend/js/theme.js"></script>
+		
+		<!-- Specific Page Vendor and Views -->
+		<script src="/Frontend/vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+		<script src="/Frontend/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+		<script src="/Frontend/vendor/circle-flip-slideshow/js/jquery.flipshow.js"></script>
+		<script src="/Frontend/js/views/view.home.js"></script>
+		
+		<!-- Theme Custom -->
+		<script src="/Frontend/js/custom.js"></script>
+		
+		<!-- Theme Initialization Files -->
+		<script src="/Frontend/js/theme.init.js"></script>
+    <script>
+        $(".online-support-right").click(function () {
+            if (!$(this).hasClass("show")) {
+                $(this).addClass("show")
+            } return false;
+        })
+        $(document).click(function () { $(".online-support-right").removeClass("show"); })
+    </script>
+ <script>
+     (function (i, s, o, g, r, a, m) {
+         i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+             (i[r].q = i[r].q || []).push(arguments)
+         }, i[r].l = 1 * new Date(); a = s.createElement(o),
+         m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+     ga('create', 'UA-56171675-1', 'auto');
+     ga('send', 'pageview');
+
+</script>
+
+    <!-- Histats.com  END  -->
+	<!-- VCHAT-->
+	<script lang="javascript">
+	    (function () {
+	        var _h1 = document.getElementsByTagName('title')[0] || false;
+	        var product_name = ''; if (_h1) { product_name = _h1.textContent || _h1.innerText; } var ga = document.createElement('script'); ga.type = 'text/javascript';
+	        ga.src = '//live.vnpgroup.net/js/web_client_box.php?hash=f97efdccaa16de22d78d14cf595f3027&data=eyJzc29faWQiOjE0NzUwOTEsImhhc2giOiIwNjQ0YmNkM2UyODkxYjJmYWQ1N2Y3M2Y1ODQ5OTdlMCJ9&pname=' + product_name;
+	        var s = document.getElementsByTagName('script'); s[0].parentNode.insertBefore(ga, s[0]);
+	    })();
+</script>	
+<style>marquee {display: none !important}</style>
+
+</body>
+</html>

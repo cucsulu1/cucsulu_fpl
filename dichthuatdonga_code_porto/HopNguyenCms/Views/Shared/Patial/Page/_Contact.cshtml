@@ -1,0 +1,125 @@
+﻿@model HopNguyenModel.PageDetail
+
+
+<div role="main" class="main">
+
+				<section class="page-top">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<ul class="breadcrumb">
+									<li><a href="#">Home</a></li>
+									<li class="active">@Model.Name</li>
+								</ul>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<h1>@Model.Name</h1>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Google Maps - Go to the bottom of the page to change settings and map location. -->
+				<div id="googlemaps" class="google-map">
+                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1862.270932000908!2d105.83795000000002!3d21.010994000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDAwJzM5LjYiTiAxMDXCsDUwJzE2LjYiRQ!5e0!3m2!1svi!2s!4v1425805395257" width="100%" height="400" frameborder="0" style="border:0"></iframe>
+				</div>
+
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+
+							<div class="alert alert-success hidden" id="contactSuccess">
+								<strong>Success!</strong> Your message has been sent to us.
+							</div>
+
+							<div class="alert alert-danger hidden" id="contactError">
+								<strong>Error!</strong> There was an error sending your message.
+							</div>
+							<h3 class="short">GỬI LIÊN HỆ </h3>
+                            
+                <form id="contactForm"action="/sendcontact" method="POST">
+                    <div class="row">
+									<div class="form-group">
+										<div class="col-md-6">
+											<label>Họ và tên *</label>
+											<input type="text" value="" data-msg-required="Vui lòng nhập tên bạn." maxlength="100" class="form-control" name="name" id="name" required>
+										</div>
+										<div class="col-md-6">
+											<label>Điện thoại *</label>
+											<input type="email" value="" data-msg-required="Số điện thoại." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control" name="phone" id="phone" required>
+										</div>
+									</div>
+								</div>
+                    	<div class="row" style="display:none">
+									<div class="form-group">
+										<div class="col-md-12">
+											<label>Email</label>
+											<input type="text" value="" data-msg-required="Email." maxlength="100" class="form-control" name="subject" id="subject" required>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="form-group">
+										<div class="col-md-12">
+											<label>Tiêu đề</label>
+											<input type="text" value="" data-msg-required="Vui lòng nhập tiêu đề." maxlength="100" class="form-control" name="subject" id="subject" required>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="form-group">
+										<div class="col-md-12">
+											<label>Nội dung *</label>
+											<textarea maxlength="5000" data-msg-required="Nội dung." rows="10" class="form-control" name="message" id="message" required></textarea>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<input type="submit" value="Gửi liên hệ" class="btn btn-primary btn-lg" data-loading-text="Loading...">
+									</div>
+								</div>
+                </form>
+						</div>
+@*						<div class="col-md-6">
+							<h4 class="push-top">Về <strong>Chúng Tôi</strong></h4>
+							@Html.Raw(Model.Detail)
+						</div>*@
+                        <div class="col-md-6">
+							<h4 class="push-top"><strong>CÔNG TY TNHH THƯƠNG MẠI VÀ DỊCH THUẬT ĐÔNG Á</strong></h4>
+							<p>
+                            (DONG A TRANSLATION Co., LTD)</p>
+
+							<hr />
+
+							<h4>Thông Tin <strong>Liên Hệ</strong></h4>
+							<ul class="list-unstyled">
+								<li><i class="fa fa-map-marker"></i> <strong>Address:</strong> Số 1, ngõ 150, phố Kim Hoa, Đống Đa, Hà Nội</li>
+								<li><i class="fa fa-phone"></i> <strong>Phone:</strong>  0964.57.58.58 , 0962.02.57.57</li>
+								<li><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:dichthuatdonga@gmail.com">dichthuatdonga@gmail.com</a></li>
+							</ul>
+
+							<hr />
+
+							<h4><strong>Giờ</strong> Làm Việc</h4>
+							<ul class="list-unstyled">
+								<li><i class="fa fa-time"></i>Tất cả các ngày trong tuần</li>
+							</ul>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<section class="call-to-action featured footer">
+				<div class="container">
+					<div class="row">
+						<div class="center">
+							<h3>DỊCH THUẬT ĐÔNG Á có <strong>TẤT CẢ</strong> về dịch thuật và công chứng nhanh! <a href="/bao-gia.html" target="_blank" class="btn btn-lg btn-primary" data-appear-animation="bounceIn">Dịch Ngay!</a> <span class="arrow hlb hidden-xs hidden-sm hidden-md" data-appear-animation="rotateInUpLeft" style="top: -22px;"></span></h3>
+						</div>
+					</div>
+				</div>
+			</section>

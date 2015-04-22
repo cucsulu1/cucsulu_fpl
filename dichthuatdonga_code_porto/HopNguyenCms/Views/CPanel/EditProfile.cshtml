@@ -1,0 +1,97 @@
+﻿@model HopNguyenModel.Admin
+@{
+    ViewBag.Title = "Sửa tài khoản";
+    Layout = "~/Views/Shared/_BackendLayout.cshtml";
+}
+
+<div class="page-header position-relative">
+    <h1>Cập nhật tài khoản
+    </h1>
+</div>
+<!--/.page-header-->
+<div class="row-fluid">
+    <div class="tabbable">
+        <ul class="nav nav-tabs" id="myTab">
+            <li class="active">
+                <a data-toggle="tab" href="#tab1">
+                    <i class="green icon-home bigger-110"></i>
+                    Thông tin chung
+                </a>
+            </li>
+        </ul>
+        <form id="validate" action="/cpanel/editprofile" method="POST">
+            <input type="hidden" name="Id" value="@Model.Id"/>
+            <div class="tab-content">
+                @if (ViewBag.msg == "success")
+                {
+                    <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Thành công!</strong> Cập nhật thành công.
+                    </div>
+                }
+                @if (ViewBag.Error != null)
+                {
+                    <div class="alert alert-error">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Lỗi!</strong> @ViewBag.Error
+                    </div>
+                }
+                <div class="tab-pane active" id="tab1">
+                    <div class="formField">
+                        <div class="row-fluid">
+                            <div class="span2">
+                                <span class="fLabel">Họ tên</span>
+                            </div>
+                            <div class="span9">
+                                <input type="text" name="Fullname" value="@Model.Fullname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formField">
+                        <div class="row-fluid">
+                            <div class="span2">
+                                <span class="fLabel">Mật khẩu mới</span>
+                            </div>
+                            <div class="span9">
+                                <a href="javascript:;" id="showPass">Đổi mật khẩu</a>
+                                <input type="password" name="Password" id="password" disabled="disabled" style="display: none">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formField">
+                        <div class="row-fluid">
+                            <div class="span2">
+                                <span class="fLabel">Điện thoại</span>
+                            </div>
+                            <div class="span9">
+                                <input type="text" name="Phone" value="@Model.Phone">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formField">
+                        <div class="row-fluid">
+                            <div class="span2">
+                                <span class="fLabel">Email</span>
+                            </div>
+                            <div class="span9">
+                                <input type="text" name="email" value="@Model.Email">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="formButtons">
+                    <div class="row-fluid">
+                        <div class="span2"></div>
+                        <div class="span9">
+                            <button class="btn btn-info" type="submit">
+                                <i class="icon-ok bigger-110"></i>
+                                Cập nhật
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

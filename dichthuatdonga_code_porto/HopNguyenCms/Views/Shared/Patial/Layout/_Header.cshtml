@@ -1,0 +1,110 @@
+﻿@using System.Collections.Specialized
+@using HopNguyenModel
+@{
+    var content = new Content();
+    var module = new Module();
+}
+
+    <div class="container">
+        <div class="logo">
+            <a href="/">
+                <img alt="Logo Dịch Thuật Đông Á" width="100" height="100" data-sticky-width="82" data-sticky-height="40" src="/FrontEnd/img/dich-thuat-dong-a-logo.png">
+            </a>
+            <div class="logo_name" >
+                <div class="title">DỊCH THUẬT ĐÔNG Á</div>
+                <div class="slogan">Dịch Thuật - Công Chứng Nhanh</div>
+                @* <div style="color: #BE0817"><span style="font-size: 18px">Cam kết cung cấp dịch vụ với&nbsp;giá rẻ nhất</span></div>*@
+            </div>
+        </div>
+        <div class="search">
+            <form id="searchForm" action="/tim-kiem.html" method="get">
+                <div class="input-group">
+                    <input type="text" class="form-control search" name="q" id="q" placeholder="Tìm kiếm..." required>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+            </form>
+        </div>
+        <nav>
+            <ul class="nav nav-pills nav-top">
+               @* <li>
+                    <a href="about-us.html"><i class="fa fa-angle-right"></i>About Us</a>
+                </li>
+                <li>
+                    <a href="contact-us.html"><i class="fa fa-angle-right"></i>Contact Us</a>
+                </li>*@
+                <li class="phone">
+                    <span><i class="fa fa-phone"></i>096.457.5858</span>
+                </li>
+                                <li class="phone">
+                    <span><i class="fa fa-phone"></i>096.207.5757</span>
+                </li>
+                <li class="phone">
+                    <span><i class="fa fa-phone"></i>04.63.290.202</span>
+                </li>
+            </ul>
+        </nav>
+        <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse">
+            <i class="fa fa-bars"></i>
+        </button>
+    </div>
+    <div class="navbar-collapse nav-main-collapse collapse">
+        <div class="container">
+            <ul class="social-icons">
+                <li class="facebook"><a href="http://www.facebook.com/dichthuatdonga" target="_blank" title="Facebook">Facebook</a></li>
+                <li class="twitter"><a href="http://www.twitter.com/dichthuatdonga" target="_blank" title="Twitter">Twitter</a></li>
+                <li class="googleplus"><a href="https://plus.google.com/102397380177231200136" target="_blank" title="Google+">Google+</a></li>
+            </ul>
+            
+            <nav class="nav-main mega-menu">
+                <ul class="nav nav-pills nav-main" id="mainMenu">
+                    <li class="dropdown active">
+                        <a href="/" class="disabled" style="padding: 5px 10px; height: 40px;"><i class="fa fa-home " style="font-size: 29px;"></i>
+                        </a>
+                    </li>
+                    @foreach (var item in new TypeContent().GetParentNull(2).OrderBy(p => p.Sort))
+                    {
+                        var lstChild = (item.Alias != "tin-tuc") ? content.GetMenuByTypeId(item.Id).Select(p => new Content() { Url = p.Url, Name = p.Name }).ToList() : new List<Content>();
+                        <li class="dropdown">
+                            <a href="/@(item.Alias).html" class="@(lstChild.Count > 0 ? "dropdown-toggle" : "") disabled" >@item.Name
+                                @if (lstChild.Count > 0)
+                                {<i class="fa fa-angle-down"></i>}
+                            </a>
+                            @if (lstChild.Count > 0)
+                            {
+                                <ul class="dropdown-menu">
+                                    @foreach (var subitem in lstChild)
+                                    {
+                                        <li><a href="@subitem.Url">@subitem.Name</a></li>
+                                    }
+                                </ul>
+                            }
+                        </li>
+                    }
+                    @*<li class="dropdown active">
+									<a class="dropdown-toggle" href="index.html">
+										Home
+										
+									</a>
+									<ul class="dropdown-menu">
+										<li><a href="index.html">Home - Default</a></li>
+										<li><a href="index-1.html">Home - Corporate <span class="tip">hot</span></a></li>
+										<li><a href="index-2.html">Home - Color</a></li>
+										<li><a href="index-3.html">Home - Light</a></li>
+										<li><a href="index-4.html">Home - Video</a></li>
+										<li><a href="index-5.html">Home - Video - Light</a></li>
+										<li><a href="index-one-page.html">One Page Website</a></li>
+										<li class="dropdown-submenu">
+											<a href="#">Sliders</a>
+											<ul class="dropdown-menu">
+												<li><a href="index.html">Revolution Slider</a></li>
+												<li><a href="index-slider-2.html">Nivo Slider</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>*@
+                </ul>
+            </nav>
+        </div>
+    </div>

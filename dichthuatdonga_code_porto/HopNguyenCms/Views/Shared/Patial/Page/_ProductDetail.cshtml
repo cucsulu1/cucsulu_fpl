@@ -1,0 +1,77 @@
+﻿@using HopNguyenModel.General
+@model HopNguyenModel.Content
+
+<div class="box-big">
+    <div class="box-big-top">
+        <h3>@Model.TypeContent.Name</h3>
+    </div>
+    <div class="box-big-bg">
+        <div class="text-box-big">
+            <div class="img-detail-pro">
+                <a id="example2" href="@Model.Image">
+                    <img id="imgP" src='@Model.Image' alt="@Model.Name" title="@Model.Name" />
+                </a>
+                @foreach(var item in Model.ImageContents)
+                {
+                    <img src="@item.Image" alt="@item.Name" style="margin: 5px 0 0 5px; width: 80px; height: 60px;" onclick="setIP(@item.Image)"/>
+                }
+            </div>
+            <div class="intro-detail-pro">
+                <h1 class="title-detail-pro">
+                    @Model.Name
+                </h1>
+                <p>
+                    Lượt xem: @Model.Hit
+                </p>
+                <p class="price">Giá bán: <span class="price">@(Model.Price > 0 ? string.Format("{0:N0} VNĐ", Model.Price) : "Liên hệ")</span></p>
+                @Model.Summary
+                @if (Model.Tags.Count > 1)
+                {
+                    <p>
+                        <strong>Tags</strong>: 
+                    @foreach (var item in Model.Tags)
+                    {
+                        <a href="/tags/@(Tool.ReplaceSpace(item.Name)).html" title="@item.Name">@item.Name.ToLower(), </a>
+                    }
+                    </p>
+                }
+                <div class="share">
+                    <span class="pull-left">Chia sẻ với bạn bè</span>:
+                    <!-- AddThis Button BEGIN -->
+                    <div class="addthis_toolbox addthis_default_style">
+                    <a class="addthis_counter addthis_pill_style"></a>
+                    <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                    <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+                    </div>
+                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f3a2e9f02cec0f9"></script>
+                    <!-- AddThis Button END -->
+                </div>
+                @*<form action="/addcart" method="POST">
+                    <input type="hidden" name="id" value="@Model.Id"/>
+                    <button type="submit" style="background: none;border: none;">
+                        <img src="/Frontend/img/cart.png" alt="cart" /></button>
+                </form>*@
+            </div>
+            <div class="clear">
+            </div>
+            <div class="detail-news">
+                @Html.Raw(Model.Detail)
+            </div>
+        </div>
+    </div>
+</div>
+@*<div class="box-big">
+    <div class="box-big-top">
+        <h3>Sản phẩm cùng loại</h3>
+    </div>
+    <div class="box-big-bg product-bg">
+        @foreach (var item in Model.GetOther.OrderByDescending(a => a.Id).Take(12))
+        {
+            <div class="product-item">
+                <a href="/@item.TypeContent.Alias/@(item.Alias).html">
+                    <img class="img-product" src="@item.Image" alt="@item.Name"/></a>
+                <h1 class="product-name"><a href="/@item.TypeContent.Alias/@(item.Alias).html">@item.Name</a></h1>
+            </div>
+        }
+    </div>
+</div>*@

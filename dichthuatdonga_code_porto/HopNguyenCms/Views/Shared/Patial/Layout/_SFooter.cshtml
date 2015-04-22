@@ -1,0 +1,55 @@
+﻿@using HopNguyenModel
+@{
+    var content = new Content();
+}
+<div class="wrap">
+    <div class="footer-bar">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul class="list-inline pull-left">
+                @foreach (var item in new TypeContent().GetParentNull(2).OrderBy(p=>p.Sort))
+                {
+                    <li class="mainnav">
+                        <a href="/@(item.Alias).html" >@item.Name</a>
+                    </li>
+                }
+                    </ul>
+                </div>
+            </div> <!-- /.row -->
+    </div>
+
+        <div class="footer-service row">
+            <div class="col-md-3 service-footer">
+                <h3><a href="/dich-thuat.html" class="mnhaschild ">Dịch Vụ Dịch thuật</a></h3>
+                @foreach (var item in new Content().GetByTypeId(25))
+                {
+                    <h2><a href="@item.Url"><i class="fa fa-angle-double-right"></i> @item.Name</a></h2>
+
+                }
+            </div>
+            <div class="col-md-3 service-footer">
+                <h3><a href="/dich-thuat.html" class="mnhaschild ">Dịch Vụ Phiên Dịch</a></h3>
+                @foreach (var item in new Content().GetByTypeId(45))
+                {
+                    <h2><a href="@item.Url"><i class="fa fa-angle-double-right"></i>  @item.Name</a></h2>
+
+                }
+            </div>
+            <div class="col-md-3 service-footer">
+                    <h3><a href="/cong-chung-nhanh.html" class="mnhaschild ">CÔNG CHỨNG NHANH</a></h3>
+                @foreach (var item in new Content().GetByTypeId(49))
+                {
+                    <h2><a href="@item.Url"><i class="fa fa-angle-double-right"></i> @item.Name</a></h2>
+
+                }
+            </div>
+            <div class="col-md-3 service-footer">
+                    <h3><a href="/dich-vu-khac.html" class="mnhaschild ">Dịch Vụ Khác</a></h3>
+                @foreach (var item in new Content().GetByTypeId(46))
+                {
+                    <h2><a href="@item.Url"><i class="fa fa-angle-double-right"></i> @item.Name</a></h2>
+
+                }
+            </div>
+        </div>
+</div>

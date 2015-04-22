@@ -1,0 +1,75 @@
+﻿@using HopNguyenModel.Extensions
+
+<div class="box-big">
+    <div class="box-big-top">
+        <h3>Giỏ hàng</h3>
+    </div>
+    <div class="box-big-bg">
+        @if (Session["order"] != null)
+        {
+            <table class="table table-fix table-hover">
+                <thead>
+                    <tr>
+                        <th style="text-align: left">Tên sản phẩm</th>
+                        <th>Giá bán</th>
+                        <th>Số lượng</th>
+                        <th>Thành tiền</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in new OrderDetail().ListAll((List<Order>)Session["order"]))
+                    {
+                        <tr>
+                            <td style="text-align: left"><a href="/@item.Product.TypeContent.Alias/@(item.Product.Alias).html">@item.Product.Name</a></td>
+                            <td>@string.Format("{0:N0} VNĐ", item.Product.Price)</td>
+                            <td>
+                                <form action="/updatecart" method="POST" class="noMargin">
+                                    <input type="hidden" name="id" value="@item.ProductId"/>
+                                    <input type="text" name="count" value="@item.Count" style="width: 30px; margin: 0" class="pull-left text-center"/>
+                                    <button type="submit" class="btn-link">Cập nhật</button>
+                                </form>
+                            </td>
+                            <td>@string.Format("{0:N0} VNĐ", Math.Ceiling(item.Count * (float)item.Product.Price))</td>
+                            <td>
+                                <a href="/deletecart/@item.ProductId" onclick="javascript:return confirm('Are you sure?');" title="Xóa">Xóa</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            
+            <div class="clear"></div>
+            <fieldset class="padding10">
+                <legend>Thông tin khách hàng</legend>
+                <form action="/checkout" method="POST">
+                    <div class="row-fluid">
+                        <div class="span5">
+                            <label>Họ và tên</label>
+                            <input type="text" class="span12" required name="name" runat="server" />
+                            <label>Email</label>
+                            <input type="text" class="span12" required name="email" runat="server" />
+                            <label>Điện thoại</label>
+                            <input type="text" class="span12" name="phone" runat="server" />
+                        </div>
+                        <div class="span7">
+                            <label>Nội dung</label>
+                            <textarea name="message" class="span12 message" style="height: 160px" runat="server"></textarea>
+                        </div>
+
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span5"></div>
+                        <div class="span5">
+                            <input type="submit" class="btn btn-primary" value="Gửi đơn hàng" />
+                        </div>
+                    </div>
+                </form>
+            </fieldset>
+        }
+        else
+        {
+            <p style="padding: 20px; text-align: center">Chưa có sản phẩm trong giỏ hàng.</p>
+        }
+    </div>
+</div>

@@ -1,0 +1,27 @@
+﻿@{
+    var pagingCount = PageData[0];
+    var page = PageData[1];
+    var url = PageData[2];
+}
+
+<div class="pagination">
+    <ul class="pagination pagination-lg pull-right">
+        <li><a href="@url" title="Đầu trang">«</a></li>
+        @for (int j = page - 3; j <= page + 3; j++)
+        {
+            if (j > 0 && j <= pagingCount)
+            {
+                if (j == page)
+                {
+            <li class="active"><a href="@url?p=@j" title="Trang @j">@j</a></li>
+                }
+                else
+                {
+            <li><a href="@url?p=@j" title="Trang @j">@j</a></li>
+                }
+
+            }
+        }
+        <li><a href="@url?p=@pagingCount" title="Cuối trang">»</a></li>
+    </ul>
+</div>

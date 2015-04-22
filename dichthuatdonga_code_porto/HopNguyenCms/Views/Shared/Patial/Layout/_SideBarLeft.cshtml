@@ -1,0 +1,253 @@
+﻿@model string
+@using HopNguyenModel
+@{
+    var image = new Image();
+    var module = new Module();
+    var other = new Content().GetByTypeAlias(Model);
+    if (other.Count==0)
+    {
+        other= new Content().GetByTypeAlias("dich-thuat");
+    }
+}
+<aside class="sidebar">
+
+    <h4>Danh mục</h4>
+    <ul class="nav nav-list primary push-bottom">
+        @foreach (var item in other.OrderByDescending(a => a.Id).Take(10))
+        {
+            <li><a href="/@item.TypeContent.Alias/@(item.Alias).html">@item.Name</a></li>
+        }
+    </ul>
+
+    <div class="tabs">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#popularPosts" data-toggle="tab"><i class="icon icon-star"></i>Liên quan</a></li>
+            <li><a href="#recentPosts" data-toggle="tab">Tin mới</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="popularPosts">
+                <ul class="simple-post-list">
+                    @foreach (var item in other.OrderByDescending(a => a.Id).Take(10))
+                    {
+                        <li>
+                            <div class="post-image">
+                                <div class="img-thumbnail">
+                                    <a  href="/@item.TypeContent.Alias/@(item.Alias).html">
+                                        <img src="@item.Image" alt="@item.Name">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="post-info">
+                                <a  href="/@item.TypeContent.Alias/@(item.Alias).html">@item.Name</a>
+                                <div class="post-meta">
+                                    @item.CreateDate
+                                </div>
+                            </div>
+                        </li>
+                    }
+
+
+                </ul>
+            </div>
+            <div class="tab-pane" id="recentPosts">
+                <ul class="simple-post-list">
+                    @foreach (var item in new HopNguyenModel.Content().GetByTypeAlias("tin-tuc").OrderByDescending(p => p.CreateDate).Take(10))
+                    {
+                        <li>
+                            <div class="post-image">
+                                <div class="img-thumbnail">
+                                    <a  href="/@item.TypeContent.Alias/@(item.Alias).html">
+                                        <img src="@item.Image" alt="@item.Name">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="post-info">
+                                <a  href="/@item.TypeContent.Alias/@(item.Alias).html">@item.Name</a>
+                                <div class="post-meta">
+                                    @item.CreateDate
+                                </div>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+@*    <div class="box">
+        <div class="box-top">
+            <h3>Hỗ trợ trực tuyến</h3>
+        </div>
+        <div class="box-bg">
+            <div class="text-box">
+                @Html.Partial("Patial/General/_OnlineSupport")
+            </div>
+        </div>
+    </div>*@
+</aside>
+
+
+@*<div class="box">
+    <div class="box-top" style="
+    border: 1px solid #BE0817;
+">
+    </div>
+    <div class="box-bg">
+        <div class="text-box">
+         <div class="fb-like-box" data-href="https://www.facebook.com/775096412531371" data-width="265" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false" style="height: 241px"></div>
+            <!-- Đặt thẻ này vào nơi bạn muốn Nút +1 kết xuất. -->
+        <div class="g-plusone" data-annotation="inline" data-width="260" data-href="http://dichthuatdonga.com/"></div>
+        </div>
+        
+    </div>
+</div>
+<script>
+    //page like boxd
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1390532984544664&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<!-- Đặt thẻ này sau thẻ Nút +1 cuối cùng. -->
+<script type="text/javascript">
+    window.___gcfg = { lang: 'vi' };
+
+    (function () {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/platform.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+</script>*@
+
+@*<div class="box">
+    <div class="box-top">
+        <h3>Khách hàng</h3>
+    </div>
+    <div class="box-bg">
+        <div class="text-box center"style="height:250px;overflow: hidden">
+            <ul class="customerslide">
+                @foreach (var item in image.GetByTypeId(4))
+                {
+                    <li>
+                        <a href="@item.Link" target="_blank">
+                            <img src="@item.Image1" style="max-width: 100%; margin-bottom: 10px"/>
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>*@
+@*<div class="box">
+    <div class="box-top">
+        <h3>Ý kiến Khách hàng</h3>
+    </div>
+    <div class="box-bg">
+        <div class="text-box center">
+            @foreach (var item in image.GetByTypeId(3))
+            {
+                <a href="@item.Link" target="_blank">
+                    <img src="@item.Image1" style="max-width: 100%; margin-bottom: 10px"/>
+                </a>
+            }
+        </div>
+    </div>
+</div>*@
+@*<div class="box">
+    <div class="box-top">
+        <h3>Liên kết web</h3>
+    </div>
+    <div class="box-bg">
+        <div class="text-box center" style="height: 333px;overflow: hidden">
+            <ul class="linkslide">
+                @foreach (var item in image.GetByTypeId(3))
+                {<li>
+                     <a href="@item.Link" target="_blank">
+                         <img src="@item.Image1" style="max-width: 100%; margin-bottom: 10px"/>
+                     </a>
+                 </li>
+                }
+            </ul>
+
+        </div>
+    </div>
+</div>*@
+@*@if (!Request.RawUrl.Equals("/"))
+{
+    <div class="box">
+        <div class="box-top">
+            <h3>Dịch thuật</h3>
+        </div>
+        <div class="box-bg">
+            <div class="category">
+                @foreach (var item in new Content().GetByTypeId(25))
+                {
+                    <h3 class="cate-header"><a href="@item.Url">@item.Name</a></h3>
+
+                }
+            </div>
+        </div>
+    </div>
+}
+@if (Request.RawUrl.Equals("/"))
+{
+    <div class="box">
+        <div class="box-top">
+            <h3>Video</h3>
+        </div>
+        <div class="box-bg">
+            <div class="text-box">
+                @Html.Raw(module.GetById(4).Detail)
+            </div>
+        </div>
+    </div>
+}*@
+@*<div class="box">
+    <div class="box-top">
+        <h3>Check mail</h3>
+    </div>
+    <div class="box-bg">
+        <div class="text-box">
+            <form method="post" name="login_form"  target="new" action="http://mail.smartdoor168.vn:2095/login">
+                <div class="row form-group">
+                    <div class="col-md-4">Email</div>
+                    <div class="col-md-8">
+                        <input type="text" name="user" class="form-control"/>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-4">Password</div>
+                    <div class="col-md-8">
+                        <input type="password" name="pass" class="form-control"/>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <input value="Login" type="submit">
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>*@
+
+@*@foreach (var item in image.GetByTypeId(2))
+{
+    <a href="@item.Link" target="_blank">
+        <img src="@item.Image1" style="width: 100%; margin-bottom: 10px"/>
+    </a>
+}*@
+<hr />
+<div class="box">
+    <div class="box-top">
+        <h3>Thống kê truy cập</h3>
+    </div>
+    <div class="box-bg">
+        <div class="text-box center">
+            <a href="http://info.flagcounter.com/86Qh">
+                <img src="http://s09.flagcounter.com/countxl/86Qh/bg_FFFFFF/txt_000000/border_FFFFFF/columns_2/maxflags_12/viewers_3/labels_1/pageviews_1/flags_0/" alt="Flag Counter" border="0"></a>
+        </div>
+    </div>
+</div>

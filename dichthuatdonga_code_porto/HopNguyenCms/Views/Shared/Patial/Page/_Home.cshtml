@@ -1,0 +1,318 @@
+﻿@using HopNguyenModel
+@{
+    var typeContent = new TypeContent();
+    var content = new Content();
+    var intro = new PageDetail().GetById(2);
+    var baogia = new PageDetail().GetByAlias("bao-gia");
+                        //var support = new Support().GetFirst();
+}
+
+<div class="steps-block steps-block-red">
+    <div class="container">
+        @*          <p>
+                         <em>Goi ngay</em> cho chung toi de duoc tu van mien phi
+          </p>*@
+        <div class="row">
+            <div class="col-md-4 steps-block-col">
+                <i class="fa fa-truck"></i>
+                <div>
+                    <h2>Giao Nhận</h2>
+                    <em>Giao nhận tài liệu miễn phí</em>
+                </div>
+                <span>&nbsp;</span>
+            </div>
+            <a href="/bao-gia.html" style="color:white">
+            <div class="col-md-4 steps-block-col">
+                <i class="fa  fa-usd fa-gift"></i>
+                <div>
+                    <h2>Báo giá</h2>
+                    <em>CAM KẾT GIÁ LUÔN THẤP NHẤT THỊ TRƯỜNG</em>
+                </div>
+                <span>&nbsp;</span>
+            </div>
+                </a>
+            <div class="col-md-4 steps-block-col">
+                <i class="fa fa-phone"></i>
+                <div>
+                    <h2>096 457 5858</h2>
+                    <em>Tư vấn miễn phí 24/7</em>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="intro-row">
+    <div class="container">
+        <div class="row-header">
+            <h2>Giới thiệu dịch thuật đông á</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="detail">
+                    @Html.Raw(intro.Detail)
+                </div>
+                <a href="/gioi-thieu.html" class="btn btn-xs btn-primary pull-right">Xem thêm...</a>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="image"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="services-row">
+    <div class="container">
+        <div class="row-header">
+            <h2><strong>Dịch vụ </strong>của chúng tôi</h2>
+            <h4>Chúng tôi luôn cung cấp các dịch vụ với chất lượng và giá cả tốt nhất</h4>
+        </div>
+
+        <div class="row featured-boxes">
+            <div class="col-sm-6 col-md-3 col-lg-3">
+                <div class="featured-box featured-box-primary">
+                    <div class="box-content">
+                        <h3><a href="/dich-thuat.html" class="mnhaschild ">Dịch thuật</a></h3>
+                        <i class="icon-featured fa fa-book"></i>
+                        @foreach (var item in new Content().GetByTypeId(25))
+                        {
+                            <p><a  href="@item.Url">@item.Name</a></p>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg-3">
+                <div class="featured-box featured-box-secundary">
+                    <div class="box-content">
+                        <h3><a href="/phien-dich.html" class="mnhaschild ">Phiên Dịch</a></h3>
+                        <i class="icon-featured fa fa-user"></i>
+                        @foreach (var item in new Content().GetByTypeId(45))
+                        {
+                            <p><a  href="@item.Url">@item.Name</a> </p>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg-3">
+                <div class="featured-box featured-box-tertiary">
+                    <div class="box-content">
+                        <h3><a href="/cong-chung-nhanh.html" class="mnhaschild ">CÔNG CHỨNG</a></h3>
+                        <i class="icon-featured fa fa-trophy"></i>
+                        @foreach (var item in new Content().GetByTypeId(49))
+                        {
+                            <p><a  href="@item.Url">@item.Name</a></p>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg-3">
+                <div class="featured-box featured-box-quartenary">
+                    <div class="box-content">
+                        <h3><a href="/dich-vu-khac.html" class="mnhaschild ">Dịch Vụ Khác</a></h3>
+                        <i class="icon-featured fa fa-cogs"></i>
+                        @foreach (var item in new Content().GetByTypeId(46))
+                        {
+                            <p><a  href="@item.Url">@item.Name</a></p>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="customer-row">
+    <div class="container">
+        <div class="row center">
+            <div class="col-md-12">
+                <h2 class="short word-rotator-title">Khách hàng 
+								<strong>
+                                    <span class="word-rotate" data-plugin-options='{"delay": 3500, "animDelay": 400}'>
+                                        <span class="word-rotate-items">
+                                            <span>Hài lòng</span>
+                                            <span>đặt niềm tin</span>
+                                        </span>
+                                    </span>
+                                </strong>
+                    Với dịch thuật đông á
+                </h2>
+                <h4 class="lead tall">Niềm tin được khẳng định từ hàng trăm doanh nghiệp việt nam</h4>
+            </div>
+        </div>
+        <div class="row center">
+            <div class="owl-carousel" data-plugin-options='{"items": 6, "autoplay": true, "autoplayTimeout": 3000}'>
+                @for (int i = 0; i < 11; i++)
+                {
+                    <div style="height: 100px; width: 200px; text-align: center">
+                        <img style="max-width:100%; max-height:100%; width:auto;display: inline;" class="img-responsive" src="/FrontEnd/img/clients/kh@(i).png" alt="khách hàng dịch thuật đông á @i">
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <section class="featured highlight footer">
+					<div class="container">
+						<div class="row center counters">
+							<div class="col-md-3 col-sm-6">
+								<strong data-to="7000" data-append="+">7000+</strong>
+								<label>Dự Án Đã Hoàn Thành</label>
+							</div>
+							<div class="col-md-3 col-sm-6">
+								<strong data-to="5">5</strong>
+								<label>Năm Kinh Nghiệm</label>
+							</div>
+							<div class="col-md-3 col-sm-6">
+								<strong data-to="50">50</strong>
+								<label>Ngôn Ngữ Dịch Thuật</label>
+							</div>
+							<div class="col-md-3 col-sm-6">
+								<strong data-to="100" data-append="%">100</strong>
+								<label>Dịch Chuẩn</label>
+							</div>
+						</div>
+					</div>
+				</section>
+    <div class="customer-row" style="padding: 40px 0 0px;">
+        <div class="container">
+            <div class="row-header">
+                <h2>Ý KIẾN <strong>KHÁCH HÀNG</strong></h2>
+@*                <h4>Chúng tôi luôn cung cấp các dịch vụ với chất lượng và giá cả tốt nhất</h4>*@
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="customer-box">
+                        <div class="customer-box-img">
+                            <img src="/images/c1.jpg" alt="Linh" class="img-responsive">
+                        </div>
+                        <div class="customer-box-info">
+                            <h4 class="shorter">Ms: Linh</h4>
+                            <h4 class="company">Công ty cổ phần Sài Gòn Công Nghệ Nước</h4>
+                            <p class="tall">Dịch thuật Đông Á đã dịch các hợp đồng của công ty rất chính xác và đảm bảo tiến độ. Giá thành còn hợp lý và dịch vụ chăm sóc tốt.</p>
+                        </div>
+                    </div>
+                    <div class="customer-box">
+                        <div class="customer-box-img">
+                            <img src="/images/c2.jpg" alt="Uyên" class="img-responsive">
+                        </div>
+                        <div class="customer-box-info">
+                            <h4 class="shorter">Ms: Uyên</h4><h4 class="company">Công ty TNHH WOO-VISON</h4>
+                            <p class="tall">Hợp tác với Dịch thuật Đông Á rất yên tâm dịch cẩn thận và đúng hẹn.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="customer-box">
+                        <div class="customer-box-img">
+                            <img src="/images/c3.jpg" alt="Hoà" class="img-responsive">
+                        </div>
+                        <div class="customer-box-info">
+                            <h4 class="shorter">Ms: Hoà</h4><h4 class="company">Công ty thiết bị & chiếu sáng Tấn Phát</h4>
+                            <p class="tall">Các tài liệu về kỹ thuật chuyên môn rất quan trọng. Chúng tôi rất hài lòng.</p>
+                        </div>
+                    </div>
+                    <div class="customer-box">
+                        <div class="customer-box-img">
+                            <img src="/images/c4.jpg" alt="Yến" class="img-responsive">
+                        </div>
+                        <div class="customer-box-info">
+                            <h4 class="shorter">Ms: Yến</h4><h4 class="company">Công ty TNHH THINK Việt Nam</h4>
+                            <p class="tall">Giới thiệu về sản phẩm mới   rất quan trọng nó quyết định sống còn tới công ty. Chúng tôi tin tưởng hoàn toàn vào quy trình bảo mật tuyệt đối thông tin của Dịch thuật Đông Á.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map-section">
+            <section class="featured footer map">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="recent-posts push-bottom">
+                                <h2>TIN TỨC <strong>DỊCH THUẬT</strong></h2>
+                                <div class="row">
+                                    <div class="owl-carousel" data-plugin-options='{"items": 1}'>
+                                        @{ var lsttt = content.GetByTypeAlias("tin-tuc").OrderByDescending(p=>p.CreateDate).ToList();}
+                                        @for (int i = 0; i < lsttt.Count; i+=4)
+                                        {
+                                            <div>
+                                            @foreach (var item in lsttt.Skip(i).Take(4))
+                                            {
+                                                var shareUrl = Request.Url.AbsoluteUri + item.TypeContent.Alias + "/" + (item.Alias) + ".html";
+                                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                                    <div class="team-item thumbnail">
+                                                        <a href="/@item.TypeContent.Alias/@(item.Alias).html" class="thumb-info team">
+                                                            <img src="@(!string.IsNullOrEmpty(item.Image) ? item.Image : "/frontend/img/no-image.gif")" alt="@item.Name"/>
+                                                            <span class="thumb-info-title">
+                                                                <span class="thumb-info-inner">@item.Name</span>
+                                                            </span>
+                                                        </a>
+                                                        <div class="thumb-info-caption">
+                                                            <p>@(item.Summary.Length>50?item.Summary.Substring(0, 50):item.Summary)...</p>
+                                                            @*                                                            <ul class="social-icons">
+                                                                <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=@shareUrl" target="_blank" title="Facebook">Facebook</a></li>
+                                                                <li class="twitter"><a href="https://twitter.com/home?status=@shareUrl" target="_blank" title="Twitter">Twitter</a></li>
+                                                                <li class="linkedin"><a href="https://plus.google.com/share?url=@shareUrl" target="_blank" title="Google">Google+</a></li>
+                                                            </ul>*@
+                                                            <span class="thumb-info-social-icons">
+                                                                <a data-tooltip="" data-placement="bottom" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=@shareUrl" data-original-title="Facebook"><i class="fa fa-facebook"></i><span>Facebook</span></a>
+                                                                <a data-tooltip="" data-placement="bottom" href="https://twitter.com/home?status=@shareUrl" data-original-title="Twitter"><i class="fa fa-twitter"></i><span>Twitter</span></a>
+                                                                <a data-tooltip="" data-placement="bottom" href="https://plus.google.com/share?url=@shareUrl" data-original-title="Google"><i class="fa fa-google"></i><span>Google+</span></a>
+                                                            </span>
+
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                            }
+                                        </div>
+                                            
+                                        }
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="recent-posts push-bottom">
+                                <h2>TIN TỨC <strong>MỚI</strong></h2>
+                                <div class="row">
+                                    <div class="owl-carousel" data-plugin-options='{"items": 1}'>
+                                        <div>
+                                            @foreach (var item in content.GetByTypeAlias("tin-tuc").Take(4))
+                                            {
+                                                var shareUrl = Request.Url.AbsoluteUri + item.TypeContent.Alias + "/" + (item.Alias) + ".html";
+                                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                                    <div class="team-item thumbnail">
+                                                        <a href="/@item.TypeContent.Alias/@(item.Alias).html" class="thumb-info team">
+                                                            <img src="@(!string.IsNullOrEmpty(item.Image) ? item.Image : "/frontend/img/no-image.gif")" alt="@item.Name"/>
+                                                            <span class="thumb-info-title">
+                                                                <span class="thumb-info-inner">@item.Name</span>
+                                                            </span>
+                                                        </a>
+                                                        <div class="thumb-info-caption">
+                                                            <p>@item.Summary.Substring(0, 50)...</p>
+                                                            @*                                                            <ul class="social-icons">
+                                                                <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=@shareUrl" target="_blank" title="Facebook">Facebook</a></li>
+                                                                <li class="twitter"><a href="https://twitter.com/home?status=@shareUrl" target="_blank" title="Twitter">Twitter</a></li>
+                                                                <li class="linkedin"><a href="https://plus.google.com/share?url=@shareUrl" target="_blank" title="Google">Google+</a></li>
+                                                            </ul>*@
+                                                            <span class="thumb-info-social-icons">
+                                                                <a data-tooltip="" data-placement="bottom" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=@shareUrl" data-original-title="Facebook"><i class="fa fa-facebook"></i><span>Facebook</span></a>
+                                                                <a data-tooltip="" data-placement="bottom" href="https://twitter.com/home?status=@shareUrl" data-original-title="Twitter"><i class="fa fa-twitter"></i><span>Twitter</span></a>
+                                                                <a data-tooltip="" data-placement="bottom" href="https://plus.google.com/share?url=@shareUrl" data-original-title="Google"><i class="fa fa-google"></i><span>Google+</span></a>
+                                                            </span>
+
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

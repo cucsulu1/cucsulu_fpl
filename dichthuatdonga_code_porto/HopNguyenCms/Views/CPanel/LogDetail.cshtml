@@ -1,0 +1,29 @@
+﻿@model HopNguyenModel.SystemLog
+@{
+    ViewBag.Title = Model.ErrorSource;
+    Layout = "~/Views/Shared/_BackendLayout.cshtml";
+}
+
+<div class="row-fluid">
+    <div class="widget">
+        <div class="wTitle">
+            <h3>System logs</h3>
+        </div>
+        <div class="wContent">
+            <div class="wContentInner">
+                <p><strong>Error source: </strong>@Model.ErrorSource</p>
+                <p><strong>Admin Error: </strong>@Model.Admin.Username</p>
+                <p><strong>Ip error: </strong>@Model.Id</p>
+                <p><strong>Date create: </strong>@Model.DateCreate</p>
+                <p><strong>Stack trace: </strong></p>
+                <pre>
+                    <code>@Model.ErrorStackTrace</code>
+                    </pre>
+                <p><strong>Message: </strong></p>
+                <pre>
+<code>@Model.ErrorMessage</code>
+</pre>
+            </div>
+        </div>
+    </div>
+</div>

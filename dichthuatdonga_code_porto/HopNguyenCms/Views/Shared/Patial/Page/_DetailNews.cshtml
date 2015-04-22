@@ -1,0 +1,142 @@
+﻿@using HopNguyenModel.General
+@model HopNguyenModel.Content
+
+<div role="main" class="main">
+
+    <section class="page-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="breadcrumb">
+                        <li><a href="/">Trang chủ</a></li>
+                        <li><a href="#">@Model.TypeContent.Name</a></li>
+                        <li class="active">@Model.Name</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>@Model.TypeContent.Name</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                @Html.Partial("~/Views/Shared/Patial/Layout/_SideBarLeft1.cshtml", Model)
+            </div>
+            <div class="col-md-9">
+                <div class="box-big">
+                    <div class="box-big-bg">
+                        <div class="text-box-big">
+                            <h1 class="title-news" style="margin-bottom: 15px;">
+                                @Model.Name
+                            </h1>
+                            <div style="height: 20px; margin-bottom: 15px;">
+                                <div id="fb-root">
+                                    <div style="padding-right: 10px; float: left"   class="fb-like" data-href="@Request.Url.ToString()" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+                                </div>
+                                <!-- Place this tag where you want the +1 button to render. -->
+                                <div style="padding-top: 5px;" class="g-plusone" data-size="medium"></div>
+                                <span style="vertical-align: top;">@Model.CreateDate</span>
+                                <!-- Place this tag after the last +1 button tag. -->
+                                <script type="text/javascript">
+                                    (function () {
+                                        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                                        po.src = 'https://apis.google.com/js/plusone.js';
+                                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+
+                                    })();
+                                    (function (d, s, id) {
+                                        var js, fjs = d.getElementsByTagName(s)[0];
+                                        if (d.getElementById(id)) return;
+                                        js = d.createElement(s); js.id = id;
+                                        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1390532984544664&version=v2.0";
+                                        fjs.parentNode.insertBefore(js, fjs);
+                                    }(document, 'script', 'facebook-jssdk'));</script>
+                            </div>
+                        </div>
+                        <div class="detail-news">
+                            <img alt="@Model.Name" src="@Model.Image" style="float:left; max-height: 200px; max-width: 200px;margin: 0px 20px 20px 0px;">
+                            @Html.Raw(Model.Detail)
+                        </div>
+                        @if (Model.Tags.Count > 1)
+                        {
+                            <div class="tags">
+                                <strong>Tags</strong>: 
+                                @foreach (var item in Model.Tags)
+                                {
+                                    <a href="/tags/@(Tool.ReplaceSpace(item.Name)).html" title="@item.Name">@item.Name.ToLower(), </a>
+                                }
+                            </div>
+                        }
+                        <hr />
+                    </div>
+                </div>
+                <div class="comment">
+                                 <div class="fb-comments" data-href="@Request.Url" data-width="100%" data-numposts="5" data-colorscheme="light"></div>
+                                <div id="fb-root"></div>
+                                <script>(function (d, s, id) {
+                                    var js, fjs = d.getElementsByTagName(s)[0];
+                                    if (d.getElementById(id)) return;
+                                    js = d.createElement(s); js.id = id;
+                                    js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&appId=1390532984544664&version=v2.3";
+                                    fjs.parentNode.insertBefore(js, fjs);
+                                }(document, 'script', 'facebook-jssdk'));</script>
+                                    <script src="https://apis.google.com/js/plusone.js"></script>
+                                <div class="g-comments"
+                                     data-href="@Request.Url"
+                                     data-width="843"
+                                     data-first_party_property="BLOGGER"
+                                     data-view_type="FILTERED_POSTMOD"
+                                     data-height="200" style="height: 100px">
+                                </div>
+                </div>
+@*                <div class="comment" style="margin-bottom: 50px">
+                    <div class="tabs">
+                        <ul class="nav nav-tabs nav-justified">
+                            <li class="active">
+                                <a href="#popular10" data-toggle="tab" class="text-center" aria-expanded="true"><i class="fa fa-star"></i>Google Plus</a>
+                            </li>
+                            <li class="">
+                                <a href="#recent10" data-toggle="tab" class="text-center" aria-expanded="false">Facebook</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="popular10" class="tab-pane active" style="height: 300px;overflow: auto;">
+                                <script src="https://apis.google.com/js/plusone.js"></script>
+                                <div class="g-comments"
+                                     data-href="@Request.Url"
+                                     data-width="799"
+                                     data-first_party_property="BLOGGER"
+                                     data-view_type="FILTERED_POSTMOD"
+                                     data-height="200" style="height: 100px">
+                                </div>
+                            </div>
+                            <div id="recent10" class="tab-pane">
+                                <div class="fb-comments" data-href="@Request.Url" data-width="100%" data-numposts="5" data-colorscheme="light"></div>
+                                <div id="fb-root"></div>
+                                <script>(function (d, s, id) {
+                                    var js, fjs = d.getElementsByTagName(s)[0];
+                                    if (d.getElementById(id)) return;
+                                    js = d.createElement(s); js.id = id;
+                                    js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&appId=1390532984544664&version=v2.3";
+                                    fjs.parentNode.insertBefore(js, fjs);
+                                }(document, 'script', 'facebook-jssdk'));</script>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>*@
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+

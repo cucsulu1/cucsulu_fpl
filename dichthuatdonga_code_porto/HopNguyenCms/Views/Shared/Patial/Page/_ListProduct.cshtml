@@ -1,0 +1,34 @@
+﻿@using HopNguyenModel
+@model TypeContent
+@{
+    var lstContent = Model == null ? new Content().GetAll(1).OrderByDescending(a => a.Id) : new Content().GetAllChildByType(Model.Alias).OrderByDescending(a => a.Id);
+    var page = Request.QueryString["p"] != null ? Convert.ToInt32(Request.QueryString["p"]) : 1;
+
+    const int itemPerPage = 21;
+    var pagingCount = Convert.ToInt32(Math.Ceiling((lstContent.Count() / (float)itemPerPage)));
+    var listPaging = lstContent.Skip((page - 1) * itemPerPage).Take(itemPerPage);
+    var url = Request.RawUrl.Split('?')[0];
+}
+
+<div class="box-big">
+    <div class="box-big-top">
+        <h3>@(Model == null ? "Sản phẩm" :  Model.Name)</h3>
+    </div>
+    <div class="box-big-bg">
+        <div class="product-bg">
+            @foreach (var item in listPaging)
+            {
+                <div class="product-item">
+                     <img src="@item.Image" alt="@item.Name" class="img-product"/>
+                     <h3 class="product-name">
+                         <a href="@item.Url">@item.Name</a>
+                     </h3>
+                 </div>
+            }
+        </div>
+        @if (pagingCount > 1)
+        {
+            @RenderPage("~/Views/Shared/Patial/General/_Pagination.cshtml", pagingCount, page, url)
+        }
+    </div>
+</div>

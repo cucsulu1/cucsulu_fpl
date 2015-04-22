@@ -1,0 +1,112 @@
+﻿@{
+    ViewBag.Title = "Thêm tài khoản";
+    Layout = "~/Views/Shared/_BackendLayout.cshtml";
+}
+
+<div class="box-big row-fluid">
+    <h4>Thêm tài khoản</h4>
+    <div class="box-big-bg span12">
+        <div class="widget">
+            <div class="tabbable">
+                <div class="navbar-inner">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#tab1">Thông tin chung</a></li>
+                    </ul>
+                </div>
+                @if (ViewBag.msg == "success")
+                {
+                    <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Thành công!</strong> Thêm mới thành công.
+                    </div>
+                }
+                @if (ViewBag.Error != null)
+                {
+                    <div class="alert alert-error">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Lỗi!</strong> @ViewBag.Error
+                    </div>
+                }
+                <form id="validate" action="/cpanel/createaccount" method="POST">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab1">
+                            <div class="formField">
+                                <div class="row-fluid">
+                                    <div class="span2">
+                                        <span class="fLabel">Họ tên</span>
+                                    </div>
+                                    <div class="span9">
+                                        <input type="text" name="Fullname">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="formField">
+                                <div class="row-fluid">
+                                    <div class="span2">
+                                        <span class="fLabel">Tên đăng nhập</span>
+                                    </div>
+                                    <div class="span9">
+                                        <input type="text" name="Username">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="formField">
+                                <div class="row-fluid">
+                                    <div class="span2">
+                                        <span class="fLabel">Mật khẩu</span>
+                                    </div>
+                                    <div class="span9">
+                                        <input type="password" name="Password">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="formField">
+                                <div class="row-fluid">
+                                    <div class="span2">
+                                        <span class="fLabel">Điện thoại</span>
+                                    </div>
+                                    <div class="span9">
+                                        <input type="text" name="Phone">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="formField">
+                                <div class="row-fluid">
+                                    <div class="span2">
+                                        <span class="fLabel">Email</span>
+                                    </div>
+                                    <div class="span9">
+                                        <input type="text" name="email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="formField">
+                                <div class="row-fluid">
+                                    <div class="span2">
+                                        <span class="fLabel">Nhận đơn hàng</span>
+                                    </div>
+                                    <div class="span9">
+                                        <select name="Order">
+                                            <option value="True">Có</option>
+                                            <option value="False">Không</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="formButtons">
+                            <div class="row-fluid">
+                                <div class="span2"></div>
+                                <div class="span9">
+                                    <button type="submit" class="button lButton bMuddy">Tạo mới</button>
+                                    <button type="button" onclick="javascipt:window.location='/Cpanel/Accounts';" class="button lButton bSky">Quay lại</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

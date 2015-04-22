@@ -1,0 +1,113 @@
+﻿@using HopNguyenModel.General
+@{
+    ViewBag.Title = "Add Images";
+    var images = StaticVariable.ImageContents;
+    var contentid = ViewBag.ContentId;
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--basic styles-->
+
+    <link href="/backend/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/backend/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/backend/css/font-awesome.min.css" />
+
+    <!--[if IE 7]>
+            <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
+        <![endif]-->
+
+    <!--page specific plugin styles-->
+
+    <!--fonts-->
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
+    <link rel="stylesheet" href="/backend/css/chosen.css" />
+    <!--ace styles-->
+
+    <link rel="stylesheet" href="/backend/css/ace.min.css" />
+    <link rel="stylesheet" href="/backend/css/ace-responsive.min.css" />
+    <link rel="stylesheet" href="/backend/css/ace-skins.min.css" />
+
+    <!--[if lte IE 8]>
+            <link rel="stylesheet" href="/backend/css/ace-ie.min.css" />
+        <![endif]-->
+
+    <!--inline styles related to this page-->
+    <link rel="shortcut icon" href="/Backend/img/favicon.png" />
+</head>
+
+<body>
+    <div style="padding: 10px;">
+        <form action="/cpanel/addimages" method="POST" enctype="multipart/form-data">
+            @if (contentid != null)
+            {
+                <input type="hidden" name="contentid" value="@contentid"/>
+            }
+            <div class="formField">
+                <div class="row-fluid">
+                    <div class="span2">
+                        <span class="fLabel">Mô tả</span>
+                    </div>
+                    <div class="span9">
+                        <input type="text" name="name">
+                    </div>
+                </div>
+            </div>
+            <div class="formField">
+                <div class="row-fluid">
+                    <div class="span2">
+                        <span class="fLabel">Hình ảnh</span>
+                    </div>
+                    <div class="span3">
+                        <input type="file" name="image" id="id-input-file-2" required="required">
+                    </div>
+                </div>
+            </div>
+            <div class="formButtons">
+                <div class="row-fluid">
+                    <div class="span2"></div>
+                    <div class="span9">
+                        <button class="btn btn-info" type="submit">
+                            <i class="icon-ok bigger-110"></i>
+                            Tạo mới
+                        </button>
+                        <button class="btn" type="button" onclick="javascript:window.close();">
+                            <i class="icon-ok bigger-110"></i>
+                            Đóng
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <table id="sample-table-2" class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Mô tả</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in images)
+                {
+                    <tr>
+                        <td>
+                            @(item.Image != null ? Html.Raw("<img src=\"" + item.Image + "\" width='100px' height='80px'>") : Html.Raw(""))
+                        </td>
+                        <td>@item.Name</td>
+                        <td>
+                            <a href="/Cpanel/Deleteimagecontent/@item.Id@(contentid != null ? "?contentid=" + contentid : "")" onclick="javascript:return confirm('Are you sure?');" title="Xóa">Xóa</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+

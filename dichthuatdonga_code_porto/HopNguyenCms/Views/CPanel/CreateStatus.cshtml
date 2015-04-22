@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Thêm trạng thái";
+    Layout = "~/Views/Shared/_BackendLayout.cshtml";
+}
+
+<div class="page-header position-relative">
+    <h1>Thêm trạng thái sản phẩm
+    </h1>
+</div>
+<!--/.page-header-->
+<div class="row-fluid">
+    <div class="tabbable">
+        <ul class="nav nav-tabs" id="myTab">
+            <li class="active">
+                <a data-toggle="tab" href="#tab1">
+                    <i class="green icon-home bigger-110"></i>
+                    Thông tin chung
+                </a>
+            </li>
+        </ul>
+        <form id="validate" action="/cpanel/createstatus" method="POST">
+            <input type="hidden" name="GroupId" value="1"/>
+            <div class="tab-content">
+                @if (ViewBag.msg == "success")
+                {
+                    <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Thành công!</strong> Thêm mới thành công.
+                    </div>
+                }
+                @if (ViewBag.Error != null)
+                {
+                    <div class="alert alert-error">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Lỗi!</strong> @ViewBag.Error
+                    </div>
+                }
+                <div class="tab-pane active" id="tab1">
+                    <div class="formField">
+                        <div class="row-fluid">
+                            <div class="span2">
+                                <span class="fLabel">Tên trạng thái</span>
+                            </div>
+                            <div class="span9">
+                                <input type="text" name="name">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="formButtons">
+                    <div class="row-fluid">
+                        <div class="span2"></div>
+                        <div class="span9">
+                            <button class="btn btn-info" type="submit">
+                                <i class="icon-ok bigger-110"></i>
+                                Tạo mới
+                            </button>
+                            <button class="btn" type="reset">
+                                <i class="icon-undo bigger-110"></i>
+                                Làm lại
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

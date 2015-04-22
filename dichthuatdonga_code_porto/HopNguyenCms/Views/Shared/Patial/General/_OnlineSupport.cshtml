@@ -1,0 +1,67 @@
+﻿@*<div class="center">
+    @foreach (var item in new HopNguyenModel.Support().GetAllAndRepair())
+    {
+        <h5 class="text-left" style="color: red">@item.Name:</h5>
+        <p style="padding: 8px 0 5px 0">@Html.Raw(item.Nick)</p>
+        <p style="color: red"><strong>Hotline: @item.Phone</strong></p>
+        <br />
+    }
+</div>*@
+<div class="online-support-right">
+    <h4><span class="icon-online"></span>HỖ TRỢ TRỰC TUYẾN</h4>
+    <div class="col-md-12">
+        <div class="icon-support icon-phone" data-tooltip="" data-placement="bottom" data-original-title="Gọi cho chúng tôi">
+            <i class="fa fa-phone"></i>
+        </div>
+        <div class="detail">
+            096.202.5757<br>
+            096.457.5858<br>
+            04.63.290.202
+        </div>
+
+    </div>
+    <div class="col-md-12">
+        <div class="icon-support icon-mail" data-tooltip="" data-placement="bottom" data-original-title="Gửi mail cho chúng tôi">
+            <i class="fa fa-envelope"></i>
+        </div>
+        <div class="detail">
+            <a href="mailto:dichthuatcucre@gmail.com">dichthuatcucre@gmail.com</a><br>
+            <a href="mailto:dichthuatdonga@gmail.com">dichthuatdonga@gmail.com</a><br>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="icon-support icon-sky" data-tooltip="" data-placement="bottom" data-original-title="Chat qua Sky">
+            <i class="fa  fa-skype"></i>
+        </div>
+        <div class="detail">
+            <script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
+            <div id="SkypeButton_Call_dichthuatdonga_1">
+                <script type="text/javascript">
+                    Skype.ui({
+                        "name": "chat",
+                        "element": "SkypeButton_Call_dichthuatdonga_1",
+                        "participants": ["dichthuatdonga"],
+                        "imageSize": 32
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 last">
+        <div class="icon-support icon-yahoo" data-tooltip="" data-placement="bottom" data-original-title="Chat qua Yahoo">
+            <i class="fa fa-smile-o"></i>
+        </div>
+        <div class="detail">
+            <div class="">
+                <a href='ymsgr:sendim?dichthuatdonga'>
+                    <img src='http://opi.yahoo.com/online?u=dichthuatdonga&m=g&t=2' alt='dichthuatdonga.com' border="0">
+                </a>
+            </div>
+            <div class="">
+                <p></p>
+                <a href='ymsgr:sendim?dichthuatcucre'>
+                    <img src='http://opi.yahoo.com/online?u=dichthuatcucre&m=g&t=2' alt='dichthuatcucre.com' border="0">
+                </a>
+            </div>
+        </div>
+</div>

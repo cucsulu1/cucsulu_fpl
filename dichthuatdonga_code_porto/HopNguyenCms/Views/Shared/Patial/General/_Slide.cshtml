@@ -1,0 +1,188 @@
+﻿@using HopNguyenModel
+@{
+    var image = new Image();
+}
+@if (Request.RawUrl.Equals("/"))
+{
+    <div class="slider-container">
+        <div class="slider" id="revolutionSlider" data-plugin-revolution-slider data-plugin-options='{"startheight": 494}'>
+            <ul id="revolutionul" style="display:none">
+                <!-- THE NEW SLIDE -->
+                <li data-transition="fade" data-slotamount="8" data-masterspeed="700" data-delay="9400" data-thumb="/images/thumbs/thumb2.jpg">
+                    <!-- THE MAIN IMAGE IN THE FIRST SLIDE -->
+                    <img src="/images/slide0.jpg" alt="">
+                    <div class="caption lft slide_title_white slide_item_left"
+                        data-x="30"
+                        data-y="90"
+                        data-speed="400"
+                        data-start="1500"
+                        data-easing="easeOutExpo">
+                        LÝ LỊCH TƯ PHÁP <br>
+                        <span class="slide_title_white_bold">NHANH</span>
+                    </div>
+                    <div class="caption lft slide_subtitle_white slide_item_left"
+                        data-x="87"
+                        data-y="245"
+                        data-speed="400"
+                        data-start="2000"
+                        data-easing="easeOutExpo">
+                        GIAO NHẬN TẬN NƠI MIỄN PHÍ
+                    </div>
+                    <a class="caption lft btn dark slide_btn slide_item_left" href="/dich-vu-khac/lam-ly-lich-tu-phap.html"
+                        data-x="87"
+                        data-y="315"
+                        data-speed="400"
+                        data-start="3000"
+                        data-easing="easeOutExpo">Nhanh chóng -  Uy tín - Chính xác
+                    </a>
+                    <div class="caption lfb"
+                        data-x="680"
+                        data-y="40"
+                        data-speed="700"
+                        data-start="1000"
+                        data-easing="easeOutExpo">
+                        <img src="/images/congchung.png" alt="Image 1">
+                    </div>
+                    <div class="caption lfl slide_item_right tp-caption start"
+data-x="350"
+data-y="345"
+data-speed="1400"
+data-start="1100"
+data-easing="easeOutBack" >
+<img src="/upload/images/giao-nhan-mien-phi.png" height='150px' >
+</div>
+
+                </li>
+
+                <!-- THE FIRST SLIDE -->
+                <li data-transition="fade" data-slotamount="8" data-masterspeed="700" data-delay="9400" data-thumb="/images/thumbs/thumb2.jpg">
+                    <!-- THE MAIN IMAGE IN THE FIRST SLIDE -->
+                    <img src="/images/slide1.jpg" alt="">
+                    <div class="caption lft slide_title_white slide_item_left"
+                        data-x="90"
+                        data-y="90"
+                        data-speed="400"
+                        data-start="1500"
+                        data-easing="easeOutExpo" style="color:#ed1c24">
+                    
+                        <span class="slide_title_white_bold">   Dịch thuật <br> </span>Tài liệu
+                    </div>
+                    <div class="caption lft slide_subtitle slide_item_left"
+                        data-x="87"
+                        data-y="245"
+                        data-speed="400"
+                        data-start="2000"
+                        data-easing="easeOutExpo">
+                        Hoàn tiền nếu dịch sai trên 10%
+                    </div>
+                    <a class="caption lft btn slide_btn slide_item_left" href="/bao-gia.html"
+                        data-x="87"
+                        data-y="315"
+                        data-speed="400"
+                        data-start="3000"
+                        data-easing="easeOutExpo">Dịch thuật trên 50 ngôn ngữ
+                    </a>
+                    <div class="caption lfb"
+                        data-x="640"
+                        data-y="55"
+                        data-speed="700"
+                        data-start="1000"
+                        data-easing="easeOutExpo">
+                        <img src="/images/Languages1.png" alt="Image 1">
+                    </div>
+                </li>
+
+                <!-- THE SECOND SLIDE -->
+                <li data-transition="fade" data-slotamount="7" data-masterspeed="300" data-delay="9400" data-thumb="/images/thumbs/thumb2.jpg">
+                    <img src="/images/slide2.jpg" alt="">
+                    <div class="caption lfl slide_title_white slide_item_left"
+                        data-x="30"
+                        data-y="90"
+                        data-speed="400"
+                        data-start="3500"
+                        data-easing="easeOutExpo" style="text-align:left">
+                       HỢP PHÁP HÓA <br />CHỨNG NHẬN LÃNH SỰ
+                    </div>
+                    <div class="caption lfl slide_subtitle slide_item_left"
+                        data-x="30"
+                        data-y="245"
+                        data-speed="400"
+                        data-start="4000"
+                        data-easing="easeOutExpo">
+                        TẤT CẢ QUỐC GIA TRÊN THẾ GIỚI
+                    </div>
+                      <a class="caption lft btn slide_btn slide_item_left" href="/cong-chung-nhanh/hop-phap-hoa-chung-nhan-lanh-su.html"
+                        data-x="30"
+                        data-y="315"
+                        data-speed="400"
+                        data-start="4500"
+                        data-easing="easeOutExpo">Siêu nhanh
+                    </a>
+                    <div class="caption lfr slide_item_right"
+                        data-x="635"
+                        data-y="105"
+                        data-speed="1200"
+                        data-start="1500"
+                        data-easing="easeOutBack">
+                        <img src="/images/passport.png" alt="Image 1">
+                    </div>
+                    <div class="caption lfr slide_item_right"
+                        data-x="580"
+                        data-y="245"
+                        data-speed="1200"
+                        data-start="2000"
+                        data-easing="easeOutBack">
+                        <img src="/images/approve.png" alt="Image 1">
+                    </div>
+                    
+                </li>
+
+@*                <!-- THE THIRD SLIDE -->
+                <li data-transition="fade" data-slotamount="8" data-masterspeed="700" data-delay="9400" data-thumb="/images/thumbs/thumb2.jpg">
+                    <img src="/images/slide3.jpg" alt="">
+                    <div class="caption lfl slide_item_left"
+                        data-x="30"
+                        data-y="95"
+                        data-speed="400"
+                        data-start="1500"
+                        data-easing="easeOutBack">
+                        <iframe src="http://player.vimeo.com/video/56974716?portrait=0" width="420" height="240" style="border: 0" allowfullscreen></iframe>
+                    </div>
+                    <div class="caption lfr slide_title"
+                        data-x="470"
+                        data-y="100"
+                        data-speed="400"
+                        data-start="2000"
+                        data-easing="easeOutExpo">
+                        Responsive Video Support
+                    </div>
+                    <div class="caption lfr slide_subtitle"
+                        data-x="470"
+                        data-y="170"
+                        data-speed="400"
+                        data-start="2500"
+                        data-easing="easeOutExpo">
+                        Youtube, Vimeo and others.
+                    </div>
+                    <div class="caption lfr slide_desc"
+                        data-x="470"
+                        data-y="220"
+                        data-speed="400"
+                        data-start="3000"
+                        data-easing="easeOutExpo">
+                        Lorem ipsum dolor sit amet, consectetuer elit sed diam<br>
+                        nonummy amet euismod dolore.
+                    </div>
+                    <a class="caption lfr btn yellow slide_btn" href=""
+                        data-x="470"
+                        data-y="280"
+                        data-speed="400"
+                        data-start="3500"
+                        data-easing="easeOutExpo">Watch more Videos!
+                    </a>
+                </li>*@
+            </ul>
+            <div class="tp-bannertimer tp-bottom"></div>
+        </div>
+    </div>
+}

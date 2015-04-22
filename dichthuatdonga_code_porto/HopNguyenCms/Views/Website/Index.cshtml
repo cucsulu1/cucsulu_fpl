@@ -1,0 +1,63 @@
+﻿@using HopNguyenModel
+@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_FrontendLayout.cshtml";
+    TypeContent typeContent = ViewBag.TypeContent;
+    Content detail = ViewBag.Content;
+    PageDetail pageDetail = ViewBag.PageDetail;
+    PagedList.PagedList<Content> lstContent = ViewBag.lstContent;
+    string page = ViewBag.Page;
+}
+@section SEO{
+    @Html.Raw(ViewBag.Meta)
+}
+
+@switch (page)
+{
+    case "page detail":
+    @Html.Partial("Patial/Page/_PageDetail", pageDetail)
+        break;
+
+    case "contact":
+    @Html.Partial("Patial/Page/_Contact", pageDetail)
+        break;
+
+    case "search":
+    @Html.Partial("Patial/Page/_Search", lstContent)
+        break;
+
+    case "tags":
+    @Html.Partial("Patial/Page/_Tags", lstContent)
+        break;
+
+    case "message":
+    @Html.Partial("Patial/Page/_Message")
+        break;
+
+    case "cart":
+    @Html.Partial("Patial/Page/_Cart")
+        break;
+
+    case "detail news":
+    @Html.Partial("Patial/Page/_DetailNews", detail)
+        break;
+
+    case "detail product":
+    @Html.Partial("Patial/Page/_ProductDetail", detail)
+        break;
+
+    case "list news":
+    @Html.Partial("Patial/Page/_ListNews", typeContent)
+        break;
+
+    case "list product":
+    @Html.Partial("Patial/Page/_ListProduct", typeContent)
+        break;
+ case "error404":
+        @Html.Partial("Patial/Page/_error404")
+        break;
+    default:
+        @Html.Partial("Patial/Page/_Home")
+        ViewBag.Page = "home";
+        break;
+}

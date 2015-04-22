@@ -1,0 +1,118 @@
+﻿@using HopNguyenModel
+@model TypeContent
+@{
+    var lstContent = new Content().GetAllChildByType(Model != null ? Model.Alias : "").OrderByDescending(a => a.Id);
+    var page = Request.QueryString["p"] != null ? Convert.ToInt32(Request.QueryString["p"]) : 1;
+
+    const int itemPerPage = 8;
+    var pagingCount = Convert.ToInt32(Math.Ceiling((lstContent.Count() / (float)itemPerPage)));
+    var listPaging = lstContent.Skip((page - 1) * itemPerPage).Take(itemPerPage);
+    var url = Request.RawUrl.Split('?')[0];
+}
+
+<div role="main" class="main" style="margin-bottom:40px">
+    <section class="page-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="breadcrumb">
+                        <li><a href="/">Trang chủ</a></li>
+                        <li><a href="#">@Model.Name</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>@Model.Name</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-9">
+                <div class="blog-posts">
+                    @foreach (var item in listPaging)
+                    {
+               
+                        <article class="post post-medium">
+                            <div class="row">
+
+                                <div class="col-md-5">
+                                    <div class="post-image">
+                                        <div class="owl-carousel" data-plugin-options='{"items":1}'>
+                                            <div>
+                                                <div class="img-thumbnail">
+                                                    <img class="img-responsive" src="@(!string.IsNullOrEmpty(item.Image) ? item.Image : "/frontend/img/no-image.gif")" alt="">
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="img-thumbnail">
+                                                    <img class="img-responsive" src="@(!string.IsNullOrEmpty(item.Image) ? item.Image : "/frontend/img/no-image.gif")" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+
+                                    <div class="post-content">
+
+                                        <h2><a href="/@item.TypeContent.Alias/@(item.Alias).html" >@item.Name</a></h2>
+                                        <p>@item.Summary</p>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="post-meta">
+                                        <span><i class="fa fa-calendar"></i>@item.CreateDate</span>
+                                        <span><i class="fa fa-user"></i>By <a href="#">Dịch thuật đông á</a> </span>
+                                        <span class="tag"><i class="fa fa-tag"></i>
+                                             @if (item.Tags.Count > 1)
+                                             {
+                                                
+                                                    foreach (var item1 in item.Tags)
+                                                    {
+                                                         <a href="/tags/@(HopNguyenModel.General.Tool.ReplaceSpace(item.Name)).html"  title="@item.Name">@item.Name.ToLower(), </a>
+                                                    }
+                                            }</span>
+                                        @*<span><i class="fa fa-comments"></i><a href="#">12 Comments</a></span>*@
+                                        <a href="/@item.TypeContent.Alias/@(item.Alias).html" class="btn btn-xs btn-primary pull-right">Xem thêm...</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </article>
+                                     
+                                      
+                    }
+                    @if (pagingCount > 1)
+                    {
+                        @RenderPage("~/Views/Shared/Patial/General/_Pagination.cshtml", pagingCount, page, url)
+                    }
+                </div>
+            </div>
+
+            <div class="col-md-3">            
+                <form  action="/tim-kiem.html" method="get" novalidate="novalidate" style="margin-bottom: 20px;">
+                        <div class="input-group input-group-lg">
+                            <input class="form-control" placeholder="Tìm kiếm..." name="q" id="q" type="text">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                    </form>
+
+                 @Html.Partial("~/Views/Shared/Patial/Layout/_SideBarLeft.cshtml",Model.Alias)
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<HopNguyenModel.SystemLog>
+@{
+    ViewBag.Title = "System Logs";
+    Layout = "~/Views/Shared/_BackendLayout.cshtml";
+}
+
+<div class="box-big row-fluid">
+    <h4>System logs</h4>
+    <div class="box-big-bg">
+        <table class="table table-fix table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Error source</th>
+                    <th>Ip error</th>
+                    <th>Create date</th>
+                    <th>Admin error</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody align="center">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td><a href="/cpanel/logdetail/@item.Id">@item.ErrorSource</a></td>
+                        <td>@item.IpError</td>
+                        <td>@item.DateCreate</td>
+                        <td>@item.Admin.Username</td>
+                        <td><a href="/cpanel/deletelog/@item.Id" class="ctrlButton">
+                            <img src="/backend/img/icons/14x14/trash.png" alt=""></a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

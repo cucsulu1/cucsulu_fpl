@@ -1,0 +1,18 @@
+﻿@model HopNguyenModel.Content
+
+<div class="breadcrumb">
+    <a href="/">Trang chủ</a>»
+    @if(Model.TypeContent.TypeContent2 != null)
+    {
+        if (Model.TypeContent.TypeContent2.TypeContent2 != null)
+        {
+            if (Model.TypeContent.TypeContent2.TypeContent2.TypeContent2 != null)
+            {
+                <a href="/@(Model.TypeContent.TypeContent2.TypeContent2.TypeContent2.Alias).html">@Model.TypeContent.TypeContent2.TypeContent2.TypeContent2.Name</a>@Html.Raw("»")
+            }
+            <a href="/@(Model.TypeContent.TypeContent2.TypeContent2.Alias).html">@Model.TypeContent.TypeContent2.TypeContent2.Name</a>@Html.Raw("»")
+        }
+        <a href="/@(Model.TypeContent.TypeContent2.Alias).html">@Model.TypeContent.TypeContent2.Name</a>@Html.Raw("»")
+    }
+    <a href="/@(Model.TypeContent.Alias).html">@Model.TypeContent.Name</a>
+</div>
