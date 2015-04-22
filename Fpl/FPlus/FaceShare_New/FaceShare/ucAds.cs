@@ -75,10 +75,11 @@ namespace FPlus
                         var head = br.Document.GetElementsByTagName("head")[0];
                         var scriptEl = br.Document.CreateElement("script");
                         var scriptElement = (IHTMLScriptElement)scriptEl.DomElement;
-                        scriptElement.text = "function clickAds() {setTimeout(function(){$('iframe').remove(); if($('#skip_ad_button').is(':hidden')){location.reload();}else{$('#skip_ad_button').click()}},10000);" +
+                        scriptElement.text = "function clickAds() {setTimeout(function(){$('iframe').remove(); if($('#skip_ad_button').is(':hidden')){$('iframe').remove();location.reload();}else{$('#skip_ad_button').click()}},10000);" +
                                              " window.alert = function () { }; window.confirm = function () { return true;}; }";
                         head.AppendChild(scriptEl);
                         br.Document.InvokeScript("clickAds");
+
                     }
                     else
                     {

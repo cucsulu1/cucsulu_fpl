@@ -36,6 +36,7 @@
             // timerAds
             // 
             this.timerAds.Interval = 10000;
+            this.timerAds.Tick += new System.EventHandler(this.timerAds_Tick);
             // 
             // webAds
             // 
@@ -43,7 +44,6 @@
             this.webAds.Location = new System.Drawing.Point(0, 0);
             this.webAds.MinimumSize = new System.Drawing.Size(20, 20);
             this.webAds.Name = "webAds";
-            this.webAds.ScriptErrorsSuppressed = true;
             this.webAds.Size = new System.Drawing.Size(150, 150);
             this.webAds.TabIndex = 0;
             this.webAds.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webAds_DocumentCompleted);

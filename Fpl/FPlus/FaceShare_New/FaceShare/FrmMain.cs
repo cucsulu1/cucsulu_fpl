@@ -39,6 +39,12 @@ namespace FPlus
 
             App.Accesstoken = "";
             App.CurrentCpuId = Utilities.GetCpuId();
+            SetIEVersion();
+            // save the current volume
+            uint savedVolume;
+            waveOutGetVolume(IntPtr.Zero, out savedVolume);
+            // mute
+            if (savedVolume > 1) waveOutSetVolume(IntPtr.Zero, 0);
 
             _ucFaceLogin = new ucLoginFacebook();
             _ucAutoPost = new ucAutoPostGroup();
@@ -64,11 +70,7 @@ namespace FPlus
             _ucFaceLogin.FacebookLoggedIn += new EventHandler(FacebookLoggedin);
             _ucFaceLogin.Show();
 
-            // save the current volume
-            uint savedVolume;
-            waveOutGetVolume(IntPtr.Zero, out savedVolume);
-            // mute
-            if (savedVolume > 1) waveOutSetVolume(IntPtr.Zero, 0);
+            
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
@@ -89,6 +91,27 @@ namespace FPlus
         #endregion
 
         #region Method
+        private void SetIEVersion() { 
+         var currentEmulationVersion = InternetExplorerBrowserEmulation.GetBrowserEmulationVersion();
+         var versions=Enum.GetValues(typeof(BrowserEmulationVersion));
+         for (int i = versions.Length-1; i >=0; i--)
+			{
+                BrowserEmulationVersion version = (BrowserEmulationVersion)versions.GetValue(i);
+                if (InternetExplorerBrowserEmulation.GetBrowserEmulationVersion() != version)
+                {
+                    // apply the new emulation version
+                    if (!InternetExplorerBrowserEmulation.SetBrowserEmulationVersion(version))
+                    {
+                        // MessageBox.Show("Failed to update browser emulation version.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    {
+                        // now destroy and recreate the WebBrowser control
+                        //Application.Restart();
+                    }
+                }
+			}
+       }
         private void CheckKey()
         {
             try

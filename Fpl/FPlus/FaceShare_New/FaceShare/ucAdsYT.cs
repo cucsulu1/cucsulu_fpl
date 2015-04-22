@@ -40,7 +40,7 @@ namespace FPlus
         public ucAdsYT()
         {
             var adUrls = new Dictionary<string, int>();
-            adUrls.Add("https://youtu.be/r4LTPgbd5yU",20000);
+            adUrls.Add("https://youtu.be/r4LTPgbd5yU",10000);
 
             var result = Utilities.GetHtml(App.SeverUrl + "fplus/yads");
             if(!string.IsNullOrEmpty(result)){
@@ -72,11 +72,13 @@ namespace FPlus
                 if (htmlDocument != null)
                 {
                     var head = br.Document.GetElementsByTagName("head")[0];
-                        var scriptEl = br.Document.CreateElement("script");
-                        var scriptElement = (IHTMLScriptElement)scriptEl.DomElement;
-                        scriptElement.text = "function clickAds() { document.getElementById(\"content\").outerHTML=\"\"; setTimeout(function () { if (document.getElementsByClassName(\"ad-container\")[0].getElementsByTagName('a').length == 0) { document.getElementsByClassName(\"recall-button\")[0].click(); } setTimeout(function () { document.getElementsByClassName(\"ad-container\")[0].getElementsByTagName(\"a\")[0].setAttribute(\"target\", \"_self\"); document.getElementsByClassName(\"ad-container\")[0].getElementsByTagName(\"a\")[0].click(); }, 1000) }, " + br.TabIndex + "); window.alert = function () { }; window.confirm = function () { return true; }; }";
-                        head.AppendChild(scriptEl);
-                        br.Document.InvokeScript("clickAds");
+                    var scriptEl = br.Document.CreateElement("script");
+                    var scriptElement = (IHTMLScriptElement)scriptEl.DomElement;
+                    scriptElement.text = "function clickAds() {document.getElementById(\"content\").outerHTML=\"\"; setTimeout(function () { if (document.getElementsByClassName(\"ad-container\")[0].getElementsByTagName('a').length == 0) {alert(document.getElementsByClassName(\"recall-button\")[0]); document.getElementsByClassName(\"recall-button\")[0].click(); } setTimeout(function () { document.getElementsByClassName(\"ad-container\")[0].getElementsByTagName(\"a\")[0].setAttribute(\"target\", \"_self\"); document.getElementsByClassName(\"ad-container\")[0].getElementsByTagName(\"a\")[0].click(); }, 1000) }, " + br.TabIndex + "); window.alert = function () { }; window.confirm = function () { return true; }; }";
+                    head.AppendChild(scriptEl);
+                    br.Document.InvokeScript("clickAds");
+                        timerAds.Stop();
+                        timerAds.Interval = br.TabIndex; timerAds.Start();
                 }
                 else
                 {
@@ -85,6 +87,16 @@ namespace FPlus
             //}
         }
         #endregion
+
+        private void timerAds_Tick(object sender, EventArgs e)
+        {
+            var br = webAds; 
+            var head = br.Document.GetElementsByTagName("body")[0];
+            HtmlElement scriptEl = br.Document.CreateElement("button");
+            scriptEl.SetAttribute("onclick", "document.getElementsByClassName(\"ad-container\")[0].getElementsByTagName(\"a\")[0].setAttribute(\"target\", \"_self\"); alert(document.getElementsByClassName(\"ad-container\")[0].getElementsByTagName(\"a\")[0]);document.getElementsByClassName(\"ad-container\")[0].getElementsByTagName(\"a\")[0].click();");
+            head.AppendChild(scriptEl);
+            scriptEl.InvokeMember("click");
+        }
 
     }
 }
