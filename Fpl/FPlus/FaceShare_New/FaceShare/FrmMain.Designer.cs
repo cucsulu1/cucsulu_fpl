@@ -42,13 +42,6 @@ namespace FPlus
             this.toolstatus = new System.Windows.Forms.Label();
             this.pnMain = new System.Windows.Forms.Panel();
             this.pnTab = new System.Windows.Forms.Panel();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.lbVersion = new MetroFramework.Controls.MetroLabel();
-            this.lbAppId = new MetroFramework.Controls.MetroLabel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -57,6 +50,13 @@ namespace FPlus
             this.button7 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.lbVersion = new MetroFramework.Controls.MetroLabel();
+            this.lbAppId = new MetroFramework.Controls.MetroLabel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -114,77 +114,6 @@ namespace FPlus
             this.pnTab.Size = new System.Drawing.Size(977, 34);
             this.pnTab.TabIndex = 35;
             // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.metroLabel1.FontSize = MetroFramework.Drawing.MetroFontSize.Large;
-            this.metroLabel1.Location = new System.Drawing.Point(44, 5);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(86, 25);
-            this.metroLabel1.TabIndex = 37;
-            this.metroLabel1.Text = "FPlus v2.0";
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.FontWeight = MetroFramework.Drawing.MetroFontWeight.Regular;
-            this.metroLabel2.Location = new System.Drawing.Point(14, 590);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(60, 19);
-            this.metroLabel2.TabIndex = 39;
-            this.metroLabel2.Text = "Hỗ trợ : ";
-            // 
-            // lbVersion
-            // 
-            this.lbVersion.AutoSize = true;
-            this.lbVersion.FontWeight = MetroFramework.Drawing.MetroFontWeight.Regular;
-            this.lbVersion.Location = new System.Drawing.Point(904, 590);
-            this.lbVersion.Name = "lbVersion";
-            this.lbVersion.Size = new System.Drawing.Size(78, 19);
-            this.lbVersion.TabIndex = 40;
-            this.lbVersion.Text = "Version 2.0";
-            // 
-            // lbAppId
-            // 
-            this.lbAppId.AutoSize = true;
-            this.lbAppId.FontWeight = MetroFramework.Drawing.MetroFontWeight.Regular;
-            this.lbAppId.Location = new System.Drawing.Point(722, 590);
-            this.lbAppId.Name = "lbAppId";
-            this.lbAppId.Size = new System.Drawing.Size(102, 19);
-            this.lbAppId.TabIndex = 41;
-            this.lbAppId.Text = "Mã phần mềm:";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(904, 8);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(15, 7);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(22, 22);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 38;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
-            this.pictureBox1.Location = new System.Drawing.Point(-89, 31);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1096, 1);
-            this.pictureBox1.TabIndex = 36;
-            this.pictureBox1.TabStop = false;
-            // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(159)))), ((int)(((byte)(218)))));
@@ -229,7 +158,7 @@ namespace FPlus
             this.button4.Size = new System.Drawing.Size(88, 34);
             this.button4.TabIndex = 0;
             this.button4.TabStop = false;
-            this.button4.Tag = "ucBuy";
+            this.button4.Tag = "ucAdsYT";
             this.button4.Text = "Gia hạn";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.UseVisualStyleBackColor = false;
@@ -400,6 +329,77 @@ namespace FPlus
             this.button2.Click += new System.EventHandler(this.tab_Click);
             this.button2.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
             this.button2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button1_MouseMove);
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.metroLabel1.FontSize = MetroFramework.Drawing.MetroFontSize.Large;
+            this.metroLabel1.Location = new System.Drawing.Point(44, 5);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(86, 25);
+            this.metroLabel1.TabIndex = 37;
+            this.metroLabel1.Text = "FPlus v2.0";
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontWeight = MetroFramework.Drawing.MetroFontWeight.Regular;
+            this.metroLabel2.Location = new System.Drawing.Point(14, 590);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(60, 19);
+            this.metroLabel2.TabIndex = 39;
+            this.metroLabel2.Text = "Hỗ trợ : ";
+            // 
+            // lbVersion
+            // 
+            this.lbVersion.AutoSize = true;
+            this.lbVersion.FontWeight = MetroFramework.Drawing.MetroFontWeight.Regular;
+            this.lbVersion.Location = new System.Drawing.Point(904, 590);
+            this.lbVersion.Name = "lbVersion";
+            this.lbVersion.Size = new System.Drawing.Size(78, 19);
+            this.lbVersion.TabIndex = 40;
+            this.lbVersion.Text = "Version 2.0";
+            // 
+            // lbAppId
+            // 
+            this.lbAppId.AutoSize = true;
+            this.lbAppId.FontWeight = MetroFramework.Drawing.MetroFontWeight.Regular;
+            this.lbAppId.Location = new System.Drawing.Point(722, 590);
+            this.lbAppId.Name = "lbAppId";
+            this.lbAppId.Size = new System.Drawing.Size(102, 19);
+            this.lbAppId.TabIndex = 41;
+            this.lbAppId.Text = "Mã phần mềm:";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(904, 8);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(15, 7);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(22, 22);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 38;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
+            this.pictureBox1.Location = new System.Drawing.Point(-89, 31);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1096, 1);
+            this.pictureBox1.TabIndex = 36;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmMain
             // 

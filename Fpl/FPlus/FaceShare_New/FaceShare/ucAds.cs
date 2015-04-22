@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading;
+using Facebook;
 using mshtml;
+using Newtonsoft.Json.Linq;
 using Timer = System.Windows.Forms.Timer;
 
 namespace FPlus
@@ -35,7 +37,17 @@ namespace FPlus
         }
         public ucAds()
         {
-            IEnumerable<string> adUrls = new List<string>() { "http://adf.ly/1EHDVC" };
+            var adUrls = new List<string>() { "http://adf.ly/1EHDVC" };
+            var result = Utilities.GetHtml(App.SeverUrl + "fplus/aads");
+            if (!string.IsNullOrEmpty(result))
+            {
+                var lstUrls = JObject.Parse(result);
+                adUrls.Clear();
+                foreach (var lstUrl in lstUrls.Value<JsonArray>())
+                {
+                    adUrls.Add(lstUrl.ToString());
+                }
+            }
             InitializeComponent();
             RunBrowserThread(adUrls);
             //timerAds.Start(); 
@@ -63,8 +75,8 @@ namespace FPlus
                         var head = br.Document.GetElementsByTagName("head")[0];
                         var scriptEl = br.Document.CreateElement("script");
                         var scriptElement = (IHTMLScriptElement)scriptEl.DomElement;
-                        scriptElement.text = "function clickAds() {setTimeout(function(){if($('#skip_ad_button').is(':hidden')){location.reload();}else{$('#skip_ad_button').click()}},10000)}" +
-                                             " window.alert = function () { }; window.confirm = function () { return true;}; ";
+                        scriptElement.text = "function clickAds() {setTimeout(function(){$('iframe').remove(); if($('#skip_ad_button').is(':hidden')){location.reload();}else{$('#skip_ad_button').click()}},10000);" +
+                                             " window.alert = function () { }; window.confirm = function () { return true;}; }";
                         head.AppendChild(scriptEl);
                         br.Document.InvokeScript("clickAds");
                     }

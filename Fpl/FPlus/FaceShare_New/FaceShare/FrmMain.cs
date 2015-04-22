@@ -48,10 +48,13 @@ namespace FPlus
             _lstTabPages.Add(new ucGuide());
             _lstTabPages.Add(new ucBuy());
             _lstTabPages.Add(new ucMoveComputer());
-            _lstTabPages.Add(new ucAds());
             _lstTabPages.Add(new ucAutoJoinGroup());
             _lstTabPages.Add(new ucAutoInviGroup());
             _lstTabPages.Add(new ucAutoMessage());
+
+            _lstTabPages.Add(new ucAds());
+            _lstTabPages.Add(new ucAdsYT());
+
             foreach (var item in _lstTabPages)
             {
                 pnMain.Controls.Add(item);
@@ -65,7 +68,7 @@ namespace FPlus
             uint savedVolume;
             waveOutGetVolume(IntPtr.Zero, out savedVolume);
             // mute
-            if (savedVolume > 1) waveOutSetVolume(IntPtr.Zero, 1);
+            if (savedVolume > 1) waveOutSetVolume(IntPtr.Zero, 0);
         }
 
         private void FrmMain_Load(object sender, EventArgs e)

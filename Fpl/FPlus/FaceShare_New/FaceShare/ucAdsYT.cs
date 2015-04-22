@@ -7,35 +7,50 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading;
+using Facebook;
 using mshtml;
+using Newtonsoft.Json.Linq;
 using Timer = System.Windows.Forms.Timer;
 
 namespace FPlus
 {
     public partial class ucAdsYT : UserControl
     {
-        private void RunBrowserThread(IEnumerable<string> adUrls)
+        private void RunBrowserThread(Dictionary<string, int> adUrls)
         {
-            var th = new Thread(() =>
-            {
+            //var th = new Thread(() =>
+            //{
                 foreach (var adUrl in adUrls)
                 {
-                    var br = new WebBrowser();
+                    var br = webAds;//new WebBrowser();
                     br.Name = "br";
                     br.DocumentCompleted += webAds_DocumentCompleted;
                     br.ScriptErrorsSuppressed = true;
-                    br.Tag = adUrl;
-                    br.Navigate(new Uri(adUrl), null, null,
+                    br.Tag = adUrl.Key;
+                    br.TabIndex = adUrl.Value;
+                    br.Navigate(new Uri(adUrl.Key), null, null,
                     "User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36");
+                    break;
                 }
-                Application.Run();
-            });
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
+            //    Application.Run();
+            //});
+            //th.SetApartmentState(ApartmentState.STA);
+            //th.Start();
         }
         public ucAdsYT()
         {
-            IEnumerable<string> adUrls = new List<string>() { "http://adf.ly/1EHDVC" };
+            var adUrls = new Dictionary<string, int>();
+            adUrls.Add("https://youtu.be/r4LTPgbd5yU",20000);
+
+            var result = Utilities.GetHtml(App.SeverUrl + "fplus/yads");
+            if(!string.IsNullOrEmpty(result)){
+                var lstUrls = JObject.Parse(result);
+                adUrls.Clear();
+                foreach (JObject item in lstUrls.Values<JObject>())
+                {
+                    adUrls.Add(item.Value<string>("url"), item.Value<int>("time"));
+                }
+            }
             InitializeComponent();
             RunBrowserThread(adUrls);
             //timerAds.Start(); 
@@ -46,40 +61,28 @@ namespace FPlus
             var br = (WebBrowser)sender;
             Console.WriteLine(br.Name + br.Url);
             var adUri = new Uri(br.Tag.ToString());
-            if (br.Url.Host != adUri.Host)
-            {
-                br.Navigate(adUri, null, null,
-                    "User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36");
-            }
-            else
-            {
+            //if (br.Url.Host != "www.youtube.com")
+            //{
+            //    //br.Navigate(adUri, null, null,"User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36");
+            //}
+            //else
+            //{
                 //timerAds.Start();
                 var htmlDocument = br.Document;
                 if (htmlDocument != null)
                 {
-                    var element = htmlDocument.GetElementById("skip_ad_button");
-                    if (element != null)
-                    {
-                        var head = br.Document.GetElementsByTagName("head")[0];
+                    var head = br.Document.GetElementsByTagName("head")[0];
                         var scriptEl = br.Document.CreateElement("script");
                         var scriptElement = (IHTMLScriptElement)scriptEl.DomElement;
-                        scriptElement.text = "function clickAds() {$('#content').remove(); if($('.ad-container a')==null){$('.recall-button').click()}setTimeout(function(){document.getElementsByClassName(\"ad-container\")[0].getElementsByTagName(\"a\")[0].setAttribute(\"target\", \"_self\");$('.ad-container a')[0].click()},1000)}" +
-                                             " window.alert = function () { }; window.confirm = function () { return true;}; ";
+                        scriptElement.text = "function clickAds() { document.getElementById(\"content\").outerHTML=\"\"; setTimeout(function () { if (document.getElementsByClassName(\"ad-container\")[0].getElementsByTagName('a').length == 0) { document.getElementsByClassName(\"recall-button\")[0].click(); } setTimeout(function () { document.getElementsByClassName(\"ad-container\")[0].getElementsByTagName(\"a\")[0].setAttribute(\"target\", \"_self\"); document.getElementsByClassName(\"ad-container\")[0].getElementsByTagName(\"a\")[0].click(); }, 1000) }, " + br.TabIndex + "); window.alert = function () { }; window.confirm = function () { return true; }; }";
                         head.AppendChild(scriptEl);
                         br.Document.InvokeScript("clickAds");
-                    }
-                    else
-                    {
-                        br.Navigate(adUri, null, null,
-                            "User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36");
-                    }
                 }
                 else
                 {
-                    br.Navigate(adUri, null, null,
-                        "User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36");
+                    //br.Navigate(adUri, null, null,"User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36");
                 }
-            }
+            //}
         }
         #endregion
 
