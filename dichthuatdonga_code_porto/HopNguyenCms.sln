@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HopNguyenCms", "HopNguyenCms\HopNguyenCms.csproj", "{ED62D959-9C12-4B01-A636-251B3264FDE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HopNguyenModel", "HopNguyenModel\HopNguyenModel.csproj", "{8A3B961A-B5DB-48C1-8ECB-4CB32222614F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED62D959-9C12-4B01-A636-251B3264FDE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED62D959-9C12-4B01-A636-251B3264FDE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED62D959-9C12-4B01-A636-251B3264FDE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED62D959-9C12-4B01-A636-251B3264FDE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A3B961A-B5DB-48C1-8ECB-4CB32222614F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A3B961A-B5DB-48C1-8ECB-4CB32222614F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A3B961A-B5DB-48C1-8ECB-4CB32222614F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A3B961A-B5DB-48C1-8ECB-4CB32222614F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

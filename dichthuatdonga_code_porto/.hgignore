@@ -1,0 +1,9 @@
+syntax: glob
+HopNguyenModel/obj/Debug
+HopNguyenCms/obj/Release
+HopNguyenCms/obj/Debug
+HopNguyenModel/bin/Debug
+_ReSharper.HopNguyenCms/
+HopNguyenCms/bin
+HopNguyenModel/bin/Release
+HopNguyenModel/obj/Release
