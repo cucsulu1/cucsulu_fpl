@@ -1,0 +1,4 @@
+-->> COppy finder,editor ngang hàng
+--->> Addreferean DLL Finder
+--->> sua config editor : config.js
+----->> sua config finder : config.ascx
